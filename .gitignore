@@ -1,0 +1,22 @@
+# Environnement virtuel Python
+venv/
+env/
+.env
+
+# Fichiers compil\N{LATIN SMALL LETTER E}s Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Dossiers g\N{LATIN SMALL LETTER E}n\N{LATIN SMALL LETTER E}r\N{LATIN SMALL LETTER E}s par des IDE
+.vscode/
+.idea/
+
+# Fichiers de test locaux (ne pas exporter les vraies donn\N{LATIN SMALL LETTER E}es ni les tests)
+test.txt
+test.xml
+test_results.csv
+*.csv
+
+# Fichiers temporaires Streamlit
+.streamlit/
