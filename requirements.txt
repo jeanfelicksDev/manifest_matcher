@@ -3,4 +3,3 @@ pandas
 pdfplumber
 xmltodict
 xhtml2pdf
-rich<14.0,>=10.14.0
