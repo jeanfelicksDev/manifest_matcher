@@ -182,7 +182,8 @@ if btn_lancer:
                                 
                                 if dest and str(dest).strip().upper() not in ["", "ABIDJAN", "PORT_INCONNU", "INCONNU", "NONE"]:
                                     clean_dest = str(dest).strip().upper()
-                                    hinterland_totals[clean_dest] = hinterland_totals.get(clean_dest, 0.0) + bl_w
+                                    if "OOCL HOUSE" not in clean_dest and "LEVINGTON" not in clean_dest and "ABIDJAN PROD" not in clean_dest:
+                                        hinterland_totals[clean_dest] = hinterland_totals.get(clean_dest, 0.0) + bl_w
                                 
                                 for c_num, c_info in bl_info.get("conteneurs", {}).items():
                                     ctype = str(c_info.get("type", "")).upper()
@@ -219,7 +220,8 @@ if btn_lancer:
                                 
                                 if dest and str(dest).strip().upper() not in ["", "ABIDJAN", "PORT_INCONNU", "INCONNU", "NONE"]:
                                     clean_dest = str(dest).strip().upper()
-                                    hinterland_totals[clean_dest] = hinterland_totals.get(clean_dest, 0.0) + bl_w
+                                    if "OOCL HOUSE" not in clean_dest and "LEVINGTON" not in clean_dest and "ABIDJAN PROD" not in clean_dest:
+                                        hinterland_totals[clean_dest] = hinterland_totals.get(clean_dest, 0.0) + bl_w
                                 
                                 if pol not in pol_groups:
                                     pol_groups[pol] = {"bls": 0, "20'": 0, "40'": 0, "poids": 0.0}
@@ -251,27 +253,34 @@ if btn_lancer:
                             })
                         
                     if recap_rows:
+                        total_bl = sum(r["BL"] for r in recap_rows)
+                        total_20 = sum(r["20'"] for r in recap_rows)
+                        total_40 = sum(r["40'"] for r in recap_rows)
+                        total_poids = sum(r["_raw_poids"] for r in recap_rows)
+                        
                         # Remplissage des Hinterlands dans les colonnes OBSERVATIONS, ligne par ligne
                         hinterland_lines = []
+                        tot_hint_global = 0.0
                         if hinterland_totals:
-                            tot_hint_global = 0.0
                             for dist, wg in hinterland_totals.items():
                                 hinterland_lines.append(f"Total {dist} : {wg:,.2f}".replace(",", " "))
                                 tot_hint_global += wg
                             if tot_hint_global > 0:
                                 hinterland_lines.append(f"TOTAL HINTERLAND : {tot_hint_global:,.2f}".replace(",", " "))
                         
+                        # Ajout du Total ABIDJAN
+                        tot_abidjan = total_poids - tot_hint_global
+                        hinterland_lines.append("") # Ligne vide pour aérer
+                        hinterland_lines.append(f"TOTAL ABIDJAN : {tot_abidjan:,.2f}".replace(",", " "))
+                        
                         for i, hline in enumerate(hinterland_lines):
                             if i < len(recap_rows):
-                                recap_rows[i]["OBSERVATIONS"] = hline
+                                s = str(recap_rows[i].get("OBSERVATIONS", ""))
+                                recap_rows[i]["OBSERVATIONS"] = (s + ("\n" if s and s!=" " else "") + hline).strip()
                             else:
-                                s = recap_rows[-1]["OBSERVATIONS"]
-                                recap_rows[-1]["OBSERVATIONS"] = (s + (" | " if s else "") + hline).strip()
-                        total_bl = sum(r["BL"] for r in recap_rows)
-                        total_20 = sum(r["20'"] for r in recap_rows)
-                        total_40 = sum(r["40'"] for r in recap_rows)
-                        total_poids = sum(r["_raw_poids"] for r in recap_rows)
-                        
+                                s = str(recap_rows[-1].get("OBSERVATIONS", ""))
+                                recap_rows[-1]["OBSERVATIONS"] = (s + (" | " if s and s!=" " else "") + hline).strip()
+                                
                         for row in recap_rows:
                             del row["_raw_poids"]
                             
