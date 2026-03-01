@@ -83,10 +83,11 @@ def parse_pdf_text(file_obj):
         if m_no: notify = m_no.group(1).strip()
             
         # Chercher spécifiquement "Total place of delivery" dans le bloc
-        m_delivery_block = re.search(r'Total place of delivery[\.\s]{0,5}:\s*(.*?)(?=\s*!|\r|\n|$)', block, re.IGNORECASE)
+        # Ex: "Total place of delivery :      BAMAKO                       !"
+        m_delivery_block = re.search(r'Total place of delivery[\.\s]*:\s*([A-Za-z]+(?:\s+[A-Za-z]+)*)', block, re.IGNORECASE)
         if m_delivery_block:
             val = m_delivery_block.group(1).strip()
-            if val and val.upper() not in ["", "ABIDJAN"]:
+            if val and val.upper() not in ["", "ABIDJAN", "ABIDJAN PROD"]:
                 port_delivery = val
             
         # 4. Conteneurs
