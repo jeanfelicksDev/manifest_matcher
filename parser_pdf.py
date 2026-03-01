@@ -26,6 +26,9 @@ def parse_pdf_text(file_obj):
     m_date = re.search(r'Call date\s*:\s*([\d\/]+)', text)
     data["navire_eta"] = m_date.group(1).strip() if m_date else "INCONNU"
     
+    m_pol = re.search(r'Port of loading\s*\.\.\.:\s*(.*?)\s*$', text, re.MULTILINE)
+    data["port_loading"] = m_pol.group(1).strip() if m_pol else "INCONNU"
+    
     # Le port de d\N{LATIN SMALL LETTER E}chargement par d\N{LATIN SMALL LETTER E}faut dans l'en-t\N{LATIN SMALL LETTER E}te du document
     port_discharge_m = re.search(r'Port of discharge\s*:\s*(.*?)\s*$', text, re.MULTILINE)
     # L'exemple a Place of delivery : POINTE NOIRE. Dans un souci de simplicit\N{LATIN SMALL LETTER E}, on essaye les deux.

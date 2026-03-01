@@ -116,10 +116,10 @@ st.title("CONTROL FICHIER SYDAM")
 
 st.markdown("""
 Cette application compare deux manifestes pour relever les diff\N{LATIN SMALL LETTER E}rences en un clin d'\N{LATIN SMALL LETTER O}il : 
-**XML vs PDF** ou **PDF vs PDF** !
+**XML vs PDF** ou **PDF vs PDF** ! Ou g\N{LATIN SMALL LETTER E}n\N{LATIN SMALL LETTER E}rez un **RECAPITULATIF** depuis un PDF !
 """, unsafe_allow_html=True)
 
-mode = st.radio("Mode de comparaison :", ["XML vs PDF", "PDF vs PDF"], horizontal=True)
+mode = st.radio("Mode de fonctionnement :", ["XML vs PDF", "PDF vs PDF", "G\N{LATIN SMALL LETTER E}n\N{LATIN SMALL LETTER E}rer RECAP PDF"], horizontal=True)
 
 col1, col2 = st.columns(2)
 
@@ -128,78 +128,159 @@ if mode == "XML vs PDF":
         file1 = st.file_uploader("Charger le fichier XML", type=['xml'])
     with col2:
         file2 = st.file_uploader("Charger le fichier PDF", type=['pdf'])
-else:
+elif mode == "PDF vs PDF":
     with col1:
         file1 = st.file_uploader("Charger le Premier fichier PDF", type=['pdf'])
     with col2:
         file2 = st.file_uploader("Charger le Second fichier PDF", type=['pdf'])
+else:
+    with col1:
+        file_recap = st.file_uploader("Charger le fichier PDF pour le r\N{LATIN SMALL LETTER E}capitulatif", type=['pdf'])
 
 st.write("") # Espace
 col_btn1, col_btn2, col_btn3 = st.columns([1, 1, 1])
 
 with col_btn2:
-    btn_lancer = st.button("Lancer la R\N{LATIN SMALL LETTER E}conciliation", type="primary", use_container_width=True)
+    if mode == "G\N{LATIN SMALL LETTER E}n\N{LATIN SMALL LETTER E}rer RECAP PDF":
+        btn_lancer = st.button("G\N{LATIN SMALL LETTER E}n\N{LATIN SMALL LETTER E}rer RECAP", type="primary", use_container_width=True)
+    else:
+        btn_lancer = st.button("Lancer la R\N{LATIN SMALL LETTER E}conciliation", type="primary", use_container_width=True)
 
 if btn_lancer:
-    if not file1 or not file2:
-        st.error("Veuillez charger les deux fichiers avant de lancer la r\N{LATIN SMALL LETTER E}conciliation.")
-    else:
-        with st.spinner("Analyse et extraction des donn\N{LATIN SMALL LETTER E}es en cours..."):
-            try:
-                if mode == "XML vs PDF":
-                    # Lecture du XML en mémoire
-                    xml_content = file1.read()
+    if mode == "G\N{LATIN SMALL LETTER E}n\N{LATIN SMALL LETTER E}rer RECAP PDF":
+        try:
+            # Pour éviter NameError si file_recap n'est pas défini hors mode
+            target_file = file_recap
+        except NameError:
+            target_file = None
+            
+        if not target_file:
+            st.error("Veuillez charger le fichier PDF.")
+        else:
+            with st.spinner("Analyse et g\N{LATIN SMALL LETTER E}n\N{LATIN SMALL LETTER E}ration du RECAP en cours..."):
+                try:
+                    data = parse_pdf_text(target_file)
                     
-                    # Extraction
-                    st.info("Extraction XML...")
-                    data1 = parse_xml(xml_content)
-                    st.success("XML extrait avec succ\N{LATIN SMALL LETTER E}s !")
+                    recap_rows = []
+                    pol = data.get("port_loading", "INCONNU")
+                    for pod, pod_data in data.get("ports", {}).items():
+                        nb_bl = len(pod_data.get("bls", {}))
+                        nb_20 = 0
+                        nb_40 = 0
+                        
+                        for bl_ref, bl_info in pod_data.get("bls", {}).items():
+                            for c_num, c_info in bl_info.get("conteneurs", {}).items():
+                                ctype = str(c_info.get("type", "")).upper()
+                                if "20'" in ctype or "20 " in ctype:
+                                    nb_20 += 1
+                                elif "40'" in ctype or "40 " in ctype:
+                                    nb_40 += 1
+                                else:
+                                    # Fallback arbitraire si c'est indéterminé
+                                    nb_20 += 1
+                                    
+                        poids = pod_data.get("poids_brut_total", 0.0)
+                        
+                        recap_rows.append({
+                            "POL": pol,
+                            "POD": pod,
+                            "BL": nb_bl,
+                            "20'": nb_20,
+                            "40'": nb_40,
+                            "POIDS (kgs)": f"{poids:,.2f}".replace(",", " "),
+                            "OBSERVATIONS": ""
+                        })
+                        
+                    if recap_rows:
+                        total_bl = sum(r["BL"] for r in recap_rows)
+                        total_20 = sum(r["20'"] for r in recap_rows)
+                        total_40 = sum(r["40'"] for r in recap_rows)
+                        total_poids = sum(pod_data.get("poids_brut_total", 0.0) for pod_data in data.get("ports", {}).values())
+                        
+                        recap_rows.append({
+                            "POL": "TOTAL",
+                            "POD": "",
+                            "BL": total_bl,
+                            "20'": total_20,
+                            "40'": total_40,
+                            "POIDS (kgs)": f"{total_poids:,.2f}".replace(",", " "),
+                            "OBSERVATIONS": "*******************"
+                        })
+                        
+                    df_recap = pd.DataFrame(recap_rows)
+                    st.subheader("📝 RECAPITULATIF (MANIFESTE EXPORT COMPLEMENTAIRE)")
+                    st.dataframe(df_recap, use_container_width=True)
                     
-                    st.info("Extraction PDF...")
-                    data2 = parse_pdf_text(file2)
-                    st.success("PDF extrait avec succ\N{LATIN SMALL LETTER E}s !")
-                    
-                    label1, label2 = "Valeur XML", "Valeur PDF"
-                    
-                else:
-                    st.info("Extraction PDF 1...")
-                    data1 = parse_pdf_text(file1)
-                    st.success("PDF 1 extrait avec succ\N{LATIN SMALL LETTER E}s !")
-                    
-                    st.info("Extraction PDF 2...")
-                    data2 = parse_pdf_text(file2)
-                    st.success("PDF 2 extrait avec succ\N{LATIN SMALL LETTER E}s !")
-                    
-                    label1, label2 = "Valeur PDF 1", "Valeur PDF 2"
-
-                # R\N{LATIN SMALL LETTER E}conciliation
-                st.info("Comparaison des donn\N{LATIN SMALL LETTER E}es...")
-                differences = reconcile_manifests(data1, data2, label1, label2)
-                
-                st.subheader("📊 R\N{LATIN SMALL LETTER E}sultats de la comparaison")
-                
-                if not differences:
-                    st.success("Aucune diff\N{LATIN SMALL LETTER E}rence majeure trouv\N{LATIN SMALL LETTER E}e entre les deux fichiers !")
-                else:
-                    st.warning(f"⚠️ {len(differences)} diff\N{LATIN SMALL LETTER E}rences trouv\N{LATIN SMALL LETTER E}es.")
-                    df_diff = pd.DataFrame(differences)
-                    
-                    # R\N{LATIN SMALL LETTER E}organisation des colonnes pour la clart\N{LATIN SMALL LETTER E}
-                    cols = ["Contexte", "Identifiant", "Champ", label1, label2]
-                    df_diff = df_diff[[c for c in cols if c in df_diff.columns]]
-                    
-                    st.dataframe(df_diff, use_container_width=True)
-                    
-                    # Export CSV
-                    csv = df_diff.to_csv(index=False, sep=';').encode('utf-8-sig')
+                    csv = df_recap.to_csv(index=False, sep=';').encode('utf-8-sig')
                     st.download_button(
-                        label="📥 T\N{LATIN SMALL LETTER E}l\N{LATIN SMALL LETTER E}charger le r\N{LATIN SMALL LETTER E}sum\N{LATIN SMALL LETTER E} des diff\N{LATIN SMALL LETTER E}rences (CSV)",
+                        label="📥 T\N{LATIN SMALL LETTER E}l\N{LATIN SMALL LETTER E}charger le RECAP (CSV)",
                         data=csv,
-                        file_name='differences_manifeste.csv',
+                        file_name='recap_manifeste.csv',
                         mime='text/csv',
                     )
+                except Exception as e:
+                    st.error(f"Une erreur est survenue : {str(e)}")
+                    import traceback
+                    st.code(traceback.format_exc())
+    else:
+        try:
+            f1 = file1
+            f2 = file2
+        except NameError:
+            f1 = None
+            f2 = None
+            
+        if not f1 or not f2:
+            st.error("Veuillez charger les deux fichiers avant de lancer la r\N{LATIN SMALL LETTER E}conciliation.")
+        else:
+            with st.spinner("Analyse et extraction des donn\N{LATIN SMALL LETTER E}es en cours..."):
+                try:
+                    if mode == "XML vs PDF":
+                        xml_content = f1.read()
+                        st.info("Extraction XML...")
+                        data1 = parse_xml(xml_content)
+                        st.success("XML extrait avec succ\N{LATIN SMALL LETTER E}s !")
+                        
+                        st.info("Extraction PDF...")
+                        data2 = parse_pdf_text(f2)
+                        st.success("PDF extrait avec succ\N{LATIN SMALL LETTER E}s !")
+                        
+                        label1, label2 = "Valeur XML", "Valeur PDF"
+                    else:
+                        st.info("Extraction PDF 1...")
+                        data1 = parse_pdf_text(f1)
+                        st.success("PDF 1 extrait avec succ\N{LATIN SMALL LETTER E}s !")
+                        
+                        st.info("Extraction PDF 2...")
+                        data2 = parse_pdf_text(f2)
+                        st.success("PDF 2 extrait avec succ\N{LATIN SMALL LETTER E}s !")
+                        
+                        label1, label2 = "Valeur PDF 1", "Valeur PDF 2"
+
+                    st.info("Comparaison des donn\N{LATIN SMALL LETTER E}es...")
+                    differences = reconcile_manifests(data1, data2, label1, label2)
                     
-            except Exception as e:
-                st.error(f"Une erreur est survenue lors de l'analyse : {str(e)}")
-                import traceback
-                st.code(traceback.format_exc())
+                    st.subheader("📊 R\N{LATIN SMALL LETTER E}sultats de la comparaison")
+                    
+                    if not differences:
+                        st.success("Aucune diff\N{LATIN SMALL LETTER E}rence majeure trouv\N{LATIN SMALL LETTER E}e entre les deux fichiers !")
+                    else:
+                        st.warning(f"⚠️ {len(differences)} diff\N{LATIN SMALL LETTER E}rences trouv\N{LATIN SMALL LETTER E}es.")
+                        df_diff = pd.DataFrame(differences)
+                        
+                        cols = ["Contexte", "Identifiant", "Champ", label1, label2]
+                        df_diff = df_diff[[c for c in cols if c in df_diff.columns]]
+                        
+                        st.dataframe(df_diff, use_container_width=True)
+                        
+                        csv = df_diff.to_csv(index=False, sep=';').encode('utf-8-sig')
+                        st.download_button(
+                            label="📥 T\N{LATIN SMALL LETTER E}l\N{LATIN SMALL LETTER E}charger le r\N{LATIN SMALL LETTER E}sum\N{LATIN SMALL LETTER E} des diff\N{LATIN SMALL LETTER E}rences (CSV)",
+                            data=csv,
+                            file_name='differences_manifeste.csv',
+                            mime='text/csv',
+                        )
+                except Exception as e:
+                    st.error(f"Une erreur est survenue lors de l'analyse : {str(e)}")
+                    import traceback
+                    st.code(traceback.format_exc())
