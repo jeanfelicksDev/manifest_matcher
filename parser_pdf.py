@@ -29,13 +29,13 @@ def parse_pdf_text(file_obj):
     m_pol = re.search(r'Port of loading[\.\s]*:\s*(.*?)\s*$', text, re.MULTILINE)
     data["port_loading"] = m_pol.group(1).strip() if m_pol else "INCONNU"
     
-    m_pol_global = re.search(r'Port of loading[\.\s]*:\s*(.*?)\s*$', text, re.MULTILINE)
+    m_pol_global = re.search(r'Port of loading[\.\s]*:\s*(.*?)(?=\s*!|\r|\n|$)', text, re.MULTILINE | re.IGNORECASE)
     data["port_loading"] = m_pol_global.group(1).strip() if m_pol_global else "INCONNU"
     
-    # 2. R\N{LATIN SMALL LETTER E}cup\N{LATIN SMALL LETTER E}ration des POL et POD au fil du document
-    pols = [(m.start(), m.group(1).strip()) for m in re.finditer(r'Port of loading[\.\s]*:\s*(.*?)\s*$', text, re.MULTILINE)]
-    pods_discharge = [(m.start(), m.group(1).strip()) for m in re.finditer(r'Port of discharge[\.\s]*:\s*(.*?)\s*$', text, re.MULTILINE)]
-    pods_delivery = [(m.start(), m.group(1).strip()) for m in re.finditer(r'Place of delivery[\.\s]*:\s*(.*?)\s*$', text, re.MULTILINE)]
+    # 2. Récupération des POL et POD au fil du document
+    pols = [(m.start(), m.group(1).strip()) for m in re.finditer(r'Port of loading[\.\s]*:\s*(.*?)(?=\s*!|\r|\n|$)', text, re.MULTILINE | re.IGNORECASE)]
+    pods_discharge = [(m.start(), m.group(1).strip()) for m in re.finditer(r'Port of discharge[\.\s]*:\s*(.*?)(?=\s*!|\r|\n|$)', text, re.MULTILINE | re.IGNORECASE)]
+    pods_delivery = [(m.start(), m.group(1).strip()) for m in re.finditer(r'Place of delivery[\.\s]*:\s*(.*?)(?=\s*!|\r|\n|$)', text, re.MULTILINE | re.IGNORECASE)]
     
     def get_latest(positions_list, max_pos, default="INCONNU"):
         latest = default
@@ -83,9 +83,11 @@ def parse_pdf_text(file_obj):
         if m_no: notify = m_no.group(1).strip()
             
         # Chercher spécifiquement "Total place of delivery" dans le bloc
-        m_delivery_block = re.search(r'Total place of delivery[\.\s]*:\s*([A-Za-z\s]+)', block)
-        if m_delivery_block and m_delivery_block.group(1).strip():
-            port_delivery = m_delivery_block.group(1).strip()
+        m_delivery_block = re.search(r'Total place of delivery[\.\s]{0,5}:\s*(.*?)(?=\s*!|\r|\n|$)', block, re.IGNORECASE)
+        if m_delivery_block:
+            val = m_delivery_block.group(1).strip()
+            if val and val.upper() not in ["", "ABIDJAN"]:
+                port_delivery = val
             
         # 4. Conteneurs
         # On cherche des numéros de conteneurs classiques (ex: NIDU2356619) et on va essayer de capter la ligne correspondante
