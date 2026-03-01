@@ -363,9 +363,7 @@ if btn_lancer:
                         html += "</tbody></table>"
                         st.markdown(html, unsafe_allow_html=True)
                     
-                    # Préparation de l'export CSV
-                    csv = df_recap.to_csv(index=False, sep=';').encode('utf-8-sig')
-                    
+
                     # Préparation de l'export PDF (Paysage)
                     pdf_html = f"""
                     <html>
@@ -402,26 +400,16 @@ if btn_lancer:
                     pisa_status = pisa.CreatePDF(io.StringIO(pdf_html), dest=pdf_buffer)
                     pdf_bytes = pdf_buffer.getvalue()
 
-                    col_dl1, col_dl2 = st.columns(2)
-                    with col_dl1:
+                    if not pisa_status.err:
                         st.download_button(
-                            label="📥 Télécharger le RECAP (CSV)",
-                            data=csv,
-                            file_name='recap_manifeste.csv',
-                            mime='text/csv',
+                            label="📄 Télécharger le RECAP (PDF - Paysage)",
+                            data=pdf_bytes,
+                            file_name='recap_manifeste.pdf',
+                            mime='application/pdf',
                             use_container_width=True
                         )
-                    with col_dl2:
-                        if not pisa_status.err:
-                            st.download_button(
-                                label="📄 Télécharger le RECAP (PDF - Paysage)",
-                                data=pdf_bytes,
-                                file_name='recap_manifeste.pdf',
-                                mime='application/pdf',
-                                use_container_width=True
-                            )
-                        else:
-                            st.error("Erreur lors de la génération du PDF")
+                    else:
+                        st.error("Erreur lors de la génération du PDF")
                 except Exception as e:
                     st.error(f"Une erreur est survenue : {str(e)}")
                     import traceback
