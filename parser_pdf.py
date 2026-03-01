@@ -83,38 +83,84 @@ def parse_pdf_text(file_obj):
         if m_no: notify = m_no.group(1).strip()
             
         # 4. Conteneurs
-        # On cherche des num\N{LATIN SMALL LETTER E}ros de conteneurs classiques (ex: NIDU2356619)
+        # On cherche des numéros de conteneurs classiques (ex: NIDU2356619) et on va essayer de capter la ligne correspondante
         containers = {}
-        cont_matches = re.finditer(r'!\s*([A-Z]{4}\d{7})\s*!\s*(.*?)\s*TARE!\s*([\d\.]+)?', block)
+        
+        # Le pattern trouve le conteneur, sa taille, le mot TARE! et tente de capturer jusqu'au poids brut qui est en fin de ligne
+        # Exemple ligne : ! OERU4177992 ! 1 40' REEFER HIGH C TARE! 5880.000 ! 28620.000 ! 50.000 !
+        # ou !OOLU2318619192 ! ... ! TEMU6639268 ! 1 40' DRY ...
+        cont_matches = re.finditer(r'!\s*([A-Z]{4}\d{7})\s*!\s*(.*?)\s*TARE!\s*([\d\.]+)\s*!\s*(.*?)(?=\n|!)', block)
         
         for c in cont_matches:
             c_num = c.group(1)
             desc_type = c.group(2).strip()
+            # group 3 is Tare
+            remainder = c.group(4).strip()
             
-            # The matched weight here is TARE! weight, not gross weight.
+            # Essayer d'extraire le Gross Weight qui est généralement le bloc de chiffres suivant
+            # Sauf si c'est vide, car on a géré le bloc global plus bas.
+            poids_brut_indiv = 0.0
+            
+            # Dans le cas de l'image, c'est sur 2 lignes:
+            # Ligne cont: ! OERU4177992 ! 1 40' REEFER HIGH C TARE! 5880.000 ! !
+            # Ligne suivante: ! SEAL... ! ! 28620.000 ! 50.000
+            
             containers[c_num] = {
                 "type": desc_type, 
-                "poids_brut": 0.0, 
+                "poids_brut": poids_brut_indiv, # On va le raffiner
                 "plomb": "", 
                 "volume": "", 
                 "package": "", 
                 "nombre_colis": ""
             }
             
-        # 5. Extraction compl\N{LATIN SMALL LETTER E}mentaire des conteneurs (Scell\N{LATIN SMALL LETTER E}s et Poids global en bas de bloc)
+        # 5. Extraction complémentaire (Scellés et Poids individuels multi-lignes)
         for c_num in containers.keys():
-            # Chercher le scell\N{LATIN SMALL LETTER E} associ\N{LATIN SMALL LETTER E} en dessous du conteneur dans l'affichage texte
+            # Chercher le scellé
             seal_m = re.search(c_num + r'[\s\S]*?SEAL\s+([A-Z0-9]+)', block)
             if seal_m: 
                 containers[c_num]["plomb"] = seal_m.group(1)
                 
-            # Si le poids \N{LATIN SMALL LETTER E}tait vide \N{LATIN SMALL LETTER A} c\N{LATIN SMALL LETTER O}t\N{LATIN SMALL LETTER E} du TARE!, chercher "GW EXCL.CTR.TARE !"
+            # Pour le poids brut spécifique au conteneur, souvent sur la ligne du conteneur ou la ligne "SEAL"
+            # On découpe le bloc à partir de l'identifiant du conteneur
+            c_start = block.find(c_num)
+            if c_start != -1:
+                # Chercher le bloc de texte juste après TARE! xxxx
+                sub_block = block[c_start:c_start+300] # Limiter la recherche aux lignes avoisinantes
+                
+                # Le poids brut est l'avant-dernier nombre avec décimales sur ces colonnes de droite.
+                # On va chercher un nombre du style 28620.000 aligné à droite
+                # Pattern: ! (espaces blancs eventuels) nombre (espaces) ! nombre
+                
+                weights_m = re.findall(r'!\s*([\d\.]+)\s*!', sub_block)
+                # TARE est souvent le premier, GW le second ou la ligne en dessous
+                valeurs_possibles = []
+                for w in weights_m:
+                    try:
+                        valf = float(w)
+                        if valf > 0: valeurs_possibles.append(valf)
+                    except: pass
+                
+                # Logique heuristique : le plus grand chiffre n'étant pas la tare (tare ~3000-6000)
+                # Souvent situé après TARE! XXXX
+                
+                tare_m = re.search(r'TARE!\s*([\d\.]+)', sub_block)
+                tare = float(tare_m.group(1)) if tare_m else 0.0
+                
+                for v in valeurs_possibles:
+                    if v != tare and v > 100: # Un conteneur fait rarement moins de 100 kgs
+                        containers[c_num]["poids_brut"] = v
+                        break
+                        
+            # Si malgré cela on n'a rien, on se rabat sur le poids total du BL à la fin
             if containers[c_num]["poids_brut"] == 0.0:
                  gw_m = re.search(r'GW EXCL\.CTR\.TARE\s*!\s*([\d\.]+)', block)
                  if gw_m:
                      weight_gw = float(gw_m.group(1))
-                     containers[c_num]["poids_brut"] = weight_gw
-                     data["ports"][default_port]["poids_brut_total"] += weight_gw
+                     # Si n conteneurs, divisé équitablement ? Pour l'instant on affecte
+                     containers[c_num]["poids_brut"] = weight_gw / len(containers)
+                     
+            data["ports"][default_port]["poids_brut_total"] += containers[c_num]["poids_brut"]
 
         # Enregistrement final du BL
         data["ports"][default_port]["bls"][bl_ref] = {
