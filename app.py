@@ -330,8 +330,10 @@ if btn_lancer:
                                 html += f"<td rowspan='{pod_spans[i]}' style='padding: 12px; border: 1px solid #e5e5e5; vertical-align: middle; font-weight: bold;'>{row['POD']}</td>"
                             
                             html += f"<td style='padding: 12px; border: 1px solid #e5e5e5;'>{row['BL']}</td>"
-                            html += f"<td style='padding: 12px; border: 1px solid #e5e5e5;'>{row['20\'']}</td>"
-                            html += f"<td style='padding: 12px; border: 1px solid #e5e5e5;'>{row['40\'']}</td>"
+                            val20 = row.get("20'", "")
+                            val40 = row.get("40'", "")
+                            html += f"<td style='padding: 12px; border: 1px solid #e5e5e5;'>{val20}</td>"
+                            html += f"<td style='padding: 12px; border: 1px solid #e5e5e5;'>{val40}</td>"
                             html += f"<td style='padding: 12px; border: 1px solid #e5e5e5;'>{row['POIDS (kgs)']}</td>"
                             
                             if i == 0:
@@ -343,9 +345,11 @@ if btn_lancer:
                         # Ajout Ligne Total HTML
                         html += f"<tr style='font-weight: bold; background-color: #f7f7f7;'>"
                         html += f"<td colspan='2' style='padding: 12px; border: 1px solid #e5e5e5; text-align: center;'>{total_row['POL']}</td>"
+                        total20 = total_row.get("20'", "")
+                        total40 = total_row.get("40'", "")
                         html += f"<td style='padding: 12px; border: 1px solid #e5e5e5;'>{total_row['BL']}</td>"
-                        html += f"<td style='padding: 12px; border: 1px solid #e5e5e5;'>{total_row['20\'']}</td>"
-                        html += f"<td style='padding: 12px; border: 1px solid #e5e5e5;'>{total_row['40\'']}</td>"
+                        html += f"<td style='padding: 12px; border: 1px solid #e5e5e5;'>{total20}</td>"
+                        html += f"<td style='padding: 12px; border: 1px solid #e5e5e5;'>{total40}</td>"
                         html += f"<td style='padding: 12px; border: 1px solid #e5e5e5;'>{total_row['POIDS (kgs)']}</td>"
                         html += f"<td style='padding: 12px; border: 1px solid #e5e5e5;'>{total_row['OBSERVATIONS']}</td>"
                         html += "</tr>"
