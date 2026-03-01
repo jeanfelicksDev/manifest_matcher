@@ -165,6 +165,7 @@ def parse_pdf_text(file_obj):
         # Enregistrement final du BL
         data["ports"][default_port]["bls"][bl_ref] = {
             "pol": current_pol,
+            "place_delivery": port_delivery,
             "consignee": consignee,
             "shipper": shipper,
             "notify": notify,

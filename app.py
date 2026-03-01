@@ -170,12 +170,20 @@ if btn_lancer:
                     if type_recap == "Export":
                         # En Export: POL est toujours ABIDJAN, on groupe par POD
                         pol = "ABIDJAN"
+                        hinterland_totals = {}
                         for pod, pod_data in data.get("ports", {}).items():
                             nb_bl = len(pod_data.get("bls", {}))
                             nb_20 = 0
                             nb_40 = 0
                             
                             for bl_ref, bl_info in pod_data.get("bls", {}).items():
+                                dest = bl_info.get("place_delivery")
+                                bl_w = float(sum(c.get("poids_brut", 0.0) for c in bl_info.get("conteneurs", {}).values()))
+                                
+                                if dest and str(dest).strip().upper() not in ["", "ABIDJAN", "PORT_INCONNU", "INCONNU", "NONE"]:
+                                    clean_dest = str(dest).strip().upper()
+                                    hinterland_totals[clean_dest] = hinterland_totals.get(clean_dest, 0.0) + bl_w
+                                
                                 for c_num, c_info in bl_info.get("conteneurs", {}).items():
                                     ctype = str(c_info.get("type", "")).upper()
                                     if "20'" in ctype or "20 " in ctype:
@@ -201,10 +209,18 @@ if btn_lancer:
                         # En Import: POD est toujours ABIDJAN, on liste tous les POLs du document
                         pod = "ABIDJAN"
                         pol_groups = {}
+                        hinterland_totals = {}
                         
                         for internal_pod, pod_data in data.get("ports", {}).items():
                             for bl_ref, bl_info in pod_data.get("bls", {}).items():
                                 pol = bl_info.get("pol", "INCONNU")
+                                dest = bl_info.get("place_delivery")
+                                bl_w = float(sum(c.get("poids_brut", 0.0) for c in bl_info.get("conteneurs", {}).values()))
+                                
+                                if dest and str(dest).strip().upper() not in ["", "ABIDJAN", "PORT_INCONNU", "INCONNU", "NONE"]:
+                                    clean_dest = str(dest).strip().upper()
+                                    hinterland_totals[clean_dest] = hinterland_totals.get(clean_dest, 0.0) + bl_w
+                                
                                 if pol not in pol_groups:
                                     pol_groups[pol] = {"bls": 0, "20'": 0, "40'": 0, "poids": 0.0}
                                 
@@ -235,6 +251,22 @@ if btn_lancer:
                             })
                         
                     if recap_rows:
+                        # Remplissage des Hinterlands dans les colonnes OBSERVATIONS, ligne par ligne
+                        hinterland_lines = []
+                        if hinterland_totals:
+                            tot_hint_global = 0.0
+                            for dist, wg in hinterland_totals.items():
+                                hinterland_lines.append(f"Total {dist} : {wg:,.2f}".replace(",", " "))
+                                tot_hint_global += wg
+                            if tot_hint_global > 0:
+                                hinterland_lines.append(f"TOTAL HINTERLAND : {tot_hint_global:,.2f}".replace(",", " "))
+                        
+                        for i, hline in enumerate(hinterland_lines):
+                            if i < len(recap_rows):
+                                recap_rows[i]["OBSERVATIONS"] = hline
+                            else:
+                                s = recap_rows[-1]["OBSERVATIONS"]
+                                recap_rows[-1]["OBSERVATIONS"] = (s + (" | " if s else "") + hline).strip()
                         total_bl = sum(r["BL"] for r in recap_rows)
                         total_20 = sum(r["20'"] for r in recap_rows)
                         total_40 = sum(r["40'"] for r in recap_rows)
