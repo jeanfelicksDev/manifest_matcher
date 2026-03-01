@@ -243,25 +243,11 @@ if btn_lancer:
                         for row in recap_rows:
                             del row["_raw_poids"]
                             
-                        # Traitement visuel : "fusion" des cellules POL et POD répétées
-                        prev_pol = None
-                        prev_pod = None
-                        for row in recap_rows:
-                            curr_pol = row["POL"]
-                            curr_pod = row["POD"]
-                            
-                            if curr_pol == prev_pol:
-                                row["POL"] = ""
-                            else:
-                                prev_pol = curr_pol
-                                prev_pod = None
-                                
-                            if curr_pod == prev_pod:
-                                row["POD"] = ""
-                            else:
-                                prev_pod = curr_pod
-                            
-                        recap_rows.append({
+                        # Sauvegarde des données intactes pour le CSV
+                        export_rows = list(recap_rows)
+
+                        # Ligne de total
+                        total_row = {
                             "POL": "TOTAL",
                             "POD": "",
                             "BL": total_bl,
@@ -269,11 +255,56 @@ if btn_lancer:
                             "40'": total_40,
                             "POIDS (kgs)": f"{total_poids:,.2f}".replace(",", " "),
                             "OBSERVATIONS": "*******************"
-                        })
+                        }
+                        export_rows.append(total_row)
                         
-                    df_recap = pd.DataFrame(recap_rows)
-                    st.subheader(f"📝 RECAPITULATIF ({type_recap.upper()})")
-                    st.dataframe(df_recap, use_container_width=True)
+                        df_recap = pd.DataFrame(export_rows)
+                        st.subheader(f"📝 RECAPITULATIF ({type_recap.upper()})")
+                        
+                        # Générer tableau HTML avec rowspan pour centrer verticalement les fusions
+                        pol_spans = [1] * len(recap_rows)
+                        pod_spans = [1] * len(recap_rows)
+                        
+                        for i in range(len(recap_rows) - 1, 0, -1):
+                            if recap_rows[i]["POL"] == recap_rows[i-1]["POL"]:
+                                pol_spans[i-1] += pol_spans[i]
+                                pol_spans[i] = 0
+                            if recap_rows[i]["POD"] == recap_rows[i-1]["POD"]:
+                                pod_spans[i-1] += pod_spans[i]
+                                pod_spans[i] = 0
+                                
+                        html = "<table style='width: 100%; border-collapse: collapse; text-align: center; margin-bottom: 20px; font-size: 1rem; color: #4b4b4b; background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 0 10px rgba(0,0,0,0.05);'>"
+                        html += "<thead><tr style='background-color: #f7f7f7; color: #3C3C3C; border-bottom: 2px solid #cecece;'>"
+                        for col in ["POL", "POD", "BL", "20'", "40'", "POIDS (kgs)", "OBSERVATIONS"]:
+                            html += f"<th style='padding: 12px; border: 1px solid #e5e5e5;'>{col}</th>"
+                        html += "</tr></thead><tbody>"
+                        
+                        for i, row in enumerate(recap_rows):
+                            html += "<tr>"
+                            if pol_spans[i] > 0:
+                                html += f"<td rowspan='{pol_spans[i]}' style='padding: 12px; border: 1px solid #e5e5e5; vertical-align: middle; font-weight: bold;'>{row['POL']}</td>"
+                            if pod_spans[i] > 0:
+                                html += f"<td rowspan='{pod_spans[i]}' style='padding: 12px; border: 1px solid #e5e5e5; vertical-align: middle; font-weight: bold;'>{row['POD']}</td>"
+                            
+                            html += f"<td style='padding: 12px; border: 1px solid #e5e5e5;'>{row['BL']}</td>"
+                            html += f"<td style='padding: 12px; border: 1px solid #e5e5e5;'>{row['20\'']}</td>"
+                            html += f"<td style='padding: 12px; border: 1px solid #e5e5e5;'>{row['40\'']}</td>"
+                            html += f"<td style='padding: 12px; border: 1px solid #e5e5e5;'>{row['POIDS (kgs)']}</td>"
+                            html += f"<td style='padding: 12px; border: 1px solid #e5e5e5;'>{row['OBSERVATIONS']}</td>"
+                            html += "</tr>"
+                            
+                        # Ajout Ligne Total HTML
+                        html += f"<tr style='font-weight: bold; background-color: #f7f7f7;'>"
+                        html += f"<td colspan='2' style='padding: 12px; border: 1px solid #e5e5e5; text-align: center;'>{total_row['POL']}</td>"
+                        html += f"<td style='padding: 12px; border: 1px solid #e5e5e5;'>{total_row['BL']}</td>"
+                        html += f"<td style='padding: 12px; border: 1px solid #e5e5e5;'>{total_row['20\'']}</td>"
+                        html += f"<td style='padding: 12px; border: 1px solid #e5e5e5;'>{total_row['40\'']}</td>"
+                        html += f"<td style='padding: 12px; border: 1px solid #e5e5e5;'>{total_row['POIDS (kgs)']}</td>"
+                        html += f"<td style='padding: 12px; border: 1px solid #e5e5e5;'>{total_row['OBSERVATIONS']}</td>"
+                        html += "</tr>"
+                        
+                        html += "</tbody></table>"
+                        st.markdown(html, unsafe_allow_html=True)
                     
                     csv = df_recap.to_csv(index=False, sep=';').encode('utf-8-sig')
                     st.download_button(
