@@ -370,38 +370,53 @@ if btn_lancer:
                         st.markdown(html, unsafe_allow_html=True)
                     
 
-                    # Préparation de l'export PDF (Paysage)
-                    pdf_html = f"""
-                    <html>
-                    <head>
-                    <style>
-                        @page {{
-                            size: a4 landscape;
-                            margin: 1cm;
-                        }}
-                        body {{
-                            font-family: Helvetica, sans-serif;
-                            font-size: 10px;
-                            color: #333333;
-                        }}
-                        h2 {{
-                            text-align: center;
-                            font-size: 16px;
-                            color: #1a1a1a;
-                        }}
-                    </style>
-                    </head>
-                    <body>
-                        <h2 style="font-family: Helvetica, sans-serif; color: #4b4b4b; text-align: left; margin-bottom: 20px;">� RECAPITULATIF ({type_recap.upper()})</h2>
-                        {html}
+                        # Version du tableau pour le PDF (Pleine largeur pour le mode Paysage)
+                        pdf_table_html = html.replace("width: 60%", "width: 100%")
                         
-                        <div style="text-align: right; margin-top: 40px; margin-right: 50px; font-size: 11px; color: #1a1a1a;">
-                            <p style="margin-bottom: 50px;">Date : {date_signature.strftime('%d/%m/%Y')}</p>
-                            <p><strong>Signature</strong></p>
-                        </div>
-                    </body>
-                    </html>
-                    """
+                        pdf_html = f"""
+                        <html>
+                        <head>
+                        <style>
+                            @page {{
+                                size: a4 landscape;
+                                margin: 1.5cm;
+                            }}
+                            body {{
+                                font-family: Helvetica, Arial, sans-serif;
+                                font-size: 10px;
+                                color: #333333;
+                            }}
+                            table {{
+                                border-collapse: collapse;
+                                width: 100%;
+                            }}
+                            th {{
+                                background-color: #f7f7f7;
+                                color: #3C3C3C;
+                                font-weight: bold;
+                                text-align: center;
+                                border: 1px solid #a0a0a0;
+                                padding: 8px;
+                            }}
+                            td {{
+                                border: 1px solid #a0a0a0;
+                                text-align: center;
+                                padding: 8px;
+                                vertical-align: middle;
+                            }}
+                        </style>
+                        </head>
+                        <body>
+                            <h2 style="color: #4b4b4b; text-align: left; margin-bottom: 20px; font-size: 18px;">RECAPITULATIF DES MARCHANDISES ({type_recap.upper()})</h2>
+                            {pdf_table_html}
+                            
+                            <div style="text-align: right; margin-top: 50px; margin-right: 50px; font-size: 12px; color: #1a1a1a;">
+                                <p style="margin-bottom: 60px;">Fait le : {date_signature.strftime('%d/%m/%Y')}</p>
+                                <p><strong>Cachet et Signature</strong></p>
+                            </div>
+                        </body>
+                        </html>
+                        """
                     pdf_buffer = io.BytesIO()
                     pisa_status = pisa.CreatePDF(io.StringIO(pdf_html), dest=pdf_buffer)
                     pdf_bytes = pdf_buffer.getvalue()
