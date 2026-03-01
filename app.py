@@ -5,6 +5,7 @@ from parser_pdf import parse_pdf_text
 from reconciliation import reconcile_manifests
 import io
 from xhtml2pdf import pisa
+from datetime import datetime
 
 st.set_page_config(page_title="CONTROL FICHIER SYDAM", layout="wide")
 
@@ -140,7 +141,9 @@ elif mode == "PDF vs PDF":
         file2 = st.file_uploader("Charger le Second fichier PDF", type=['pdf'])
 else:
     with col1:
-        file_recap = st.file_uploader("Charger le fichier PDF pour le r\N{LATIN SMALL LETTER E}capitulatif", type=['pdf'])
+        file_recap = st.file_uploader("Charger le fichier PDF pour le récapitulatif", type=['pdf'])
+    with col2:
+        date_signature = st.date_input("Date de signature pour le PDF", value=datetime.today(), format="DD/MM/YYYY")
 
 st.write("") # Espace
 col_btn1, col_btn2, col_btn3 = st.columns([1, 1, 1])
@@ -377,6 +380,11 @@ if btn_lancer:
                     <body>
                         <h2 style="font-family: Helvetica, sans-serif; color: #4b4b4b; text-align: left; margin-bottom: 20px;">� RECAPITULATIF ({type_recap.upper()})</h2>
                         {html}
+                        
+                        <div style="text-align: right; margin-top: 40px; margin-right: 50px; font-size: 11px; color: #1a1a1a;">
+                            <p style="margin-bottom: 50px;">Date : {date_signature.strftime('%d/%m/%Y')}</p>
+                            <p><strong>Signature</strong></p>
+                        </div>
                     </body>
                     </html>
                     """
