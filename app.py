@@ -121,6 +121,10 @@ Cette application compare deux manifestes pour relever les diff\N{LATIN SMALL LE
 
 mode = st.radio("Mode de fonctionnement :", ["XML vs PDF", "PDF vs PDF", "G\N{LATIN SMALL LETTER E}n\N{LATIN SMALL LETTER E}rer RECAP PDF"], horizontal=True)
 
+type_recap = None
+if mode == "G\N{LATIN SMALL LETTER E}n\N{LATIN SMALL LETTER E}rer RECAP PDF":
+    type_recap = st.radio("Type de RECAP :", ["Export", "Import"], horizontal=True)
+
 col1, col2 = st.columns(2)
 
 if mode == "XML vs PDF":
@@ -162,41 +166,83 @@ if btn_lancer:
                     data = parse_pdf_text(target_file)
                     
                     recap_rows = []
-                    pol = data.get("port_loading", "INCONNU")
-                    for pod, pod_data in data.get("ports", {}).items():
-                        nb_bl = len(pod_data.get("bls", {}))
-                        nb_20 = 0
-                        nb_40 = 0
+                    
+                    if type_recap == "Export":
+                        # En Export: POL est toujours ABIDJAN, on groupe par POD
+                        pol = "ABIDJAN"
+                        for pod, pod_data in data.get("ports", {}).items():
+                            nb_bl = len(pod_data.get("bls", {}))
+                            nb_20 = 0
+                            nb_40 = 0
+                            
+                            for bl_ref, bl_info in pod_data.get("bls", {}).items():
+                                for c_num, c_info in bl_info.get("conteneurs", {}).items():
+                                    ctype = str(c_info.get("type", "")).upper()
+                                    if "20'" in ctype or "20 " in ctype:
+                                        nb_20 += 1
+                                    elif "40'" in ctype or "40 " in ctype:
+                                        nb_40 += 1
+                                    else:
+                                        nb_20 += 1
+                                        
+                            poids = pod_data.get("poids_brut_total", 0.0)
+                            
+                            recap_rows.append({
+                                "POL": pol,
+                                "POD": pod,
+                                "BL": nb_bl,
+                                "20'": nb_20,
+                                "40'": nb_40,
+                                "POIDS (kgs)": f"{poids:,.2f}".replace(",", " "),
+                                "OBSERVATIONS": "",
+                                "_raw_poids": poids # Interne pour calcul du total
+                            })
+                    else: # Import
+                        # En Import: POD est toujours ABIDJAN, on liste tous les POLs du document
+                        pod = "ABIDJAN"
+                        pol_groups = {}
                         
-                        for bl_ref, bl_info in pod_data.get("bls", {}).items():
-                            for c_num, c_info in bl_info.get("conteneurs", {}).items():
-                                ctype = str(c_info.get("type", "")).upper()
-                                if "20'" in ctype or "20 " in ctype:
-                                    nb_20 += 1
-                                elif "40'" in ctype or "40 " in ctype:
-                                    nb_40 += 1
-                                else:
-                                    # Fallback arbitraire si c'est indéterminé
-                                    nb_20 += 1
+                        for internal_pod, pod_data in data.get("ports", {}).items():
+                            for bl_ref, bl_info in pod_data.get("bls", {}).items():
+                                pol = bl_info.get("pol", "INCONNU")
+                                if pol not in pol_groups:
+                                    pol_groups[pol] = {"bls": 0, "20'": 0, "40'": 0, "poids": 0.0}
+                                
+                                pol_groups[pol]["bls"] += 1
+                                
+                                for c_num, c_info in bl_info.get("conteneurs", {}).items():
+                                    ctype = str(c_info.get("type", "")).upper()
+                                    if "20'" in ctype or "20 " in ctype:
+                                        pol_groups[pol]["20'"] += 1
+                                    elif "40'" in ctype or "40 " in ctype:
+                                        pol_groups[pol]["40'"] += 1
+                                    else:
+                                        pol_groups[pol]["20'"] += 1
                                     
-                        poids = pod_data.get("poids_brut_total", 0.0)
+                                    # Additionner le poids par conteneur pour ce POL
+                                    pol_groups[pol]["poids"] += c_info.get("poids_brut", 0.0)
                         
-                        recap_rows.append({
-                            "POL": pol,
-                            "POD": pod,
-                            "BL": nb_bl,
-                            "20'": nb_20,
-                            "40'": nb_40,
-                            "POIDS (kgs)": f"{poids:,.2f}".replace(",", " "),
-                            "OBSERVATIONS": ""
-                        })
+                        for pol, group_data in pol_groups.items():
+                            recap_rows.append({
+                                "POL": pol,
+                                "POD": pod,
+                                "BL": group_data["bls"],
+                                "20'": group_data["20'"],
+                                "40'": group_data["40'"],
+                                "POIDS (kgs)": f'{group_data["poids"]:,.2f}'.replace(",", " "),
+                                "OBSERVATIONS": "",
+                                "_raw_poids": group_data["poids"]
+                            })
                         
                     if recap_rows:
                         total_bl = sum(r["BL"] for r in recap_rows)
                         total_20 = sum(r["20'"] for r in recap_rows)
                         total_40 = sum(r["40'"] for r in recap_rows)
-                        total_poids = sum(pod_data.get("poids_brut_total", 0.0) for pod_data in data.get("ports", {}).values())
+                        total_poids = sum(r["_raw_poids"] for r in recap_rows)
                         
+                        for row in recap_rows:
+                            del row["_raw_poids"]
+                            
                         recap_rows.append({
                             "POL": "TOTAL",
                             "POD": "",
@@ -208,7 +254,7 @@ if btn_lancer:
                         })
                         
                     df_recap = pd.DataFrame(recap_rows)
-                    st.subheader("📝 RECAPITULATIF (MANIFESTE EXPORT COMPLEMENTAIRE)")
+                    st.subheader(f"📝 RECAPITULATIF ({type_recap.upper()})")
                     st.dataframe(df_recap, use_container_width=True)
                     
                     csv = df_recap.to_csv(index=False, sep=';').encode('utf-8-sig')

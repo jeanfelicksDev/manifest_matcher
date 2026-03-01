@@ -29,26 +29,46 @@ def parse_pdf_text(file_obj):
     m_pol = re.search(r'Port of loading\s*\.\.\.:\s*(.*?)\s*$', text, re.MULTILINE)
     data["port_loading"] = m_pol.group(1).strip() if m_pol else "INCONNU"
     
-    # Le port de d\N{LATIN SMALL LETTER E}chargement par d\N{LATIN SMALL LETTER E}faut dans l'en-t\N{LATIN SMALL LETTER E}te du document
-    port_discharge_m = re.search(r'Port of discharge\s*:\s*(.*?)\s*$', text, re.MULTILINE)
-    # L'exemple a Place of delivery : POINTE NOIRE. Dans un souci de simplicit\N{LATIN SMALL LETTER E}, on essaye les deux.
-    port_delivery_m = re.search(r'Place of delivery\s*:\s*(.*?)\s*$', text, re.MULTILINE)
+    m_pol_global = re.search(r'Port of loading\s*\.\.\.:\s*(.*?)\s*$', text, re.MULTILINE)
+    data["port_loading"] = m_pol_global.group(1).strip() if m_pol_global else "INCONNU"
     
-    default_port = port_delivery_m.group(1).strip() if port_delivery_m else "PORT_INCONNU"
-    if not port_delivery_m and port_discharge_m:
-        default_port = port_discharge_m.group(1).strip()
-        
-    data["ports"][default_port] = {"poids_brut_total": 0.0, "bls": {}}
+    # 2. R\N{LATIN SMALL LETTER E}cup\N{LATIN SMALL LETTER E}ration des POL et POD au fil du document
+    pols = [(m.start(), m.group(1).strip()) for m in re.finditer(r'Port of loading\s*\.\.\.:\s*(.*?)\s*$', text, re.MULTILINE)]
+    pods_discharge = [(m.start(), m.group(1).strip()) for m in re.finditer(r'Port of discharge\s*:\s*(.*?)\s*$', text, re.MULTILINE)]
+    pods_delivery = [(m.start(), m.group(1).strip()) for m in re.finditer(r'Place of delivery\s*:\s*(.*?)\s*$', text, re.MULTILINE)]
     
-    # 2. S\N{LATIN SMALL LETTER E}paration par Bloc de BL 
-    # Le pattern d'un nouveau BL semble \N{LATIN SMALL LETTER E}tre un point d'exclamation suivi d'un code AB320...
+    def get_latest(positions_list, max_pos, default="INCONNU"):
+        latest = default
+        for pos, val in positions_list:
+            if pos < max_pos:
+                latest = val
+            else:
+                break
+        return latest
+
+    # 3. S\N{LATIN SMALL LETTER E}paration par Bloc de BL 
     bl_blocks = re.split(r'!(?=[A-Z0-9]{8,15}\s*!\s*SH[ \t]+)', text)
+    current_search_pos = 0
     
     for block in bl_blocks:
-        # Retrouver le num\N{LATIN SMALL LETTER E}ro du BL au d\N{LATIN SMALL LETTER E}but de ce bloc
+        block_pos = text.find(block, current_search_pos)
+        if block_pos != -1:
+            current_search_pos = block_pos
+            
         bl_match = re.search(r'^([A-Z0-9]+)\s*!', block)
         if not bl_match: continue
         bl_ref = bl_match.group(1).strip()
+        
+        # D\N{LATIN SMALL LETTER E}duire le POL et POD pour ce BL sp\N{LATIN SMALL LETTER E}cifique
+        current_pol = get_latest(pols, current_search_pos, data["port_loading"])
+        
+        port_delivery = get_latest(pods_delivery, current_search_pos, None)
+        port_discharge = get_latest(pods_discharge, current_search_pos, "PORT_INCONNU")
+        
+        default_port = port_delivery if port_delivery else port_discharge
+        
+        if default_port not in data["ports"]:
+            data["ports"][default_port] = {"poids_brut_total": 0.0, "bls": {}}
         
         # 3. Extraction des acteurs logistiques (Shipper, Consignee, Notify)
         shipper, consignee, notify = "", "", ""
@@ -98,10 +118,11 @@ def parse_pdf_text(file_obj):
 
         # Enregistrement final du BL
         data["ports"][default_port]["bls"][bl_ref] = {
+            "pol": current_pol,
             "consignee": consignee,
             "shipper": shipper,
             "notify": notify,
-            "marchandise": "Voir PDF", # L'extraction de ce champ n\N{LATIN SMALL LETTER E}cessite du NLP lourd
+            "marchandise": "Voir PDF",
             "conteneurs": containers
         }
 
