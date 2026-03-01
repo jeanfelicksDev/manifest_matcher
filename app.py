@@ -320,42 +320,44 @@ if btn_lancer:
                         html += "<thead><tr style='background-color: #f7f7f7; color: #3C3C3C; border-bottom: 2px solid #cecece;'>"
                         for col in ["POL", "POD", "BL", "20'", "40'", "POIDS (kgs)", "OBSERVATIONS"]:
                             width = ""
-                            if col in ["BL", "20'", "40'"]: width = "width: 70px;"
-                            elif col == "POIDS (kgs)": width = "width: 150px;"
-                            elif col == "OBSERVATIONS": width = "width: 370px;"
+                            if col == "POL": width = "width: 100px;"
+                            elif col == "POD": width = "width: 100px;"
+                            elif col in ["BL", "20'", "40'"]: width = "width: 35px;"
+                            elif col == "POIDS (kgs)": width = "width: 75px;"
+                            elif col == "OBSERVATIONS": width = "width: 185px;"
                             html += f"<th style='padding: 12px; border: 1px solid #e5e5e5; {width}'>{col}</th>"
                         html += "</tr></thead><tbody>"
                         
                         for i, row in enumerate(recap_rows):
                             html += "<tr>"
                             if pol_spans[i] > 0:
-                                html += f"<td rowspan='{pol_spans[i]}' style='padding: 12px; border: 1px solid #e5e5e5; vertical-align: middle; font-weight: bold;'>{row['POL']}</td>"
+                                html += f"<td rowspan='{pol_spans[i]}' style='padding: 12px; border: 1px solid #e5e5e5; vertical-align: middle; font-weight: bold; width: 100px;'>{row['POL']}</td>"
                             if pod_spans[i] > 0:
-                                html += f"<td rowspan='{pod_spans[i]}' style='padding: 12px; border: 1px solid #e5e5e5; vertical-align: middle; font-weight: bold;'>{row['POD']}</td>"
+                                html += f"<td rowspan='{pod_spans[i]}' style='padding: 12px; border: 1px solid #e5e5e5; vertical-align: middle; font-weight: bold; width: 100px;'>{row['POD']}</td>"
                             
-                            html += f"<td style='padding: 12px; border: 1px solid #e5e5e5; width: 70px;'>{row['BL']}</td>"
+                            html += f"<td style='padding: 12px; border: 1px solid #e5e5e5; width: 35px;'>{row['BL']}</td>"
                             val20 = row.get("20'", "")
                             val40 = row.get("40'", "")
-                            html += f"<td style='padding: 12px; border: 1px solid #e5e5e5; width: 70px;'>{val20}</td>"
-                            html += f"<td style='padding: 12px; border: 1px solid #e5e5e5; width: 70px;'>{val40}</td>"
-                            html += f"<td style='padding: 12px; border: 1px solid #e5e5e5; width: 150px;'>{row['POIDS (kgs)']}</td>"
+                            html += f"<td style='padding: 12px; border: 1px solid #e5e5e5; width: 35px;'>{val20}</td>"
+                            html += f"<td style='padding: 12px; border: 1px solid #e5e5e5; width: 35px;'>{val40}</td>"
+                            html += f"<td style='padding: 12px; border: 1px solid #e5e5e5; width: 75px;'>{row['POIDS (kgs)']}</td>"
                             
                             if i == 0:
                                 obs_html = str(row['OBSERVATIONS']).replace('\n', '<br>')
-                                html += f"<td rowspan='{len(recap_rows)}' style='padding: 12px; border: 1px solid #e5e5e5; vertical-align: middle; text-align: center; font-weight: bold; color: #4b4b4b; width: 370px;'>{obs_html}</td>"
+                                html += f"<td rowspan='{len(recap_rows)}' style='padding: 12px; border: 1px solid #e5e5e5; vertical-align: middle; text-align: center; font-weight: bold; color: #4b4b4b; width: 185px;'>{obs_html}</td>"
                                 
                             html += "</tr>"
                             
                         # Ajout Ligne Total HTML
                         html += f"<tr style='font-weight: bold; background-color: #f7f7f7;'>"
-                        html += f"<td colspan='2' style='padding: 12px; border: 1px solid #e5e5e5; text-align: center;'>{total_row['POL']}</td>"
+                        html += f"<td colspan='2' style='padding: 12px; border: 1px solid #e5e5e5; text-align: center; width: 200px;'>{total_row['POL']}</td>"
                         total20 = total_row.get("20'", "")
                         total40 = total_row.get("40'", "")
-                        html += f"<td style='padding: 12px; border: 1px solid #e5e5e5; width: 70px;'>{total_row['BL']}</td>"
-                        html += f"<td style='padding: 12px; border: 1px solid #e5e5e5; width: 70px;'>{total20}</td>"
-                        html += f"<td style='padding: 12px; border: 1px solid #e5e5e5; width: 70px;'>{total40}</td>"
-                        html += f"<td style='padding: 12px; border: 1px solid #e5e5e5; width: 150px;'>{total_row['POIDS (kgs)']}</td>"
-                        html += f"<td style='padding: 12px; border: 1px solid #e5e5e5; width: 370px;'>{total_row['OBSERVATIONS']}</td>"
+                        html += f"<td style='padding: 12px; border: 1px solid #e5e5e5; width: 35px;'>{total_row['BL']}</td>"
+                        html += f"<td style='padding: 12px; border: 1px solid #e5e5e5; width: 35px;'>{total20}</td>"
+                        html += f"<td style='padding: 12px; border: 1px solid #e5e5e5; width: 35px;'>{total40}</td>"
+                        html += f"<td style='padding: 12px; border: 1px solid #e5e5e5; width: 75px;'>{total_row['POIDS (kgs)']}</td>"
+                        html += f"<td style='padding: 12px; border: 1px solid #e5e5e5; width: 185px;'>{total_row['OBSERVATIONS']}</td>"
                         html += "</tr>"
                         
                         html += "</tbody></table>"
