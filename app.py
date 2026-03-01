@@ -320,8 +320,9 @@ if btn_lancer:
                         html += "<thead><tr style='background-color: #f7f7f7; color: #3C3C3C; border-bottom: 2px solid #cecece;'>"
                         for col in ["POL", "POD", "BL", "20'", "40'", "POIDS (kgs)", "OBSERVATIONS"]:
                             width = ""
-                            if col in ["BL", "20'", "40'"]:
-                                width = "width: 50px;"
+                            if col in ["BL", "20'", "40'"]: width = "width: 50px;"
+                            elif col == "POIDS (kgs)": width = "width: 110px;"
+                            elif col == "OBSERVATIONS": width = "width: 280px;"
                             html += f"<th style='padding: 12px; border: 1px solid #e5e5e5; {width}'>{col}</th>"
                         html += "</tr></thead><tbody>"
                         
@@ -337,11 +338,11 @@ if btn_lancer:
                             val40 = row.get("40'", "")
                             html += f"<td style='padding: 12px; border: 1px solid #e5e5e5; width: 50px;'>{val20}</td>"
                             html += f"<td style='padding: 12px; border: 1px solid #e5e5e5; width: 50px;'>{val40}</td>"
-                            html += f"<td style='padding: 12px; border: 1px solid #e5e5e5;'>{row['POIDS (kgs)']}</td>"
+                            html += f"<td style='padding: 12px; border: 1px solid #e5e5e5; width: 110px;'>{row['POIDS (kgs)']}</td>"
                             
                             if i == 0:
                                 obs_html = str(row['OBSERVATIONS']).replace('\n', '<br>')
-                                html += f"<td rowspan='{len(recap_rows)}' style='padding: 12px; border: 1px solid #e5e5e5; vertical-align: middle; text-align: center; font-weight: bold; color: #4b4b4b;'>{obs_html}</td>"
+                                html += f"<td rowspan='{len(recap_rows)}' style='padding: 12px; border: 1px solid #e5e5e5; vertical-align: middle; text-align: center; font-weight: bold; color: #4b4b4b; width: 280px;'>{obs_html}</td>"
                                 
                             html += "</tr>"
                             
@@ -353,8 +354,8 @@ if btn_lancer:
                         html += f"<td style='padding: 12px; border: 1px solid #e5e5e5; width: 50px;'>{total_row['BL']}</td>"
                         html += f"<td style='padding: 12px; border: 1px solid #e5e5e5; width: 50px;'>{total20}</td>"
                         html += f"<td style='padding: 12px; border: 1px solid #e5e5e5; width: 50px;'>{total40}</td>"
-                        html += f"<td style='padding: 12px; border: 1px solid #e5e5e5;'>{total_row['POIDS (kgs)']}</td>"
-                        html += f"<td style='padding: 12px; border: 1px solid #e5e5e5;'>{total_row['OBSERVATIONS']}</td>"
+                        html += f"<td style='padding: 12px; border: 1px solid #e5e5e5; width: 110px;'>{total_row['POIDS (kgs)']}</td>"
+                        html += f"<td style='padding: 12px; border: 1px solid #e5e5e5; width: 280px;'>{total_row['OBSERVATIONS']}</td>"
                         html += "</tr>"
                         
                         html += "</tbody></table>"
