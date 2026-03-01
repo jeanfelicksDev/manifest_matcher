@@ -243,6 +243,24 @@ if btn_lancer:
                         for row in recap_rows:
                             del row["_raw_poids"]
                             
+                        # Traitement visuel : "fusion" des cellules POL et POD répétées
+                        prev_pol = None
+                        prev_pod = None
+                        for row in recap_rows:
+                            curr_pol = row["POL"]
+                            curr_pod = row["POD"]
+                            
+                            if curr_pol == prev_pol:
+                                row["POL"] = ""
+                            else:
+                                prev_pol = curr_pol
+                                prev_pod = None
+                                
+                            if curr_pod == prev_pod:
+                                row["POD"] = ""
+                            else:
+                                prev_pod = curr_pod
+                            
                         recap_rows.append({
                             "POL": "TOTAL",
                             "POD": "",
