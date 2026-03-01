@@ -4,6 +4,7 @@ from parser_xml import parse_xml
 from parser_pdf import parse_pdf_text
 from reconciliation import reconcile_manifests
 import io
+from xhtml2pdf import pisa
 
 st.set_page_config(page_title="CONTROL FICHIER SYDAM", layout="wide")
 
@@ -349,13 +350,60 @@ if btn_lancer:
                         html += "</tbody></table>"
                         st.markdown(html, unsafe_allow_html=True)
                     
+                    # Préparation de l'export CSV
                     csv = df_recap.to_csv(index=False, sep=';').encode('utf-8-sig')
-                    st.download_button(
-                        label="📥 T\N{LATIN SMALL LETTER E}l\N{LATIN SMALL LETTER E}charger le RECAP (CSV)",
-                        data=csv,
-                        file_name='recap_manifeste.csv',
-                        mime='text/csv',
-                    )
+                    
+                    # Préparation de l'export PDF (Paysage)
+                    pdf_html = f"""
+                    <html>
+                    <head>
+                    <style>
+                        @page {{
+                            size: a4 landscape;
+                            margin: 1cm;
+                        }}
+                        body {{
+                            font-family: Helvetica, sans-serif;
+                            font-size: 10px;
+                            color: #333333;
+                        }}
+                        h2 {{
+                            text-align: center;
+                            font-size: 16px;
+                            color: #1a1a1a;
+                        }}
+                    </style>
+                    </head>
+                    <body>
+                        <h2 style="font-family: Helvetica, sans-serif; color: #4b4b4b; text-align: left; margin-bottom: 20px;">� RECAPITULATIF ({type_recap.upper()})</h2>
+                        {html}
+                    </body>
+                    </html>
+                    """
+                    pdf_buffer = io.BytesIO()
+                    pisa_status = pisa.CreatePDF(io.StringIO(pdf_html), dest=pdf_buffer)
+                    pdf_bytes = pdf_buffer.getvalue()
+
+                    col_dl1, col_dl2 = st.columns(2)
+                    with col_dl1:
+                        st.download_button(
+                            label="📥 Télécharger le RECAP (CSV)",
+                            data=csv,
+                            file_name='recap_manifeste.csv',
+                            mime='text/csv',
+                            use_container_width=True
+                        )
+                    with col_dl2:
+                        if not pisa_status.err:
+                            st.download_button(
+                                label="📄 Télécharger le RECAP (PDF - Paysage)",
+                                data=pdf_bytes,
+                                file_name='recap_manifeste.pdf',
+                                mime='application/pdf',
+                                use_container_width=True
+                            )
+                        else:
+                            st.error("Erreur lors de la génération du PDF")
                 except Exception as e:
                     st.error(f"Une erreur est survenue : {str(e)}")
                     import traceback
