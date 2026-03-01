@@ -82,6 +82,11 @@ def parse_pdf_text(file_obj):
         m_no = re.search(r'!\s*NO[ \t]+(.*?)\s*!', block)
         if m_no: notify = m_no.group(1).strip()
             
+        # Chercher spécifiquement "Total place of delivery" dans le bloc
+        m_delivery_block = re.search(r'Total place of delivery[\.\s]*:\s*([A-Za-z\s]+)', block)
+        if m_delivery_block and m_delivery_block.group(1).strip():
+            port_delivery = m_delivery_block.group(1).strip()
+            
         # 4. Conteneurs
         # On cherche des numéros de conteneurs classiques (ex: NIDU2356619) et on va essayer de capter la ligne correspondante
         containers = {}
