@@ -20,22 +20,22 @@ def parse_pdf_text(file_obj):
     m_vessel = re.search(r'Vessel\s*:\s*(\S.*?)\s+Call date', text)
     data["navire_nom"] = m_vessel.group(1).strip() if m_vessel else "INCONNU"
         
-    m_voyage = re.search(r'Voyage\s*\.\.\.:\s*(\S+)', text)
+    m_voyage = re.search(r'Voyage[\.\s]*:\s*(\S+)', text)
     data["navire_voyage"] = m_voyage.group(1).strip() if m_voyage else "INCONNU"
         
-    m_date = re.search(r'Call date\s*:\s*([\d\/]+)', text)
+    m_date = re.search(r'Call date[\.\s]*:\s*([\d\/]+)', text)
     data["navire_eta"] = m_date.group(1).strip() if m_date else "INCONNU"
     
-    m_pol = re.search(r'Port of loading\s*\.\.\.:\s*(.*?)\s*$', text, re.MULTILINE)
+    m_pol = re.search(r'Port of loading[\.\s]*:\s*(.*?)\s*$', text, re.MULTILINE)
     data["port_loading"] = m_pol.group(1).strip() if m_pol else "INCONNU"
     
-    m_pol_global = re.search(r'Port of loading\s*\.\.\.:\s*(.*?)\s*$', text, re.MULTILINE)
+    m_pol_global = re.search(r'Port of loading[\.\s]*:\s*(.*?)\s*$', text, re.MULTILINE)
     data["port_loading"] = m_pol_global.group(1).strip() if m_pol_global else "INCONNU"
     
     # 2. R\N{LATIN SMALL LETTER E}cup\N{LATIN SMALL LETTER E}ration des POL et POD au fil du document
-    pols = [(m.start(), m.group(1).strip()) for m in re.finditer(r'Port of loading\s*\.\.\.:\s*(.*?)\s*$', text, re.MULTILINE)]
-    pods_discharge = [(m.start(), m.group(1).strip()) for m in re.finditer(r'Port of discharge\s*:\s*(.*?)\s*$', text, re.MULTILINE)]
-    pods_delivery = [(m.start(), m.group(1).strip()) for m in re.finditer(r'Place of delivery\s*:\s*(.*?)\s*$', text, re.MULTILINE)]
+    pols = [(m.start(), m.group(1).strip()) for m in re.finditer(r'Port of loading[\.\s]*:\s*(.*?)\s*$', text, re.MULTILINE)]
+    pods_discharge = [(m.start(), m.group(1).strip()) for m in re.finditer(r'Port of discharge[\.\s]*:\s*(.*?)\s*$', text, re.MULTILINE)]
+    pods_delivery = [(m.start(), m.group(1).strip()) for m in re.finditer(r'Place of delivery[\.\s]*:\s*(.*?)\s*$', text, re.MULTILINE)]
     
     def get_latest(positions_list, max_pos, default="INCONNU"):
         latest = default
