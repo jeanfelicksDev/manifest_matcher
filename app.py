@@ -396,13 +396,15 @@ if btn_lancer:
                                 font-weight: bold;
                                 text-align: center;
                                 border: 1px solid #a0a0a0;
-                                padding: 8px;
+                                padding: 4px 8px;
+                                line-height: 1.2;
                             }}
                             td {{
                                 border: 1px solid #a0a0a0;
                                 text-align: center;
-                                padding: 8px;
+                                padding: 4px 8px;
                                 vertical-align: middle;
+                                line-height: 1.2;
                             }}
                         </style>
                         </head>
