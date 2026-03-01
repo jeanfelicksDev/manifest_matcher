@@ -172,43 +172,48 @@ if btn_lancer:
                     recap_rows = []
                     
                     if type_recap == "Export":
-                        # En Export: POL est toujours ABIDJAN, on groupe par POD
-                        pol = "ABIDJAN"
+                        # En Export: POL est toujours ABIDJAN, on groupe par POD (Destination)
+                        pol_default = "ABIDJAN"
+                        pod_groups = {}
                         hinterland_totals = {}
-                        for pod, pod_data in data.get("ports", {}).items():
-                            nb_bl = len(pod_data.get("bls", {}))
-                            nb_20 = 0
-                            nb_40 = 0
-                            
+                        
+                        for internal_pod, pod_data in data.get("ports", {}).items():
                             for bl_ref, bl_info in pod_data.get("bls", {}).items():
+                                pod = internal_pod
                                 dest = bl_info.get("place_delivery")
                                 bl_w = float(sum(c.get("poids_brut", 0.0) for c in bl_info.get("conteneurs", {}).values()))
                                 
-                                if dest and str(dest).strip().upper() not in ["", "ABIDJAN", "PORT_INCONNU", "INCONNU", "NONE"]:
+                                # Hinterland en Export: destination finale inland (rare mais possible)
+                                # On ignore ABIDJAN et le port de déchargement lui-même
+                                if dest and str(dest).strip().upper() not in ["", "ABIDJAN", pod.upper(), "PORT_INCONNU", "INCONNU", "NONE"]:
                                     clean_dest = str(dest).strip().upper()
                                     if "OOCL HOUSE" not in clean_dest and "LEVINGTON" not in clean_dest and "ABIDJAN PROD" not in clean_dest:
                                         hinterland_totals[clean_dest] = hinterland_totals.get(clean_dest, 0.0) + bl_w
                                 
+                                if pod not in pod_groups:
+                                    pod_groups[pod] = {"bls": 0, "20'": 0, "40'": 0, "poids": 0.0}
+                                
+                                pod_groups[pod]["bls"] += 1
                                 for c_num, c_info in bl_info.get("conteneurs", {}).items():
                                     ctype = str(c_info.get("type", "")).upper()
                                     if "20'" in ctype or "20 " in ctype:
-                                        nb_20 += 1
+                                        pod_groups[pod]["20'"] += 1
                                     elif "40'" in ctype or "40 " in ctype:
-                                        nb_40 += 1
+                                        pod_groups[pod]["40'"] += 1
                                     else:
-                                        nb_20 += 1
-                                        
-                            poids = pod_data.get("poids_brut_total", 0.0)
-                            
+                                        pod_groups[pod]["20'"] += 1
+                                    pod_groups[pod]["poids"] += c_info.get("poids_brut", 0.0)
+                        
+                        for pod, g_data in pod_groups.items():
                             recap_rows.append({
-                                "POL": pol,
+                                "POL": pol_default,
                                 "POD": pod,
-                                "BL": nb_bl,
-                                "20'": nb_20,
-                                "40'": nb_40,
-                                "POIDS (kgs)": f"{poids:,.2f}".replace(",", " "),
+                                "BL": g_data["bls"],
+                                "20'": g_data["20'"],
+                                "40'": g_data["40'"],
+                                "POIDS (kgs)": f"{g_data['poids']:,.2f}".replace(",", " "),
                                 "OBSERVATIONS": "",
-                                "_raw_poids": poids # Interne pour calcul du total
+                                "_raw_poids": g_data["poids"]
                             })
                     else: # Import
                         # En Import: POD est toujours ABIDJAN, on liste tous les POLs du document
@@ -302,7 +307,7 @@ if btn_lancer:
                         export_rows.append(total_row)
                         
                         df_recap = pd.DataFrame(export_rows)
-                        st.subheader(f"📝 RECAPITULATIF ({type_recap.upper()})")
+                        st.subheader(f"📊 RECAPITULATIF ({type_recap.upper()})")
                         
                         # Générer tableau HTML avec rowspan pour centrer verticalement les fusions
                         pol_spans = [1] * len(recap_rows)
