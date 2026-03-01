@@ -316,7 +316,7 @@ if btn_lancer:
                                 pod_spans[i-1] += pod_spans[i]
                                 pod_spans[i] = 0
                                 
-                        html = "<table style='width: 100%; margin-left: auto; margin-right: auto; border-collapse: collapse; text-align: center; margin-bottom: 20px; font-size: 1rem; color: #4b4b4b; background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 0 10px rgba(0,0,0,0.05);'>"
+                        html = "<table style='width: 60%; margin-left: auto; margin-right: auto; border-collapse: collapse; text-align: center; margin-bottom: 20px; font-size: 0.9rem; color: #4b4b4b; background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 0 10px rgba(0,0,0,0.05);'>"
                         html += "<thead><tr style='background-color: #f7f7f7; color: #3C3C3C; border-bottom: 2px solid #cecece;'>"
                         for col in ["POL", "POD", "BL", "20'", "40'", "POIDS (kgs)", "OBSERVATIONS"]:
                             width = ""
