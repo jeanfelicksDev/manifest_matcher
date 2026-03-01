@@ -273,13 +273,11 @@ if btn_lancer:
                         hinterland_lines.append("") # Ligne vide pour aérer
                         hinterland_lines.append(f"TOTAL ABIDJAN : {tot_abidjan:,.2f}".replace(",", " "))
                         
-                        for i, hline in enumerate(hinterland_lines):
-                            if i < len(recap_rows):
-                                s = str(recap_rows[i].get("OBSERVATIONS", ""))
-                                recap_rows[i]["OBSERVATIONS"] = (s + ("\n" if s and s!=" " else "") + hline).strip()
-                            else:
-                                s = str(recap_rows[-1].get("OBSERVATIONS", ""))
-                                recap_rows[-1]["OBSERVATIONS"] = (s + (" | " if s and s!=" " else "") + hline).strip()
+                        obs_text = "\n\n".join(hinterland_lines)
+                        if recap_rows:
+                            recap_rows[0]["OBSERVATIONS"] = obs_text
+                        for i in range(1, len(recap_rows)):
+                            recap_rows[i]["OBSERVATIONS"] = ""
                                 
                         for row in recap_rows:
                             del row["_raw_poids"]
@@ -331,7 +329,11 @@ if btn_lancer:
                             html += f"<td style='padding: 12px; border: 1px solid #e5e5e5;'>{row['20\'']}</td>"
                             html += f"<td style='padding: 12px; border: 1px solid #e5e5e5;'>{row['40\'']}</td>"
                             html += f"<td style='padding: 12px; border: 1px solid #e5e5e5;'>{row['POIDS (kgs)']}</td>"
-                            html += f"<td style='padding: 12px; border: 1px solid #e5e5e5;'>{row['OBSERVATIONS']}</td>"
+                            
+                            if i == 0:
+                                obs_html = str(row['OBSERVATIONS']).replace('\n', '<br>')
+                                html += f"<td rowspan='{len(recap_rows)}' style='padding: 12px; border: 1px solid #e5e5e5; vertical-align: middle; text-align: center; font-weight: bold; color: #4b4b4b;'>{obs_html}</td>"
+                                
                             html += "</tr>"
                             
                         # Ajout Ligne Total HTML
