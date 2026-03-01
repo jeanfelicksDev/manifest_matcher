@@ -401,13 +401,15 @@ if btn_lancer:
                     pdf_bytes = pdf_buffer.getvalue()
 
                     if not pisa_status.err:
-                        st.download_button(
-                            label="📄 Télécharger le RECAP (PDF - Paysage)",
-                            data=pdf_bytes,
-                            file_name='recap_manifeste.pdf',
-                            mime='application/pdf',
-                            use_container_width=True
-                        )
+                        col_btn_dl1, col_btn_dl2, col_btn_dl3 = st.columns([1.5, 1, 1.5])
+                        with col_btn_dl2:
+                            st.download_button(
+                                label="📄 Télécharger le RECAP (PDF - Paysage)",
+                                data=pdf_bytes,
+                                file_name='recap_manifeste.pdf',
+                                mime='application/pdf',
+                                use_container_width=True
+                            )
                     else:
                         st.error("Erreur lors de la génération du PDF")
                 except Exception as e:
