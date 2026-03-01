@@ -115,17 +115,24 @@ st.markdown("""
 st.title("CONTROL FICHIER SYDAM")
 
 st.markdown("""
-Cette application compare un manifeste sous format **XML** avec son \N{LATIN SMALL LETTER E}quivalent sous format **PDF**.  
-Relevez les diff\N{LATIN SMALL LETTER E}rences en un clin d'\N{LATIN SMALL LETTER O}il !
+Cette application compare deux manifestes pour relever les diff\N{LATIN SMALL LETTER E}rences en un clin d'\N{LATIN SMALL LETTER O}il : 
+**XML vs PDF** ou **PDF vs PDF** !
 """, unsafe_allow_html=True)
+
+mode = st.radio("Mode de comparaison :", ["XML vs PDF", "PDF vs PDF"], horizontal=True)
 
 col1, col2 = st.columns(2)
 
-with col1:
-    xml_file = st.file_uploader("Charger le fichier XML du NAVIRE", type=['xml'])
-
-with col2:
-    pdf_file = st.file_uploader("Charger le fichier PDF du NAVIRE", type=['pdf'])
+if mode == "XML vs PDF":
+    with col1:
+        file1 = st.file_uploader("Charger le fichier XML", type=['xml'])
+    with col2:
+        file2 = st.file_uploader("Charger le fichier PDF", type=['pdf'])
+else:
+    with col1:
+        file1 = st.file_uploader("Charger le Premier fichier PDF", type=['pdf'])
+    with col2:
+        file2 = st.file_uploader("Charger le Second fichier PDF", type=['pdf'])
 
 st.write("") # Espace
 col_btn1, col_btn2, col_btn3 = st.columns([1, 1, 1])
@@ -134,38 +141,51 @@ with col_btn2:
     btn_lancer = st.button("Lancer la R\N{LATIN SMALL LETTER E}conciliation", type="primary", use_container_width=True)
 
 if btn_lancer:
-    if not xml_file or not pdf_file:
+    if not file1 or not file2:
         st.error("Veuillez charger les deux fichiers avant de lancer la r\N{LATIN SMALL LETTER E}conciliation.")
     else:
         with st.spinner("Analyse et extraction des donn\N{LATIN SMALL LETTER E}es en cours..."):
             try:
-                # Lecture du XML en mémoire
-                xml_content = xml_file.read()
-                
-                # Extraction
-                st.info("Extraction XML...")
-                xml_data = parse_xml(xml_content)
-                st.success("XML extrait avec succ\N{LATIN SMALL LETTER E}s !")
-                
-                st.info("Extraction PDF...")
-                # On passe directement l'objet \N{LATIN SMALL LETTER E} parser_pdf pour qu'il lise le flux binaire
-                pdf_data = parse_pdf_text(pdf_file)
-                st.success("PDF extrait avec succ\N{LATIN SMALL LETTER E}s !")
-                
+                if mode == "XML vs PDF":
+                    # Lecture du XML en mémoire
+                    xml_content = file1.read()
+                    
+                    # Extraction
+                    st.info("Extraction XML...")
+                    data1 = parse_xml(xml_content)
+                    st.success("XML extrait avec succ\N{LATIN SMALL LETTER E}s !")
+                    
+                    st.info("Extraction PDF...")
+                    data2 = parse_pdf_text(file2)
+                    st.success("PDF extrait avec succ\N{LATIN SMALL LETTER E}s !")
+                    
+                    label1, label2 = "Valeur XML", "Valeur PDF"
+                    
+                else:
+                    st.info("Extraction PDF 1...")
+                    data1 = parse_pdf_text(file1)
+                    st.success("PDF 1 extrait avec succ\N{LATIN SMALL LETTER E}s !")
+                    
+                    st.info("Extraction PDF 2...")
+                    data2 = parse_pdf_text(file2)
+                    st.success("PDF 2 extrait avec succ\N{LATIN SMALL LETTER E}s !")
+                    
+                    label1, label2 = "Valeur PDF 1", "Valeur PDF 2"
+
                 # R\N{LATIN SMALL LETTER E}conciliation
                 st.info("Comparaison des donn\N{LATIN SMALL LETTER E}es...")
-                differences = reconcile_manifests(xml_data, pdf_data)
+                differences = reconcile_manifests(data1, data2, label1, label2)
                 
                 st.subheader("📊 R\N{LATIN SMALL LETTER E}sultats de la comparaison")
                 
                 if not differences:
-                    st.success("Aucune diff\N{LATIN SMALL LETTER E}rence majeure trouv\N{LATIN SMALL LETTER E}e entre le XML et le PDF !")
+                    st.success("Aucune diff\N{LATIN SMALL LETTER E}rence majeure trouv\N{LATIN SMALL LETTER E}e entre les deux fichiers !")
                 else:
                     st.warning(f"⚠️ {len(differences)} diff\N{LATIN SMALL LETTER E}rences trouv\N{LATIN SMALL LETTER E}es.")
                     df_diff = pd.DataFrame(differences)
                     
                     # R\N{LATIN SMALL LETTER E}organisation des colonnes pour la clart\N{LATIN SMALL LETTER E}
-                    cols = ["Contexte", "Identifiant", "Champ", "Valeur XML", "Valeur PDF"]
+                    cols = ["Contexte", "Identifiant", "Champ", label1, label2]
                     df_diff = df_diff[[c for c in cols if c in df_diff.columns]]
                     
                     st.dataframe(df_diff, use_container_width=True)
