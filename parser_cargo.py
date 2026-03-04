@@ -238,16 +238,22 @@ def parse_cargo(file_obj) -> dict:
         #   3. Nettoyer les trailers (., ,, &)
 
         def _extract_name_from_shipper_line(sl: str) -> str:
-            """Extrait le nom depuis une ligne shipper (côté gauche avant ' . ' ou '. chiffre')."""
+            """Extrait le nom depuis une ligne shipper (côté gauche par grands espaces ou ancien ' . ')."""
             sl = sl.strip()
             if not sl or sl in (".", ".."):
                 return ""
-            # Coupure avant " . " (séparateur de colonnes gauche/droite dans PDF)
-            if ' . ' in sl:
-                sl = sl.split(' . ')[0]
-            # Coupure avant ". NB " (ex: "SONLINK. 747 PACKAGES...")
-            elif re.search(r'\.\s+\d', sl):
-                sl = re.split(r'\.\s+\d', sl)[0]
+            
+            # Coupure par grands espaces (layout=True)
+            parts = re.split(r'\s{5,}', sl, maxsplit=1)
+            if len(parts) >= 2:
+                sl = parts[0]
+            else:
+                # Rétro-compatibilité
+                if ' . ' in sl:
+                    sl = sl.split(' . ')[0]
+                elif re.search(r'\.\s+\d', sl):
+                    sl = re.split(r'\.\s+(?=\d)', sl, maxsplit=1)[0]
+                    
             # Nettoyer les fins parasites
             sl = re.sub(r'\s*[,\.\&]\s*$', '', sl).strip()
             return sl
@@ -280,19 +286,20 @@ def parse_cargo(file_obj) -> dict:
                 left = sl
                 right = ""
 
-                # Tentative de séparation gauche (Shipper) / droite (Désignation)
-                if ' . ' in sl:
-                    sp = sl.split(' . ', 1)
-                    left, right = sp[0].strip(), sp[1].strip()
-                elif re.search(r'\.\s+\d', sl):
-                    sp = re.split(r'\.\s+(?=\d)', sl, 1)
-                    left, right = sp[0].strip(), sp[1].strip()
+                # Séparation gauche (Shipper) / droite (Désignation) par grand espace (layout=True)
+                parts = re.split(r'\s{5,}', sl, maxsplit=1)
+                
+                if len(parts) >= 2:
+                    left, right = parts[0].strip(), parts[1].strip()
                 else:
-                    # Séparation par mot-clé de la colonne droite s'ils sont collés
+                    # Rétro-compatibilité : Séparation par mot-clé de la colonne droite s'ils sont collés
                     m = re.search(r'\s+(' + right_kw + r'.*)', sl, re.IGNORECASE)
                     if m:
                         left = sl[:m.start()].strip()
                         right = m.group(1).strip()
+                    elif ' . ' in sl:
+                        sp = sl.split(' . ', 1)
+                        left, right = sp[0].strip(), sp[1].strip()
 
                 # Nettoyage
                 left = re.sub(r'\s*[,\.\&]\s*$', '', left).strip()
