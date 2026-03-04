@@ -347,8 +347,7 @@ def parse_cargo(file_obj) -> dict:
 
         # ── Début d'un nouveau BL ──────────────────────────────────────────
         m_bl = re.match(
-            r'B/L NUMBER:\s+'
-            r'((?:OOLU|MSCU|HLCU|MAEU|CMAU|COSU|EVGU|YMLU|APLU|ANNU|SUDU|MEDU)[A-Z0-9]+)',
+            r'B/L NUMBER:\s+([A-Z0-9]+)',
             line, re.IGNORECASE
         )
         if m_bl:

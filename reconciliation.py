@@ -155,23 +155,34 @@ def reconcile_manifests(data1: dict, data2: dict,
     bls1 = _flat_bls(data1)
     bls2 = _flat_bls(data2)
 
-    all_bls = sorted(set(list(bls1.keys()) + list(bls2.keys())))
+    aligned_bls1 = dict(bls1)
+    aligned_bls2 = dict(bls2)
+
+    for b1 in list(aligned_bls1.keys()):
+        for b2 in list(aligned_bls2.keys()):
+            if b1 != b2:
+                if len(b1) < len(b2) and b1 in b2:
+                    aligned_bls1[b2] = aligned_bls1.pop(b1)
+                elif len(b2) < len(b1) and b2 in b1:
+                    aligned_bls2[b1] = aligned_bls2.pop(b2)
+
+    all_bls = sorted(set(list(aligned_bls1.keys()) + list(aligned_bls2.keys())))
 
     for bl_ref in all_bls:
         ctx_bl = f"BL"
 
         # BL présent dans un seul doc
-        if bl_ref not in bls1:
+        if bl_ref not in aligned_bls1:
             _add(ctx_bl, bl_ref, "Présence BL",
                  f"Manquant dans {label1}", f"Présent dans {label2}")
             continue
-        if bl_ref not in bls2:
+        if bl_ref not in aligned_bls2:
             _add(ctx_bl, bl_ref, "Présence BL",
                  f"Présent dans {label1}", f"Manquant dans {label2}")
             continue
 
-        pol1, b1 = bls1[bl_ref]
-        pol2, b2 = bls2[bl_ref]
+        pol1, b1 = aligned_bls1[bl_ref]
+        pol2, b2 = aligned_bls2[bl_ref]
 
         # Port de chargement
         _add(ctx_bl, bl_ref, "Port", pol1, pol2)
