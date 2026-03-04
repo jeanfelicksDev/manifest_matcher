@@ -475,13 +475,27 @@ elif btn_lancer:
                     # Coloration des lignes selon le contexte
                     st.dataframe(df_diff, use_container_width=True, height=min(600, 45 * len(df_diff) + 38))
 
-                    csv = df_diff.to_csv(index=False, sep=";").encode("utf-8-sig")
+                    import tempfile
+                    import os
+                    from utils_export import generate_excel_diff_report
+                    
+                    with tempfile.NamedTemporaryFile(delete=False, suffix=".xlsx") as tmp:
+                        tmp_path = tmp.name
+
+                    # On reformate en dictionnaire pour un passage facile
+                    diff_list_reordered = df_diff.to_dict('records')
+                    generate_excel_diff_report(diff_list_reordered, tmp_path)
+
+                    with open(tmp_path, "rb") as exc:
+                        xls_data = exc.read()
+
                     st.download_button(
-                        label="📥 Télécharger les différences (CSV)",
-                        data=csv,
-                        file_name="differences_manifeste.csv",
-                        mime="text/csv",
+                        label="📥 Télécharger le rapport Excel détaillé",
+                        data=xls_data,
+                        file_name="differences_manifeste.xlsx",
+                        mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
                     )
+                    os.remove(tmp_path)
 
             except Exception as e:
                 st.error(f"Erreur lors de l'analyse : {e}")

@@ -57,10 +57,28 @@ def reconcile_manifests(data1: dict, data2: dict,
     diffs = []
 
     def _str(v) -> str:
-        """Normalise une valeur en chaîne majuscule pour comparaison."""
+        """Normalise une valeur en chaîne majuscule pour comparaison sémantique."""
         if v is None:
             return ""
-        return str(v).strip().upper()
+        
+        t = str(v).upper()
+        # Supprimer ponctuation neutre
+        t = re.sub(r'[\.,_\-\']', ' ', t)
+        
+        # Remplacement d'abréviations communes
+        abrevs = {
+            r'\bLTD\b': 'LIMITED',
+            r'\bCO\b': 'COMPANY',
+            r'\bCORP\b': 'CORPORATION',
+            r'\bINC\b': 'INCORPORATED',
+        }
+        for k, val in abrevs.items():
+            t = re.sub(k, val, t)
+            
+        # Nettoyage des espaces multiples
+        t = re.sub(r'\s+', ' ', t).strip()
+        
+        return t
 
     def _add(contexte, identifiant, champ, v1, v2):
         """Ajoute une différence si les valeurs diffèrent."""
