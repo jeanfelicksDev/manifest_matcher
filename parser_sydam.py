@@ -203,7 +203,7 @@ def parse_sydam(file_obj) -> dict:
     all_lines = []
     with pdfplumber.open(file_obj) as pdf:
         for page in pdf.pages:
-            txt = page.extract_text()
+            txt = page.extract_text(layout=True)
             if txt:
                 for line in txt.split("\n"):
                     all_lines.append(line)
@@ -477,20 +477,38 @@ def parse_sydam(file_obj) -> dict:
 
         # ── Lignes orphelines avant VMC (suite de Shipper / Designation) ──
         if not after_vmc:
-            rest = re.sub(r'\b(Colis|package|Marques et colis)\b', '', line, flags=re.IGNORECASE).replace('()', '').replace('("")', '').replace('"', '').strip()
-            if rest:
-                # Si c'est en majuscules sans symboles, on le met au shipper (ex: QINGDAO)
-                if re.match(r'^[A-Z\s,\.\-&]+$', rest):
-                    if bl_data["shipper"] and rest not in bl_data["shipper"]:
-                        bl_data["shipper"] += " " + rest
-                    elif not bl_data["shipper"]:
-                        bl_data["shipper"] = rest
+            # Avec layout=True, on peut isoler gauche et droite par les "grands espaces"
+            clean_raw = raw_line.rstrip()
+            started_with_spaces = clean_raw.startswith('    ')
+            parts = [p.strip() for p in re.split(r'\s{4,}', clean_raw) if p.strip()]
+
+            left, right = "", ""
+            if len(parts) >= 2:
+                left, right = parts[0], parts[1]
+            elif len(parts) == 1:
+                # Si ça commence avec bcp d'espaces, c'est la colonne designation (droite)
+                if started_with_spaces:
+                    right = parts[0]
                 else:
-                    # Sinon c'est probablement de la description
-                    if bl_data["designation"] and rest not in bl_data["designation"]:
-                        bl_data["designation"] += " " + rest
-                    elif not bl_data["designation"]:
-                        bl_data["designation"] = rest
+                    left = parts[0]
+
+            # Nettoyage
+            def _clean_str(s):
+                return re.sub(r'\b(Colis|package|Marques et colis)\b', '', s, flags=re.IGNORECASE).replace('()', '').replace('("")', '').replace('"', '').strip()
+
+            left, right = _clean_str(left), _clean_str(right)
+
+            if left:
+                if bl_data["shipper"] and left not in bl_data["shipper"]:
+                    bl_data["shipper"] += " " + left
+                elif not bl_data["shipper"]:
+                    bl_data["shipper"] = left
+                    
+            if right:
+                if bl_data["designation"] and right not in bl_data["designation"]:
+                    bl_data["designation"] += " " + right
+                elif not bl_data["designation"]:
+                    bl_data["designation"] = right
 
     # ── Nettoyage des clés temporaires ───────────────────────────────────
     for port_data in result["ports"].values():
