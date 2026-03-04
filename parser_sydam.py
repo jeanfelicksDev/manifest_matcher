@@ -160,32 +160,33 @@ _RE_POIDS_EOL = re.compile(r'\b(\d{4,7})\s*$')
 # Lignes de mise en page à ignorer
 _SKIP = re.compile(
     r'(^-{5,}'
-    r'|^Port de\s'
-    r'|^Chargement No'
-    r'|^Ligne Conteneur'
-    r'|^Marques et colis'
+    r'|^Port\s+de\s'
+    r'|^Chargement\s+No'
+    r'|^Ligne\s+Conteneur'
+    r'|^Marques\s+et\s+colis'
     r'|^\d{2}/\d{2}/\d{4}\s+\d+\s+\d+\s*$'
     r'|^R[eé]publique'
     r"|^d'Ivoire"
     r'|^MINISTERE'
     r'|^Union-Disc'
-    r'|^No Validation'
+    r'|^No\s+Validation'
     r'|^C\s*-\s*H'
-    r'|^Nombre de page'
-    r'|^Nombre total'
+    r'|^Nombre\s+de\s+page'
+    r'|^Nombre\s+total'
     r'|^Marchandises'
     r'|^ABIDJAN'
     r'|^Discharge\s'
     r'|^Entering\s'
-    r'|^Port Douane'
+    r'|^Port\s+Douane'
     r'|^:\s'
-    r'|^Tonne \(net\)'
+    r'|^Tonne\s+\(net\)'
     r'|^\("package"\)'
     r'|^Colis$'
     r'|^Carton$'
-    r'|^Description de'
+    r'|^Description\s+de'
     r'|^Transporteur'
-    r')'
+    r')',
+    re.IGNORECASE
 )
 
 
@@ -231,7 +232,7 @@ def parse_sydam(file_obj) -> dict:
     # ── Variables d'état ──────────────────────────────────────────────────
     current_pol  = None
     current_bl   = None
-    after_vmc    = False
+    after_marques = False
     pending_ct   = None   # dernier numéro de conteneur en attente de son type
 
     # ── Parcours ligne par ligne ───────────────────────────────────────────
@@ -243,7 +244,7 @@ def parse_sydam(file_obj) -> dict:
         # ── NOUVELLE LIGNE BL PRINCIPALE ──────────────────────────────────
         m_bl = _RE_BL_START.match(line)
         if m_bl:
-            after_vmc  = False
+            after_marques = False
             pending_ct = None
             current_pol = m_bl.group(1)
             bl_ref      = m_bl.group(3)
@@ -337,46 +338,18 @@ def parse_sydam(file_obj) -> dict:
         if bl_data is None:
             continue
 
-        # ── "VMC" → la ligne suivante = importateur (consignee & notify) ──
-        # VMC peut être seul ("VMC") ou en fin de ligne ("OOLKPY7584 VMC")
-        has_vmc = line == "VMC" or line.endswith(" VMC") or re.match(r'^OOL[A-Z]{3,4}\d+\s+VMC$', line)
-        if has_vmc:
-            # Si scellé + VMC sur la même ligne → enregistrer le scellé aussi
-            if line != "VMC":
+        # ── "VMC" ou "Marques et colis" → Transition Consignee vers Notify ──
+        if re.search(r'\b(VMC|Marques et colis)\b', line, re.IGNORECASE):
+            after_marques = True
+            # Si scellé + VMC sur la même ligne (legacy)
+            if "VMC" in line and line != "VMC":
                 m_seal_vmc = _RE_SEAL.search(line)
                 if m_seal_vmc and bl_data["conteneurs"]:
                     for ct_num in reversed(list(bl_data["conteneurs"].keys())):
                         if not bl_data["conteneurs"][ct_num]["num_plomb"]:
                             bl_data["conteneurs"][ct_num]["num_plomb"] = m_seal_vmc.group(1)
                             break
-            after_vmc = True
             continue
-
-        if after_vmc:
-            if _SKIP.search(line):
-                continue
-            
-            # Sortir de after_vmc si on tombe sur un conteneur, un scellé ou le prochain BL
-            if _RE_CONT_ISO.search(line) or _RE_SEAL.search(line) or _RE_BL_START.match(line):
-                after_vmc = False
-                # Ne pas utiliser 'continue', on doit traiter cette ligne (c'est un conteneur/seal !)
-                pass
-            else:
-                # C'est donc bien la suite du consignee / notify
-                clean_name = re.sub(r'\s+OOLU\w+\s+\d+.*$', '', line).strip()
-                clean_name = re.sub(r'\s+OOL[A-Z]{3,4}\d+.*$', '', clean_name).strip()
-                
-                if clean_name:
-                    if not bl_data["consignee"]:
-                        bl_data["consignee"] = clean_name
-                    elif clean_name not in bl_data["consignee"]:
-                        bl_data["consignee"] += " " + clean_name
-
-                    if not bl_data["notify"]:
-                        bl_data["notify"] = clean_name
-                    elif clean_name not in bl_data["notify"]:
-                        bl_data["notify"] += " " + clean_name
-                continue
 
         # ── Ignorer les lignes de mise en page ────────────────────────────
         if _SKIP.search(line):
@@ -475,40 +448,66 @@ def parse_sydam(file_obj) -> dict:
                     bl_data["designation"] = rest
             continue
 
-        # ── Lignes orphelines avant VMC (suite de Shipper / Designation) ──
-        if not after_vmc:
-            # Avec layout=True, on peut isoler gauche et droite par les "grands espaces"
-            clean_raw = raw_line.rstrip()
-            started_with_spaces = clean_raw.startswith('    ')
-            parts = [p.strip() for p in re.split(r'\s{4,}', clean_raw) if p.strip()]
+        # ── Lignes orphelines (suite de Shipper / Consignee / Notify / Designation) ──
+        # Extraction de (left, right)
+        clean_raw = raw_line.rstrip()
+        started_with_spaces = clean_raw.startswith('    ')
+        parts = [p.strip() for p in re.split(r'\s{4,}', clean_raw) if p.strip()]
 
-            left, right = "", ""
-            if len(parts) >= 2:
-                left, right = parts[0], parts[1]
-            elif len(parts) == 1:
-                # Si ça commence avec bcp d'espaces, c'est la colonne designation (droite)
-                if started_with_spaces:
-                    right = parts[0]
-                else:
-                    left = parts[0]
+        left, right = "", ""
+        left_indent = 0
+        if len(parts) >= 2:
+            left, right = parts[0], parts[1]
+            left_indent = len(clean_raw) - len(clean_raw.lstrip())
+        elif len(parts) == 1:
+            indent = len(clean_raw) - len(clean_raw.lstrip())
+            if started_with_spaces and indent >= 45:
+                right = parts[0]
+            else:
+                left = parts[0]
+                left_indent = indent
 
-            # Nettoyage
-            def _clean_str(s):
-                return re.sub(r'\b(Colis|package|Marques et colis)\b', '', s, flags=re.IGNORECASE).replace('()', '').replace('("")', '').replace('"', '').strip()
+        # Nettoyage commun
+        def _clean_str(s):
+            return re.sub(r'\b(Colis|package|Marques et colis|VMC)\b', '', s, flags=re.IGNORECASE).replace('()', '').replace('("")', '').replace('"', '').strip()
 
-            left, right = _clean_str(left), _clean_str(right)
+        left, right = _clean_str(left), _clean_str(right)
 
+        # Attribution de 'left'
+        if left:
+            # Retirer codes annexes souvent mélangés
+            left = re.sub(r'\s+OOLU\w+\s+\d+.*$', '', left).strip()
+            left = re.sub(r'\s+OOL[A-Z]{3,4}\d+.*$', '', left).strip()
+            
             if left:
-                if bl_data["shipper"] and left not in bl_data["shipper"]:
-                    bl_data["shipper"] += " " + left
-                elif not bl_data["shipper"]:
-                    bl_data["shipper"] = left
-                    
-            if right:
-                if bl_data["designation"] and right not in bl_data["designation"]:
-                    bl_data["designation"] += " " + right
-                elif not bl_data["designation"]:
-                    bl_data["designation"] = right
+                if left_indent < 15:
+                    if left.isupper() and " " not in left and len(left) < 15:
+                        pass # Probablement le nom du port
+                    else:
+                        if bl_data["shipper"] and left not in bl_data["shipper"]:
+                            bl_data["shipper"] += " " + left
+                        elif not bl_data["shipper"]:
+                            bl_data["shipper"] = left
+                elif 15 <= left_indent <= 42:
+                    if not after_marques:
+                        # Consignee
+                        if bl_data["consignee"] and left not in bl_data["consignee"]:
+                            bl_data["consignee"] += " " + left
+                        elif not bl_data["consignee"]:
+                            bl_data["consignee"] = left
+                    else:
+                        # Notify
+                        if bl_data["notify"] and left not in bl_data["notify"]:
+                            bl_data["notify"] += " " + left
+                        elif not bl_data["notify"]:
+                            bl_data["notify"] = left
+
+        # Attribution de 'right'
+        if right:
+            if bl_data["designation"] and right not in bl_data["designation"]:
+                bl_data["designation"] += " " + right
+            elif not bl_data["designation"]:
+                bl_data["designation"] = right
 
     # ── Nettoyage des clés temporaires ───────────────────────────────────
     for port_data in result["ports"].values():

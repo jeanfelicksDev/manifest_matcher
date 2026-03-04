@@ -318,6 +318,13 @@ def parse_cargo(file_obj) -> dict:
         # ── Extraction Shipper / Désignation ──
         shipper, raw_designation = _extract_actor_name(shipper_lines, is_shipper=True)
 
+        if shipper:
+            # Nettoyages heuristiques pour les lignes récalcitrantes de N/M qui leakent dans Shipper
+            shipper = re.sub(r'^N/M[\.\s]*\d+\s+(?:PKGS?|PACKAGES?|CARTONS?|CTNS?|PCS)\s+[A-Z0-9-]+\s+', '', shipper, flags=re.IGNORECASE).strip()
+            shipper = re.sub(r'^N/M[\.\s]*\d+\s+(?:CARTONS?|CTNS?)\s+HERBICIDE\s+\([^)]+\)\s+', '', shipper, flags=re.IGNORECASE).strip()
+            shipper = re.sub(r'^N/M[\.\s]*$', '', shipper, flags=re.IGNORECASE).strip()
+            if not shipper: shipper = None
+
         consignee = _extract_actor_name(consignee_lines)
         notify    = _extract_actor_name(notify_lines)
 
