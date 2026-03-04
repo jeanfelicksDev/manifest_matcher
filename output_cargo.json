@@ -1,0 +1,1115 @@
+{
+  "navire": "NAVIOS MAGNOLIA",
+  "numero_voyage": "121 WEST - I",
+  "eta": null,
+  "ports": {
+    "SHANGHAI": {
+      "bls": {
+        "OOLU2754654610": {
+          "shipper": "CHONGQING DALONGYUFENG MOTORCYCLE MANUFACTURING CO. LTD",
+          "consignee": "GLOBAL BETY NEGOCE",
+          "notify": "GLOBAL BETY NEGOCE",
+          "designation": "840 CARTONS MOTORCYCLE CKD GROSS WEIGHT : 47144.100 KG . AAM2412-30 VOLUME : 145.570 CBM . AAM2412-31 ( 103933.88 LB ) ( 5140.746 CFT )",
+          "conteneurs": {
+            "CSNU8817661": {
+              "type": "40HC",
+              "num_plomb": "OOLJWV8819",
+              "nbre_colis": 419,
+              "poids_brut": 23547.05,
+              "volume": 72.708
+            },
+            "TCNU6317960": {
+              "type": "40HC",
+              "num_plomb": "OOLJWV8915",
+              "nbre_colis": 421,
+              "poids_brut": 23597.05,
+              "volume": 72.862
+            }
+          }
+        },
+        "OOLU2754748060": {
+          "shipper": "SONLINK JIANGMEN TENGHUI TRADING CO.,LTD",
+          "consignee": "STE BOUAKE COMMERCE KOUADESIREE@KARTA.CI",
+          "notify": "STE BOUAKE COMMERCE KOUADESIREE@KARTA.CI",
+          "designation": "747 PACKAGES TRICYCLE SPARE PART GROSS WEIGHT : 20419.000 KG . . VOLUME : 70.000 CBM . . ( 45015.73 LB )",
+          "conteneurs": {
+            "FFAU6376467": {
+              "type": "40HC",
+              "num_plomb": "OOLHYK3285",
+              "nbre_colis": 747,
+              "poids_brut": 20419.0,
+              "volume": 70.0
+            }
+          }
+        },
+        "OOLU2754752860": {
+          "shipper": "SONLINK JIANGMEN TENGHUI TRADING CO.,LTD",
+          "consignee": "STE BOUAKE COMMERCE KOUADESIREE@KARTA.CI",
+          "notify": "STE BOUAKE COMMERCE KOUADESIREE@KARTA.CI",
+          "designation": "738 PACKAGES TRICYCLE SPARE PART GROSS WEIGHT : 19097.000 KG . . VOLUME : 70.000 CBM . . ( 42101.25 LB )",
+          "conteneurs": {
+            "CSNU8830853": {
+              "type": "40HC",
+              "num_plomb": "OOLJWV9402",
+              "nbre_colis": 738,
+              "poids_brut": 19097.0,
+              "volume": 70.0
+            }
+          }
+        },
+        "OOLU2754754510": {
+          "shipper": "SONLINK JIANGMEN TENGHUI TRADING CO.,LTD",
+          "consignee": "STE BOUAKE COMMERCE KOUADESIREE@KARTA.CI",
+          "notify": "STE BOUAKE COMMERCE KOUADESIREE@KARTA.CI",
+          "designation": "368 CARTONS NEW MOTORCYCLE IN CKD GROSS WEIGHT : 20967.000 KG . . VOLUME : 71.000 CBM . . ( 46223.85 LB )",
+          "conteneurs": {
+            "CSNU8807431": {
+              "type": "40HC",
+              "num_plomb": "OOLJWK7818",
+              "nbre_colis": 368,
+              "poids_brut": 20967.0,
+              "volume": 71.0
+            }
+          }
+        },
+        "OOLU2754871250": {
+          "shipper": "CHONGQING DILIGENCE GENERAL MACHINERY CO.,LTD",
+          "consignee": "SOCIETE BAKARY COMMERCE SBC 01POBOX: 871 BKE 01 D'IVOIRE PHONE:",
+          "notify": "SOCIETE BAKARY COMMERCE SBC 01POBOX: 871 BKE 01 D'IVOIRE PHONE:",
+          "designation": "1007 PACKAGES WATER PUMP GROSS WEIGHT : 24931.900 KG . GASOLINE GENERATOR VOLUME : 72.150 CBM . GASOLINE ENGINE ( 54964.87 LB )",
+          "conteneurs": {
+            "OOCU7433359": {
+              "type": "40HC",
+              "num_plomb": "OOLJWV9538",
+              "nbre_colis": 1007,
+              "poids_brut": 24931.9,
+              "volume": 72.15
+            }
+          }
+        },
+        "OOLU2755679080": {
+          "shipper": "JAC HEAVY DUTY IMPORT AND EXPORT CO., LTD NO 2 SHANGHAI ROAD, 250198004,250198005 ( 1324.298 CFT ) HEFEI , ANHUI, CHINA TOTAL WEIGHT:25000KGS",
+          "consignee": "12 PACKAGES 12 PACKAGES OF 2 NEW JAC FRANCETRUCK-CI FORKLIFTS MODEL CPCD70 S/N VOLUME : 45.000 CBM PORT BOUET - VRIDI CANAL 250197996,250197997 ( 50375.11 LB ) 26 BP 1300 TOTAL WEIGHT:22850KGS ( 1589.157 CFT ) ABIDJAN 26 / COTE D' IVOIRE",
+          "notify": "20 PACKAGES 15 PACKAGES OF 3 NEW JAC FRANCETRUCK-CI FORKLIFTS MODEL CPCD40 S/N VOLUME : 35.100 CBM PORT BOUET - VRIDI CANAL 250197998,250197999,250198000 ( 41865.35 LB ) 26 BP 1300 TOTAL WEIGHT:17090KGS ( 1239.542 CFT ) ABIDJAN 26 / COTE D' IVOIRE 5 PACKAGES OF SPARE PARTS TOTAL WEIGHT:1900KGS",
+          "designation": "20 PACKAGES 20 PACKAGES OF 5 NEW JAC GROSS WEIGHT : 25000.000 KG . FORKLIFTS MODEL CPCD35 S/N VOLUME : 37.500 CBM . 250198001,250198002,250198003, ( 55115.00 LB )",
+          "conteneurs": {
+            "FFAU5483990": {
+              "type": "40HC",
+              "num_plomb": "OOLHZG4611",
+              "nbre_colis": 20,
+              "poids_brut": 18990.0,
+              "volume": 33.411
+            },
+            "OOCU9061625": {
+              "type": "40HC",
+              "num_plomb": "OOLJWU8000",
+              "nbre_colis": 12,
+              "poids_brut": 22850.0,
+              "volume": 40.203
+            },
+            "TIIU5001560": {
+              "type": "40HC",
+              "num_plomb": "OOLJWU7991",
+              "nbre_colis": 20,
+              "poids_brut": 25000.0,
+              "volume": 43.986
+            }
+          }
+        },
+        "OOLU4123237280": {
+          "shipper": "HUANGSHAN BEST ORGANIC TEA INDUSTRIAL CO.,LTD",
+          "consignee": "NOUVEAU SOLEIL SARL YIRIMADIO ROUTE FOFANA/ZHA HUADONG",
+          "notify": "NOUVEAU SOLEIL SARL YIRIMADIO ROUTE FOFANA/ZHA HUADONG",
+          "designation": "5750 BUNDLES CHINA GREEN TEA GROSS WEIGHT : 130000.000 KG . CARGO IN TRANSIT TO BAMAKO VOLUME : 320.000 CBM . MALI ( 286598.00 LB )",
+          "conteneurs": {
+            "CSNU8054940": {
+              "type": "40HC",
+              "num_plomb": "OOLGPW1896",
+              "nbre_colis": 1150,
+              "poids_brut": 26000.0,
+              "volume": 64.0
+            },
+            "DFSU7455392": {
+              "type": "40HC",
+              "num_plomb": "OOLJWN0738",
+              "nbre_colis": 1150,
+              "poids_brut": 26000.0,
+              "volume": 64.0
+            },
+            "GLDU7562438": {
+              "type": "40HC",
+              "num_plomb": "OOLGPW1894",
+              "nbre_colis": 1150,
+              "poids_brut": 26000.0,
+              "volume": 64.0
+            },
+            "OOCU9323474": {
+              "type": "40HC",
+              "num_plomb": "OOLJWN0735",
+              "nbre_colis": 1150,
+              "poids_brut": 26000.0,
+              "volume": 64.0
+            },
+            "TEMU8177770": {
+              "type": "40HC",
+              "num_plomb": "OOLKEE4441",
+              "nbre_colis": 1150,
+              "poids_brut": 26000.0,
+              "volume": 64.0
+            }
+          }
+        },
+        "OOLU8898417420": {
+          "shipper": "PLACE OF DELIVERY : ABIDJAN CHANGZHOU ZHUOYUAN WEIGHING TECHNOLOGY CO.,LTD",
+          "consignee": "CAA MINING 2 PLATEAUX 9E TRANCHE 25 BP 982 ABIDJAN 25 IVORY COAST MR. PHILIPPE ADOU**",
+          "notify": "ETS - EDS 16 BP 1373 ABJ 16 M. EBBY DAN SEBASTIEN EBBYSEB975@GMAIL.COM",
+          "designation": "33 CARTONS TRUCK SCALE GROSS WEIGHT : 16340.000 KG . DIESEL GENERATOR VOLUME : 50.000 CBM . BSC#CIIMP-414180 ( 36023.16 LB )",
+          "conteneurs": {
+            "TRHU5384320": {
+              "type": "40HC",
+              "num_plomb": "OOLJWP6332",
+              "nbre_colis": 33,
+              "poids_brut": 16340.0,
+              "volume": 50.0
+            }
+          }
+        },
+        "OOLU2156475910": {
+          "shipper": "ARYSTA LIFESCIENCE SAS BP80 ROUTE D'ARTIX 64150 NOGUERES FRANCE DAKAR,SENEGAL BY CONSIGNEE'S OWN COSTS AND",
+          "consignee": "RISK MALI PROTECTION DES CULTURES QUINZAMBOUGOU - ROUTE DE SOTUBA PORTE 1892 - BP603 - BAMAKO - MALI",
+          "notify": "MALI PROTECTION DES CULTURES QUINZAMBOUGOU - ROUTE DE SOTUBA PORTE 1892 - BP603 - BAMAKO - MALI",
+          "designation": "8000 CARTONS KALACH 360 SL BD 1L ML(360G/L GROSS WEIGHT : 125600.000 KG . GLYPHOSATE SL) VOLUME : 250.000 CBM . HS CODE: 3808939000 ( 276897.76 LB ) CARGO IN TRANSIT TO MALI VIA ( 8828.650 CFT )",
+          "conteneurs": {
+            "CSNU7260334": {
+              "type": "40HC",
+              "num_plomb": "OOLJWN0772",
+              "nbre_colis": 1600,
+              "poids_brut": 25120.0,
+              "volume": 50.0
+            },
+            "OOCU7383094": {
+              "type": "40HC",
+              "num_plomb": "OOLJWN0699",
+              "nbre_colis": 1600,
+              "poids_brut": 25120.0,
+              "volume": 50.0
+            },
+            "OOLU8899728": {
+              "type": "40HC",
+              "num_plomb": "OOLJWN0700",
+              "nbre_colis": 1600,
+              "poids_brut": 25120.0,
+              "volume": 50.0
+            },
+            "OOLU9984697": {
+              "type": "40HC",
+              "num_plomb": "OOLJWN0682",
+              "nbre_colis": 1600,
+              "poids_brut": 25120.0,
+              "volume": 50.0
+            },
+            "RFCU5010265": {
+              "type": "40HC",
+              "num_plomb": "OOLJWN0641",
+              "nbre_colis": 1600,
+              "poids_brut": 25120.0,
+              "volume": 50.0
+            }
+          }
+        },
+        "OOLU2156508510": {
+          "shipper": "PUYANG LONGOU BIOTECHNOLOGY DEVELOPMENT CO., LTD",
+          "consignee": "STONES MALI IMMEUBLE IBI GROUP ACI 2000 BAMAKO MALI BP: 27 84",
+          "notify": "STONES MALI IMMEUBLE IBI GROUP ACI 2000 BAMAKO MALI BP: 27 84",
+          "designation": "1050 BAGS HYDROXYPROPYL METHYL GROSS WEIGHT : 27324.000 KG . CELLULOSE; HYDROXYETHYL METHYL VOLUME : 47.000 CBM . CELLULOSE; REDISPERSIBLE ( 60238.49 LB )",
+          "conteneurs": {
+            "FFAU3485417": {
+              "type": "40HC",
+              "num_plomb": "OOLJWT3549",
+              "nbre_colis": 1050,
+              "poids_brut": 27324.0,
+              "volume": 47.0
+            }
+          }
+        },
+        "OOLU2755568420": {
+          "shipper": "SHANGHAI MEDWELL MEDICAL PRODUCTS CO.,LTD",
+          "consignee": "SENPHARDIS SARL VILLA 75,CITE SIPRES AL AZHAR EXTENSION RUFISQUE OUEST-ZAC MBAO DAKAR/SENEGAL",
+          "notify": "SOCIMED SARL 9,CHAUSSEE JULES CESAR(BATIMENT 01 PORTE 106)95520 OSNY FRANCE **",
+          "designation": "1150 CARTONS GAUZE SWABS GROSS WEIGHT : 10580.000 KG . BSC N. 0840078 VOLUME : 66.700 CBM . . ( 23324.67 LB )",
+          "conteneurs": {
+            "OOCU6560364": {
+              "type": "40HC",
+              "num_plomb": "OOLJWN5525",
+              "nbre_colis": 1150,
+              "poids_brut": 10580.0,
+              "volume": 66.7
+            }
+          }
+        },
+        "OOLU2755783830": {
+          "shipper": "PLACE OF DELIVERY : DAKAR NANJING HAIGE CHEMICAL CO.,LTD",
+          "consignee": "DAYS FREE DEMURRAGE AT MAMOUTOU TRAORE-MALI MADINE-KOURA BOUTIQUE NO:A2 A LA DIGUE MOPTI(MALI)",
+          "notify": "MAMOUTOU MADINE-KOURA BOUTIQUE NO:A2 A LA DIGUE MOPTI(MALI)",
+          "designation": "3430 CARTONS CHLORPYRIFOS 5% GR 23500KGS GROSS WEIGHT : 39973.400 KG . VOLUME : 56.000 CBM .",
+          "conteneurs": {
+            "OOLU0320830": {
+              "type": "20DV",
+              "num_plomb": "OOLJWT3520",
+              "nbre_colis": 1080,
+              "poids_brut": 14828.4,
+              "volume": 20.774
+            },
+            "TRHU3471132": {
+              "type": "20DV",
+              "num_plomb": "OOLJWT3511",
+              "nbre_colis": 2350,
+              "poids_brut": 25145.0,
+              "volume": 35.226
+            }
+          }
+        }
+      }
+    },
+    "SINGAPORE": {
+      "bls": {
+        "OOLU2754879030": {
+          "shipper": "CHONGQING JINBOSS IMPORT EXPORT CO., LTD",
+          "consignee": "LUO, XIAOBO PASSPORT NUMBER: EM1033462 DONDON N'DAOU,BAMAKO,MALI**",
+          "notify": "LUO, XIAOBO PASSPORT NUMBER: EM1033462 DONDON N'DAOU,BAMAKO,MALI**",
+          "designation": "1247 PACKAGES TRICYCLE IN CKD FORM GROSS WEIGHT : 14832.500 KG . SHIPPER FURTHER DECLARES VOLUME : 66.848 CBM . \"CARGO IN TRANSIT TO MALI\", ( 32699.73 LB )",
+          "conteneurs": {
+            "OOCU6867387": {
+              "type": "40HC",
+              "num_plomb": "OOLHPJ6630",
+              "nbre_colis": 1247,
+              "poids_brut": 14832.5,
+              "volume": 66.848
+            }
+          }
+        },
+        "OOLU2754343080": {
+          "shipper": "CHAO YANG LONG MARCH TYRE NEW CO.,LTD",
+          "consignee": "TO ORDER",
+          "notify": "SAM & SONS SERVICES YOUPOUGON ZONE 21 BP 109 ABIDJAN 21",
+          "designation": "1748 PACKAGES TYRES GROSS WEIGHT : 90706.000 KG . . VOLUME : 300.000 CBM . . ( 199970.45 LB )",
+          "conteneurs": {
+            "CAIU4791684": {
+              "type": "40HC",
+              "num_plomb": "OOLJVF4921",
+              "nbre_colis": 334,
+              "poids_brut": 15034.88,
+              "volume": 49.726
+            },
+            "GCXU6513298": {
+              "type": "40HC",
+              "num_plomb": "OOLJVF4923",
+              "nbre_colis": 385,
+              "poids_brut": 14990.97,
+              "volume": 49.581
+            },
+            "OOCU7451310": {
+              "type": "40HC",
+              "num_plomb": "OOLJVF4940",
+              "nbre_colis": 338,
+              "poids_brut": 15730.14,
+              "volume": 52.026
+            },
+            "OOCU8039566": {
+              "type": "40HC",
+              "num_plomb": "OOLJVF4922",
+              "nbre_colis": 329,
+              "poids_brut": 15495.77,
+              "volume": 51.251
+            },
+            "OOCU9140832": {
+              "type": "40HC",
+              "num_plomb": "OOLJVF8524",
+              "nbre_colis": 84,
+              "poids_brut": 14425.24,
+              "volume": 47.71
+            },
+            "SEGU6620040": {
+              "type": "40HC",
+              "num_plomb": "OOLJVF4924",
+              "nbre_colis": 278,
+              "poids_brut": 15029.0,
+              "volume": 49.707
+            }
+          }
+        },
+        "OOLU2754624110": {
+          "shipper": "ROOPCHAND AND SONS (H.K) LTD PLACE OF DELIVERY : ABIDJAN FLAT/RM 609A 6/F FOOK CHEONG BLDG 63 HOI YUEN RD KWUN TONG ( 988.809 CFT ) KL HONG KONG",
+          "consignee": "ETS SH 26 BP 293 ABIDJAN 26 MARCORY RCI",
+          "notify": "ETS SH 26 BP 293 ABIDJAN 26 MARCORY RCI",
+          "designation": "2000 CARTONS INSTANT DRY YEAST GROSS WEIGHT : 19000.000 KG . . VOLUME : 28.000 CBM . . ( 41887.40 LB )",
+          "conteneurs": {
+            "OOLU2980299": {
+              "type": "20DV",
+              "num_plomb": "OOLJNX6107",
+              "nbre_colis": 2000,
+              "poids_brut": 19000.0,
+              "volume": 28.0
+            }
+          }
+        },
+        "OOLU2754716860": {
+          "shipper": "FUQING PROFIT EXPRESS TRADE CO.,LTD RM 601 BUILDING 22 NO .288 DONGMENG STREET FUQING FUJIAN TEL:0591-85165901*",
+          "consignee": "DREAMERS FOOD INDUSTRY ALLOKOI PK 22, 05BP 225 ABIDJAN 05 CONTACT PERSON:HEXINCHUN",
+          "notify": "DREAMERS FOOD INDUSTRY ALLOKOI PK 22, 05BP 225 ABIDJAN 05 CONTACT PERSON:HEXINCHUN",
+          "designation": "674 PACKAGES BUILDING MATERIAL GROSS WEIGHT : 13850.000 KG . T/S VIA XIAMEN VOLUME : 68.000 CBM . . ( 30533.71 LB ) ( 2401.393 CFT )",
+          "conteneurs": {
+            "BMOU5838256": {
+              "type": "40HC",
+              "num_plomb": "OOLJPF6813",
+              "nbre_colis": 674,
+              "poids_brut": 13850.0,
+              "volume": 68.0
+            }
+          }
+        },
+        "OOLU2754787590": {
+          "shipper": "AOLAN (FUJIAN) INDUSTRY CO.,LTD",
+          "consignee": "SOLOENERGIE SARL EXTENSION, BANDE VERTE LOT NO 10-386 RESIDENCE ADIA FATOU NDIAYE NGAINDE **",
+          "notify": "SOLOENERGIE SARL EXTENSION, BANDE VERTE LOT NO 10-386 RESIDENCE ADIA FATOU NDIAYE NGAINDE **",
+          "designation": "317 PACKAGES EVAPORATIVE AIR COOLER GROSS WEIGHT : 4335.650 KG . SPARE PARTS OF EVAPORATIVE AIR VOLUME : 27.940 CBM . COOLER ( 9558.37 LB )",
+          "conteneurs": {
+            "CSNU1289500": {
+              "type": "20DV",
+              "num_plomb": "OOLJPF5558",
+              "nbre_colis": 317,
+              "poids_brut": 4335.65,
+              "volume": 27.94
+            }
+          }
+        },
+        "OOLU2754871550": {
+          "shipper": "FUJIAN TINGKAM TRADING CO.,LTD",
+          "consignee": "SERIGNE THIAM LOBAT FALL DAKAR,SENEGAL PPM:197330",
+          "notify": "SERIGNE THIAM LOBAT FALL DAKAR,SENEGAL PPM:197330",
+          "designation": "950 PACKAGES MARCHANDISES DIVERSES GROSS WEIGHT : 28496.000 KG . BSC NO.:0823114 VOLUME : 68.000 CBM .",
+          "conteneurs": {
+            "CSNU7356689": {
+              "type": "40HC",
+              "num_plomb": "OOLJPF6947",
+              "nbre_colis": 950,
+              "poids_brut": 28496.0,
+              "volume": 68.0
+            }
+          }
+        },
+        "OOLU2754871740": {
+          "shipper": "FUJIAN TINGKAM TRADING CO.,LTD",
+          "consignee": "SERIGNE THIAM LOBAT FALL DAKAR,SENEGAL PPM:197330",
+          "notify": "SERIGNE THIAM LOBAT FALL DAKAR,SENEGAL PPM:197330",
+          "designation": "916 PACKAGES MARCHANDISES DIVERSES GROSS WEIGHT : 28492.000 KG . BSC NO.:0824368 VOLUME : 68.000 CBM .",
+          "conteneurs": {
+            "CSNU8605261": {
+              "type": "40HC",
+              "num_plomb": "OOLJPF6948",
+              "nbre_colis": 916,
+              "poids_brut": 28492.0,
+              "volume": 68.0
+            }
+          }
+        },
+        "OOLU2755152900": {
+          "shipper": "HAINAN SINYOUNG RUBBER MACHINERY LIMITED COMPANY",
+          "consignee": "MAINLAND GROUP RARE RUBBER S.A KOUMASSI ZONE ABIDJAN COTE D'IVOIRE EMAIL:JACKIE@MAINLAND-GLOBAL.C OM **",
+          "notify": "MAINLAND GROUP RARE RUBBER S.A KOUMASSI ZONE ABIDJAN COTE D'IVOIRE EMAIL:JACKIE@MAINLAND-GLOBAL.C OM **",
+          "designation": "197 PACKAGES ACCESSORY PARTS OF NATURAL GROSS WEIGHT : 22888.000 KG . RUBBER PROCESSING VOLUME : 38.000 CBM . PULL ROD ( 50458.88 LB )",
+          "conteneurs": {
+            "FSCU8954323": {
+              "type": "40HC",
+              "num_plomb": "OOLJBF8310",
+              "nbre_colis": 197,
+              "poids_brut": 22888.0,
+              "volume": 38.0
+            }
+          }
+        },
+        "OOLU2755396380": {
+          "shipper": "BEIJING MIDEA OVERSEAS ENGINEERING &TECHNOLOGY CO.,LTD. ( 2493.211 CFT )",
+          "consignee": "ENTREPRISE DE SERVICES ET TRAVAUX TECHNIQUES (ES2T) 04 BP 1470 ABIDJAN 04 ES2T.ENTREPRISE@GMAIL.COM **",
+          "notify": "ENTREPRISE DE SERVICES ET TRAVAUX TECHNIQUES (ES2T) 04 BP 1470 ABIDJAN 04 ES2T.ENTREPRISE@GMAIL.COM ***",
+          "designation": "137 PACKAGES AIR CONDIONER GROSS WEIGHT : 10176.500 KG . HS CODE: 841510,841590 VOLUME : 70.600 CBM . PO:ECCIV2024080500 ( 22435.11 LB )",
+          "conteneurs": {
+            "CSNU1340746": {
+              "type": "20DV",
+              "num_plomb": "OOLKHC9320",
+              "nbre_colis": 89,
+              "poids_brut": 2692.0,
+              "volume": 18.676
+            },
+            "CSNU8468960": {
+              "type": "40HC",
+              "num_plomb": "OOLKHB7153",
+              "nbre_colis": 48,
+              "poids_brut": 7484.5,
+              "volume": 51.924
+            }
+          }
+        },
+        "OOLU2755468954": {
+          "shipper": "SHENZHEN GREEN VIEW CONSTRUCTION MACHINERY CO..LTD ( 2401.393 CFT )",
+          "consignee": "MAXI DISTRI COMPANY (MDC) 3, BLV VGE.ABIDJAN CONTACT PERSON: MR CHEN",
+          "notify": null,
+          "designation": "1314 PACKAGES GENERATORS AND ACCESSORIES GROSS WEIGHT : 17130.000 KG . DRILLING RIGS AND ACCESSORIES VOLUME : 68.000 CBM . ENGINE OIL ( 37764.80 LB )",
+          "conteneurs": {
+            "OOCU8155653": {
+              "type": "40HC",
+              "num_plomb": "OOLHRS6383",
+              "nbre_colis": 1314,
+              "poids_brut": 17130.0,
+              "volume": 68.0
+            }
+          }
+        },
+        "OOLU2755396370": {
+          "shipper": "SHENZHEN GRAND IMPORT AND EXPORT CO.,LTD",
+          "consignee": "SAMA HYGIENIC AFRICA (SARL) PARC INDUSTRIEL INTEGREE DE DIAMNIADIO(P2ID) - HANGAR A3 -POLE URBAIN DE DIAMNIADIO*",
+          "notify": "H AND O FREIGHT ADRESSE : CENTRE MOHAMMED 5 IMMBL A - ETG 9 N (EN FACE D'HOTEL COMPANILE) P.O.BOX 20250 -CASABLANCA -**",
+          "designation": "1 PACKAGE TOILET TISSUE KITCHEN TOWEL GROSS WEIGHT : 5120.000 KG . REWINDING MACHINE VOLUME : 12.000 CBM . ECTN# 0833654 ( 11287.55 LB )",
+          "conteneurs": {
+            "CSNU7998328": {
+              "type": "40HC",
+              "num_plomb": "OOLHRT7552",
+              "nbre_colis": 1,
+              "poids_brut": 5120.0,
+              "volume": 12.0
+            }
+          }
+        },
+        "OOLU2755396381": {
+          "shipper": "YIWU ANSAR TRADING CO.,LTD",
+          "consignee": "IBRAHIMA THIMBO HS CODE:6704190000 214 DAKAR SENEGAL. PUT COTTON BUTT CITY:DAKAR * BROOM",
+          "notify": "HS CDOE:9603100000 SAME AS CONSIGNEE",
+          "designation": "380 CARTONS SANITARY PRODUCTS GROSS WEIGHT : 9980.000 KG . VOLUME : 71.060 CBM .",
+          "conteneurs": {
+            "CAAU9119324": {
+              "type": "40HC",
+              "num_plomb": "OOLKHC4923",
+              "nbre_colis": 380,
+              "poids_brut": 9980.0,
+              "volume": 71.06
+            }
+          }
+        },
+        "OOLU2755464782": {
+          "shipper": "GUANGZHOU FUKEJIA TRADING COMPANY . ( 2401.393 CFT )",
+          "consignee": "KHADY SARR VILLA NR 51,DAKAR SENEGAL MOB: +221 773955647",
+          "notify": null,
+          "designation": "650 PACKAGES SUITCASE GROSS WEIGHT : 27500.000 KG . CTN NO.:0831888 VOLUME : 68.000 CBM . . ( 60626.50 LB )",
+          "conteneurs": {
+            "OOCU6742564": {
+              "type": "40HC",
+              "num_plomb": "OOLHRT8835",
+              "nbre_colis": 650,
+              "poids_brut": 27500.0,
+              "volume": 68.0
+            }
+          }
+        },
+        "OOLU2755465284": {
+          "shipper": "PLACE OF DELIVERY : DAKAR GUANGZHOU FUKEJIA TRADING COMPANY . ( 2401.393 CFT )",
+          "consignee": "KHADY SARR VILLA NR 51,DAKAR SENEGAL MOB: +221 773955647",
+          "notify": null,
+          "designation": "650 PACKAGES SUITCASE GROSS WEIGHT : 27500.000 KG . CTN NO.:0831890 VOLUME : 68.000 CBM . . ( 60626.50 LB )",
+          "conteneurs": {
+            "OOCU8216580": {
+              "type": "40HC",
+              "num_plomb": "OOLHRT8829",
+              "nbre_colis": 650,
+              "poids_brut": 27500.0,
+              "volume": 68.0
+            }
+          }
+        },
+        "OOLU2755469001": {
+          "shipper": "GUANGZHOU ZHIBAO FOOD SPECIAL EQUIPMENT CO., LTD",
+          "consignee": "MAME MOR GAYE PLACE OF DELIVERY : DAKAR 169A ,DAKAR SENEGAL CONTACT:MAME MOR GAYE EMAIL:MARAGAYE7@GMAIL.COM **",
+          "notify": "MAME MOR GAYE 169A ,DAKAR SENEGAL CONTACT:MAME MOR GAYE EMAIL:MARAGAYE7@GMAIL.COM **",
+          "designation": "89 PACKAGES MIX GOODS OVEN GROSS WEIGHT : 11190.000 KG . DOUGH MIXER VOLUME : 66.070 CBM . DINNING CHAIR ( 24669.47 LB )",
+          "conteneurs": {
+            "CSNU6164280": {
+              "type": "40HC",
+              "num_plomb": "OOLKHC7082",
+              "nbre_colis": 89,
+              "poids_brut": 11190.0,
+              "volume": 66.07
+            }
+          }
+        },
+        "OOLU2156413300": {
+          "shipper": "LEO GROUP PUMP (ZHEJIANG) CO.,LTD",
+          "consignee": "SAMB ABDA DAKAR - SENEGAL",
+          "notify": "KARIOX GOODS WHOLESALERS LLC SUIT NO.: 105, DARWISH BUILDING, AL RAS DEIRA PO BOX # 111931 , DUBAI U.A.E.**",
+          "designation": "2950 CARTONS DOOR LOCK GROSS WEIGHT : 28485.000 KG . BSC:0831666 VOLUME : 55.050 CBM . . ( 62798.03 LB )",
+          "conteneurs": {
+            "CSNU7992016": {
+              "type": "40HC",
+              "num_plomb": "OOLJPH8589",
+              "nbre_colis": 2950,
+              "poids_brut": 28485.0,
+              "volume": 55.05
+            }
+          }
+        },
+        "OOLU2755388750": {
+          "shipper": "TECHKING TIRES LIMITED F6, BLOCK B, JIUHUAN SCIENCE AND TECHNOLOGY BUILDING, VIA DAKAR PORT BY ( 2189.505 CFT )",
+          "consignee": "AMC TELECOM BAMAKO, MALI",
+          "notify": "AMC TELECOM BAMAKO, MALI",
+          "designation": "240 PACKAGES TIRES GROSS WEIGHT : 16130.000 KG . HS CODE :4011.20 VOLUME : 62.000 CBM . CARGO IN TRANSIT TO MALI ( 35560.20 LB )",
+          "conteneurs": {
+            "TGBU8559351": {
+              "type": "40HC",
+              "num_plomb": "OOLKDR4989",
+              "nbre_colis": 240,
+              "poids_brut": 16130.0,
+              "volume": 62.0
+            }
+          }
+        },
+        "OOLU2755654640": {
+          "shipper": "PLACE OF DELIVERY : DAKAR YIWU SENE E-COMMERCE FIRM 302, UNIT 1, BUILDING 3 LIUYUAN COMMUNITY, CHOUCHENG IRON TABLE ( 2401.393 CFT ) STREET, VIWU CITY, JINHUA BSC 0830150 CITY, ZHEJIANG PROVINCE",
+          "consignee": "HONG KONG YUEMAO CO.LIMITED ROOM 502C,5/F,HO KING COMMERCIAL CENTRE 2-16 FA YUEN STREET MONG KOK KOWLOON SWIFT CODE:IBOCUS44",
+          "notify": "MOUHAMED TINE 29, AV. A. BAMBA. COLOBANE EN FACE PLACE DE LA NATION +221 703043787",
+          "designation": "1385 CARTONS FOLDABLE BED GROSS WEIGHT : 9240.000 KG . PLASTIC TABLE VOLUME : 68.000 CBM . FURNITURE PARTS ( 20370.50 LB )",
+          "conteneurs": {
+            "TRHU5542235": {
+              "type": "40HC",
+              "num_plomb": "OOLKDK9099",
+              "nbre_colis": 1385,
+              "poids_brut": 9240.0,
+              "volume": 68.0
+            }
+          }
+        },
+        "OOLU2755469000": {
+          "shipper": "JACHION INDUSTRIAL CO., LTD",
+          "consignee": "BAMAKO ABBAS SALMAN (ULTIMATE DESTINATION) IS INDUSTRIAL AREA, ROAD 845 BAMAKO - MALI CONSIGNEE ACCOUNT FOR AND RISK OF",
+          "notify": "CONSIGNEE ABBAS SALMAN 21 DAYS FREE DETENTION AT INDUSTRIAL AREA, ROAD 845.BAMAKO - MALI",
+          "designation": "708 BALES SHOPPING BAGS GROSS WEIGHT : 23644.500 KG . CTN NO.: 841068 VOLUME : 75.820 CBM .",
+          "conteneurs": {
+            "OOCU7172511": {
+              "type": "40HC",
+              "num_plomb": "OOLHRB4216",
+              "nbre_colis": 708,
+              "poids_brut": 23644.5,
+              "volume": 75.82
+            }
+          }
+        },
+        "OOLU2754938800": {
+          "shipper": "TRIANGLE TYRE CO.,LTD",
+          "consignee": "SPRINT TECHNIQUE COTE D'IVOIRE 26 BP 1336 ABIDJAN 26 RUE PIERRE ET MARIE CURIE ZONE 4C - MARCORY - ABIDJAN COTE D'IVOIRE",
+          "notify": "SPRINT TECHNIQUE COTE D'IVOIRE 26 BP 1336 ABIDJAN 26 RUE PIERRE ET MARIE CURIE ZONE 4C - MARCORY - ABIDJAN COTE D'IVOIRE",
+          "designation": "1056 PIECES NEW TYRES GROSS WEIGHT : 76717.000 KG . BSC #CIIMP-409829 VOLUME : 300.000 CBM .",
+          "conteneurs": {
+            "CSNU7711530": {
+              "type": "40HC",
+              "num_plomb": "OOLKDL4485",
+              "nbre_colis": 206,
+              "poids_brut": 15792.0,
+              "volume": 61.754
+            },
+            "FSCU8520862": {
+              "type": "40HC",
+              "num_plomb": "OOLKDL4488",
+              "nbre_colis": 220,
+              "poids_brut": 15623.0,
+              "volume": 61.093
+            },
+            "OOLU8866112": {
+              "type": "40HC",
+              "num_plomb": "OOLKDL4422",
+              "nbre_colis": 220,
+              "poids_brut": 15622.0,
+              "volume": 61.089
+            },
+            "OOLU9586965": {
+              "type": "40HC",
+              "num_plomb": "OOLKDL4571",
+              "nbre_colis": 190,
+              "poids_brut": 14058.0,
+              "volume": 54.973
+            },
+            "TCNU6597250": {
+              "type": "40HC",
+              "num_plomb": "OOLKDL4580",
+              "nbre_colis": 220,
+              "poids_brut": 15622.0,
+              "volume": 61.089
+            }
+          }
+        },
+        "OOLU2037414710": {
+          "shipper": "SHENGTIAN INDUSTRY LIMITED",
+          "consignee": ". ( 38073.44 LB ) SDMI SARL BOPP RUE 2 X CASAMANCE BP 3134",
+          "notify": "SDMI SARL BOPP RUE 2 X CASAMANCE BP 3134",
+          "designation": "19 PACKAGES PIPE FITTING,FLANGE GROSS WEIGHT : 27008.000 KG . BSC NO.: 0821935 VOLUME : 20.000 CBM .",
+          "conteneurs": {
+            "OOCU8623543": {
+              "type": "40HC",
+              "num_plomb": "OOLJXB0468",
+              "nbre_colis": 26,
+              "poids_brut": 17270.0,
+              "volume": 15.601
+            },
+            "TEMU5797356": {
+              "type": "20DV",
+              "num_plomb": "OOLJXB0549",
+              "nbre_colis": 19,
+              "poids_brut": 27008.0,
+              "volume": 24.399
+            }
+          }
+        },
+        "OOLU2037414711": {
+          "shipper": "SHENGTIAN INDUSTRY LIMITED",
+          "consignee": "SDMI SARL BOPP RUE 2 X CASAMANCE BP 3134",
+          "notify": "SDMI SARL BOPP RUE 2 X CASAMANCE BP 3134",
+          "designation": "35 PACKAGES PIPE FITTING,FLANGE GROSS WEIGHT : 52484.000 KG . BSC NO.:0821937 VOLUME : 40.000 CBM .",
+          "conteneurs": {
+            "BMOU1660145": {
+              "type": "20DV",
+              "num_plomb": "OOLJXB0585",
+              "nbre_colis": 18,
+              "poids_brut": 24889.0,
+              "volume": 18.969
+            },
+            "FBIU0386205": {
+              "type": "20DV",
+              "num_plomb": "OOLJXB0586",
+              "nbre_colis": 17,
+              "poids_brut": 27595.0,
+              "volume": 21.031
+            }
+          }
+        },
+        "OOLU2754571620": {
+          "shipper": "BEIJING DONGLINCHANGSHENG BIOTECHNOLOGY CO., LTD BENEFICIARY ADDRESS: NO.484, AUTO PARTS ( 923.830 CFT ) DONGSHA GEZHUANG, BEI QI JIA CONSTRUCTION MACHINERY PARTS TOWN,* SAFETY FOOTWEAR CTN:0827705",
+          "consignee": "NOM: PAPE LOUM L'ADRESSE :HANN MARINAS CITE ISRA VILLA NO.4 DAKAR SENEGAL EMAIL :OLIVIA_SONG_EP@163.COM",
+          "notify": "NOM: PAPE LOUM L'ADRESSE :HANN MARINAS CITE ISRA VILLA NO.4 DAKAR SENEGAL EMAIL :OLIVIA_SONG_EP@163.COM",
+          "designation": "35 PACKAGES GENERATOR SET GROSS WEIGHT : 9365.000 KG . ROAD ROLLER VOLUME : 26.160 CBM . BUCKET TOOTH ( 20646.08 LB )",
+          "conteneurs": {
+            "CSNU2128937": {
+              "type": "20DV",
+              "num_plomb": "OOLJXH6452",
+              "nbre_colis": 35,
+              "poids_brut": 9365.0,
+              "volume": 26.16
+            }
+          }
+        },
+        "OOLU2754616490": {
+          "shipper": "TIANJIN NOKA IMPORT AND EXPORT TRADING COMPANY",
+          "consignee": "JEANS LOUIS DOUCROU HANN-MARISTE 2, VILLA X25-DAKAR 99 DAKAR, SENEGAL DOUCROU@GMAIL.COM TAX ID: PPM 78533 **",
+          "notify": "JEANS LOUIS DOUCROU HANN-MARISTE 2, VILLA X25-DAKAR 99 DAKAR, SENEGAL DOUCROU@GMAIL.COM TAX ID: PPM 78533 **",
+          "designation": "1004 CARTONS DINING CHAIR GROSS WEIGHT : 18613.060 KG . DINING TABLE VOLUME : 131.482 CBM . BED ( 41034.35 LB )",
+          "conteneurs": {
+            "FSCU7273921": {
+              "type": "40HC",
+              "num_plomb": "OOLJXC0550",
+              "nbre_colis": 618,
+              "poids_brut": 10438.5,
+              "volume": 73.737
+            },
+            "TRHU4525676": {
+              "type": "40HC",
+              "num_plomb": "OOLJXC3333",
+              "nbre_colis": 386,
+              "poids_brut": 8174.56,
+              "volume": 57.745
+            }
+          }
+        },
+        "OOLU2754746080": {
+          "shipper": "TIANJIN FRIEND IMPORT EXPORT CO., LTD CUIJIAZHUANG INDUSTRIAL BLACK SEAMLESS STEEL ( 1412.584 CFT ) AREA,DAQIUZHUANG TOWN, PIPE WITH FLANGE JINGHAI COUNTY,TIANJIN* CARGO IN TRANSIT FINAL DESTINATION MALI",
+          "consignee": "AFRICAN TRADE MARKET AND SERVICES DE LA SURETE, BAMAKO, MALI",
+          "notify": "BRIDGE AFRICA CONSULTING SARL DJICORONI PARA, DONTEME II BAMAKO, MALI",
+          "designation": "73 PACKAGES SQUARRE TUBE GROSS WEIGHT : 54210.000 KG . ANGLE IRON VOLUME : 40.000 CBM . STEEL PLATE ( 119511.37 LB )",
+          "conteneurs": {
+            "OOCU7174514": {
+              "type": "40HC",
+              "num_plomb": "OOLKFL5716",
+              "nbre_colis": 15,
+              "poids_brut": 26702.0,
+              "volume": 19.703
+            },
+            "OOCU9054138": {
+              "type": "40HC",
+              "num_plomb": "OOLKFL5657",
+              "nbre_colis": 58,
+              "poids_brut": 27508.0,
+              "volume": 20.297
+            }
+          }
+        }
+      }
+    },
+    "NANSHA": {
+      "bls": {
+        "OOLU2306588080": {
+          "shipper": "CHENSI INT'L LIMITED",
+          "consignee": "FLECHE LIGNE SARL NIGER A COTE DE LA STATION CORRIDOR;MALI CONTACT: LI YUJIE*",
+          "notify": null,
+          "designation": "912 CARTONS FURNITURE GROSS WEIGHT : 21650.000 KG . CARGO TRANSIT TO MALI VIA VOLUME : 68.000 CBM .",
+          "conteneurs": {
+            "OOLU6937500": {
+              "type": "40HC",
+              "num_plomb": "OOLKHB1623",
+              "nbre_colis": 912,
+              "poids_brut": 21650.0,
+              "volume": 68.0
+            }
+          }
+        },
+        "OOLU2755545040": {
+          "shipper": "PLACE OF DELIVERY : DAKAR GUANGZHOU FUKEJIA TRADING COMPANY . ( 2401.393 CFT )",
+          "consignee": "KHADY SARR VILLA NR 51 DAKAR SENEGAL MOB: +221 773955647",
+          "notify": null,
+          "designation": "650 PACKAGES SUITCASE GROSS WEIGHT : 27500.000 KG . CTN NO.:0833178 VOLUME : 68.000 CBM . . ( 60626.50 LB )",
+          "conteneurs": {
+            "DRYU9746040": {
+              "type": "40HC",
+              "num_plomb": "OOLKHC4981",
+              "nbre_colis": 650,
+              "poids_brut": 27500.0,
+              "volume": 68.0
+            }
+          }
+        },
+        "OOLU2755987301": {
+          "shipper": "GUANGDONG RIFU INTELLIGENT EQUIPMENT CO. ,LTD",
+          "consignee": "UNIVERSAL COLORS A L ATTENTIONNDE ZOHRA AYAD DIAMNIADIO SITE DE L APROSI MAIL : **",
+          "notify": null,
+          "designation": "10 PACKAGES BAG PACKING MACHINE 2 SETS GROSS WEIGHT : 6220.000 KG . AIR TANKER VOLUME : 30.510 CBM . DRILL MACHINE ( 13712.61 LB )",
+          "conteneurs": {
+            "TGBU8584776": {
+              "type": "40HC",
+              "num_plomb": "OOLHRT9006",
+              "nbre_colis": 10,
+              "poids_brut": 6220.0,
+              "volume": 30.51
+            }
+          }
+        },
+        "OOLU2755434060": {
+          "shipper": "MDF WOOD PANEL GUANGXI FORESTRY INDUSTRY IMPORT AND EXPORT TRADING CO.,LTD ECTN# 0832672 ( 1135.329 CFT )",
+          "consignee": "MEGABAT SAS DAKAR SENEGAL RUE MARCHAND X AUTOROUTE,IMMEUBLE NDINDY C,6EM ETAGE, APPARTEMENT 46",
+          "notify": "MEGABAT SAS DAKAR SENEGAL RUE MARCHAND X AUTOROUTE,IMMEUBLE NDINDY C,6EM ETAGE, APPARTEMENT 46",
+          "designation": "12 PALLETS MEDIUM DENSITY FIBERBOARD GROSS WEIGHT : 28350.000 KG . (MDF) VOLUME : 32.149 CBM . 2440X1220X6MM ( 62500.41 LB )",
+          "conteneurs": {
+            "FCIU7085735": {
+              "type": "40HC",
+              "num_plomb": "OOLJKC7320",
+              "nbre_colis": 12,
+              "poids_brut": 28350.0,
+              "volume": 32.149
+            }
+          }
+        },
+        "OOLU2156379880": {
+          "shipper": "2134686 TRI STAR ELECTRONICS PTE LTD #04-01, CHIAT HONG BUILDING",
+          "consignee": "DISCHARGE TO SHIPPER'S ORDER",
+          "notify": "AMADOU WURRY JALLOW BANJUL, GAMBIA",
+          "designation": "600 CARTONS AIR CONDITIONER GROSS WEIGHT : 11134.620 KG . VOLUME : 66.450 CBM . GOODS IN TRANSIT TO BANJUL ( 24547.38 LB )",
+          "conteneurs": {
+            "CSNU7372099": {
+              "type": "40HC",
+              "num_plomb": "OOLJYP1012",
+              "nbre_colis": 600,
+              "poids_brut": 11134.62,
+              "volume": 66.45
+            }
+          }
+        },
+        "OOLU2755433670": {
+          "shipper": "XIAMEN MEIRUIYA IMPORT AND EXPORT CO., LTD",
+          "consignee": "MR.IDRISSA SAMBOU 8 RUE RAMEZ BOURGI BP.2649, DAKAR RP,DAKAR SENEGAL",
+          "notify": null,
+          "designation": "1296 CARTONS HOUSEHOLD APPLIANCES GROSS WEIGHT : 7983.340 KG . (LED TV AND SPARE PARTS) VOLUME : 68.000 CBM . FACTURE BSC NO.0834738 ( 17600.07 LB )",
+          "conteneurs": {
+            "CSLU6061650": {
+              "type": "40HC",
+              "num_plomb": "OOLJYP7346",
+              "nbre_colis": 1296,
+              "poids_brut": 7983.34,
+              "volume": 68.0
+            }
+          }
+        }
+      }
+    },
+    "ZHOUSHAN": {
+      "bls": {
+        "OOLU2755618130": {
+          "shipper": "HONLE GROUP CO.,LTD",
+          "consignee": "RSI - CDI KOUMASSI 2 ELECDIS-CI EMAIL: GEOMELKI@OUTLOOK.COM**",
+          "notify": "RSI - CDI KOUMASSI 2 ELECDIS-CI EMAIL: GEOMELKI@OUTLOOK.COM**",
+          "designation": "10 CARTONS OIL TRANSFORMERS GROSS WEIGHT : 13832.000 KG . ECTN# C311032793 VOLUME : 22.320 CBM .",
+          "conteneurs": {
+            "TIIU6292244": {
+              "type": "40HC",
+              "num_plomb": "OOLJPH9042",
+              "nbre_colis": 10,
+              "poids_brut": 13832.0,
+              "volume": 22.32
+            }
+          }
+        },
+        "OOLU2755700300": {
+          "shipper": "YOUNGKING INDUSTRIAL LIMITED 2/F,KAM LUNG COM CONSIGNEE'S OWN RISK ( 2401.393 CFT ) ETHRTAVENUE ,TST,KL AND COST, CARRIER'S LIABILITY CEASES AT",
+          "consignee": "DAKAR,SENEGAL M/S. DOUCOURE IBRAHIM BP.3078-BAMAKO MALI",
+          "notify": "M/S. DOUCOURE IBRAHIM BP.3078-BAMAKO MALI",
+          "designation": "1105 PACKAGES SOLAR PANEL GROSS WEIGHT : 20774.000 KG . CTN :B55284283 VOLUME : 68.000 CBM . IN TRANSIT TO BAMAKO MALI ON ( 45798.36 LB )",
+          "conteneurs": {
+            "CSNU6265990": {
+              "type": "40HC",
+              "num_plomb": "OOLJPG6094",
+              "nbre_colis": 1105,
+              "poids_brut": 20774.0,
+              "volume": 68.0
+            }
+          }
+        }
+      }
+    },
+    "QINGDAO": {
+      "bls": {
+        "OOLU2755838140": {
+          "shipper": "HIGH TECH INTL SCM COMPANY",
+          "consignee": "( 4802.786 CFT ) GLOBAL BETY NEGOCE DOUMBOUYAFATIM@KARTA.CI",
+          "notify": "GLOBAL BETY NEGOCE DOUMBOUYAFATIM@KARTA.CI",
+          "designation": "593 PACKAGES CARBON BLACK GROSS WEIGHT : 54800.000 KG . . VOLUME : 136.000 CBM . ( 120812.08 LB )",
+          "conteneurs": {
+            "CSNU8670950": {
+              "type": "40HC",
+              "num_plomb": "OOLKDL7836",
+              "nbre_colis": 323,
+              "poids_brut": 28000.0,
+              "volume": 69.489
+            },
+            "TRHU6930472": {
+              "type": "40HC",
+              "num_plomb": "OOLKDR1721",
+              "nbre_colis": 270,
+              "poids_brut": 26800.0,
+              "volume": 66.511
+            }
+          }
+        },
+        "OOLU2755575000": {
+          "shipper": "LINYI LION KING INTERNATIONAL TRADE CO.,LTD LANSHAN DISTRICT,LINYI CITY SHANDONG PROVINCE,CHINA",
+          "consignee": "NDIAGA MBODJI 37 RUE GALANDOU DIOUF DAKAR SENEGAL",
+          "notify": "NDIAGA MBODJI 37 RUE GALANDOU DIOUF DAKAR SENEGAL",
+          "designation": "19 PALLETS FILM FACED PLYWOOD GROSS WEIGHT : 27800.000 KG . UV MARBLE VOLUME : 48.330 CBM . CTN NO:0833113 ( 61287.88 LB ) ( 1706.755 CFT )",
+          "conteneurs": {
+            "FFAU5937434": {
+              "type": "40HC",
+              "num_plomb": "OOLKDL7623",
+              "nbre_colis": 19,
+              "poids_brut": 27800.0,
+              "volume": 48.33
+            }
+          }
+        },
+        "OOLU2755789880": {
+          "shipper": "PLACE OF DELIVERY : DAKAR SHANDONG RETECH FARMING TECHNOLOGY CO.,LTD",
+          "consignee": "KPAX SENEGAL GANDIGAL-CARITAS,PARCELLE NO CONTACT PERSON:MAMADOU FALL",
+          "notify": "KPAX SENEGAL GANDIGAL-CARITAS,PARCELLE NO CONTACT PERSON:MAMADOU FALL",
+          "designation": "914 PACKAGES PREFAB CHICKEN HOUSE GROSS WEIGHT : 59010.000 KG . ECTN NO.:BSC# 0830676 VOLUME : 162.000 CBM . . ( 130093.45 LB )",
+          "conteneurs": {
+            "OOCU9236997": {
+              "type": "40HC",
+              "num_plomb": "OOLKDM0954",
+              "nbre_colis": 407,
+              "poids_brut": 18030.0,
+              "volume": 49.498
+            },
+            "SEKU4656768": {
+              "type": "40HC",
+              "num_plomb": "OOLKDL7763",
+              "nbre_colis": 387,
+              "poids_brut": 16310.0,
+              "volume": 44.776
+            },
+            "TRHU2494447": {
+              "type": "20DV",
+              "num_plomb": "OOLKDM1245",
+              "nbre_colis": 120,
+              "poids_brut": 24670.0,
+              "volume": 67.726
+            }
+          }
+        },
+        "OOLU2755952720": {
+          "shipper": "SHANDONG HAOHUA TIRE CO., LTD HOUZHEN INDUSTRY ZONE SHOUGUANG,SHANDONG,CHINA",
+          "consignee": "BOUSSO GUEYE CITE CAPVERDIENNE PRES DES COLIS POSTAUX DAKAR SENEGAL (LOCAL TEL): 221 33 837 08 66/ 77 148 22 73",
+          "notify": "BOUSSO GUEYE CITE CAPVERDIENNE PRES DES COLIS POSTAUX DAKAR SENEGAL (LOCAL TEL): 221 33 837 08 66/ 77 148 22 73",
+          "designation": "720 PIECES TIRES GROSS WEIGHT : 18940.400 KG . BSC NUMBER:0834173 VOLUME : 62.000 CBM . . ( 41756.01 LB ) ( 2189.505 CFT )",
+          "conteneurs": {
+            "OOCU7589383": {
+              "type": "40HC",
+              "num_plomb": "OOLKDL8470",
+              "nbre_colis": 720,
+              "poids_brut": 18940.4,
+              "volume": 62.0
+            }
+          }
+        }
+      }
+    },
+    "XIAMEN": {
+      "bls": {
+        "OOLU2306372620": {
+          "shipper": "DONGSHAN XINHEFA FOOD CO.,LTD TRADE AND INDUSTRIAL ZONE,TONGLING TOWN DONGSHAN TOTAL:4080CARTONS ( 5297.190 CFT ) COUNTY,FUJIAN,CHINA TOTAL NET WEIGHT:81600KGS O/B J. MARR (SEAFOODS) LIMITED TOTAL BSC NO",
+          "consignee": "CDPA-CI SARL 05 BP 86 ABIDJAN 05 COTE D'IVOIRE",
+          "notify": "CDPA-CI SARL 05 BP 86 ABIDJAN 05 COTE D'IVOIRE",
+          "designation": "4080 CARTONS FROZEN FISH(TILAPIA) GROSS WEIGHT : 85680.000 KG . TEMP SET AT:-20C VOLUME : 150.000 CBM . VENT SET AT:CLOSED ( 188890.13 LB ) GROSS WEIGHT:85680KGS",
+          "conteneurs": {
+            "FSCU5315587": {
+              "type": "40RQ",
+              "num_plomb": "OOLJXM4873",
+              "nbre_colis": 1360,
+              "poids_brut": 28560.0,
+              "volume": 50.0
+            },
+            "OOLU6464747": {
+              "type": "40RQ",
+              "num_plomb": "OOLJXM6086",
+              "nbre_colis": 1360,
+              "poids_brut": 28560.0,
+              "volume": 50.0
+            },
+            "OOLU6512486": {
+              "type": "40RQ",
+              "num_plomb": "OOLJXM4937",
+              "nbre_colis": 1360,
+              "poids_brut": 28560.0,
+              "volume": 50.0
+            }
+          }
+        },
+        "OOLU2306372660": {
+          "shipper": "DONGSHAN XINHEFA FOOD CO.,LTD TRADE AND INDUSTRIAL PLACE OF DELIVERY : ABIDJAN ZONE,TONGLING TOWN DONGSHAN TOTAL:4080CARTONS ( 5297.190 CFT ) COUNTY,FUJIAN,CHINA TOTAL NET WEIGHT:81600KGS O/B J. MARR (SEAFOODS) LIMITED TOTAL BSC NO",
+          "consignee": "CDPA-CI SARL 05 BP 86 ABIDJAN 05 COTE D'IVOIRE",
+          "notify": "CDPA-CI SARL 05 BP 86 ABIDJAN 05 COTE D'IVOIRE",
+          "designation": "4080 CARTONS FROZEN FISH(TILAPIA) GROSS WEIGHT : 85680.000 KG . TEMP SET AT:-20C VOLUME : 150.000 CBM . VENT SET AT:CLOSED ( 188890.13 LB ) GROSS WEIGHT:85680KGS",
+          "conteneurs": {
+            "OOLU6210336": {
+              "type": "40RQ",
+              "num_plomb": "OOLJXM6074",
+              "nbre_colis": 1360,
+              "poids_brut": 28560.0,
+              "volume": 50.0
+            },
+            "OOLU6427928": {
+              "type": "40RQ",
+              "num_plomb": "OOLJXM4821",
+              "nbre_colis": 1360,
+              "poids_brut": 28560.0,
+              "volume": 50.0
+            },
+            "OOLU6486514": {
+              "type": "40RQ",
+              "num_plomb": "OOLJXM4828",
+              "nbre_colis": 1360,
+              "poids_brut": 28560.0,
+              "volume": 50.0
+            }
+          }
+        },
+        "OOLU2306389690": {
+          "shipper": "FUJIAN MING XING FROZEN FOOD CO.,LTD LINTOU ZHAOAN ZHANGZHOU FUJIAN P.R. CHINA TO MALI AT CONSIGNEE'S RISK COST AND",
+          "consignee": "DIABY GRAND MARCHE DE BAMAKO PLACE OF DELIVERY : ABIDJAN IMMEUBLE HALIMATOU DIABY DIBIDA BAMAKO MALI",
+          "notify": "DIABY GRAND MARCHE DE BAMAKO IMMEUBLE HALIMATOU DIABY DIBIDA BAMAKO MALI",
+          "designation": "16250 CARTONS CANNED SARDINES IN VEGETABLE GROSS WEIGHT : 126750.000 KG . OIL VOLUME : 125.000 CBM . 50X125G ( 279433.05 LB ) CARGO IN TRANSIT FROM ABIDJAN ( 4414.325 CFT )",
+          "conteneurs": {
+            "CSNU1827966": {
+              "type": "20DV",
+              "num_plomb": "OOLJXP7348",
+              "nbre_colis": 3250,
+              "poids_brut": 25350.0,
+              "volume": 25.0
+            },
+            "FCIU5242141": {
+              "type": "20DV",
+              "num_plomb": "OOLJXP7288",
+              "nbre_colis": 3250,
+              "poids_brut": 25350.0,
+              "volume": 25.0
+            },
+            "OOLU0176321": {
+              "type": "20DV",
+              "num_plomb": "OOLJXP7316",
+              "nbre_colis": 3250,
+              "poids_brut": 25350.0,
+              "volume": 25.0
+            },
+            "OOLU2939802": {
+              "type": "20DV",
+              "num_plomb": "OOLJXP7398",
+              "nbre_colis": 3250,
+              "poids_brut": 25350.0,
+              "volume": 25.0
+            },
+            "TEMU3129907": {
+              "type": "20DV",
+              "num_plomb": "OOLJXP7290",
+              "nbre_colis": 3250,
+              "poids_brut": 25350.0,
+              "volume": 25.0
+            }
+          }
+        },
+        "OOLU2306632210": {
+          "shipper": "CPA QUANZHOU MINGYANG AUTOMOBILE PARTS CO., LTD",
+          "consignee": "AFRICA IMPORT SARL CELL: 05 74 00 05 85/05 86 13 37 00 PLACE OF DELIVERY : ABIDJAN",
+          "notify": "AFRICA IMPORT SARL CELL: 05 74 00 05 85/05 86 13 37 00",
+          "designation": "1142 PACKAGES BOLTS AND NUTS GROSS WEIGHT : 27839.050 KG . AIR BRAKE CHAMBER VOLUME : 28.700 CBM . FILTERS ( 61373.97 LB )",
+          "conteneurs": {
+            "UETU2259121": {
+              "type": "20DV",
+              "num_plomb": "OOLJXM4482",
+              "nbre_colis": 1142,
+              "poids_brut": 27839.05,
+              "volume": 28.7
+            }
+          }
+        },
+        "OOLU2306722000": {
+          "shipper": "DONGSHAN XINHEFA FOOD CO.,LTD TRADE AND INDUSTRIAL ZONE,TONGLING TOWN DONGSHAN TEMP SET AT: -20C ( 1765.730 CFT ) COUNTY,FUJIAN,CHINA VENT SET AT: CLOSED O/B QUANZHOU YANGHUA FISHERY*",
+          "consignee": "CIIDPH(COMPTOIR IVOIRIEN D'IMPORTATION DE PRODUITS HALIEUTIQUE) 109 BIS RUE DES GARGOTES PORT DE PECHE, ABIDJAN** PLACE OF DELIVERY : ABIDJAN",
+          "notify": "CIIDPH(COMPTOIR IVOIRIEN D'IMPORTATION DE PRODUITS HALIEUTIQUE) 109 BIS RUE DES GARGOTES PORT DE PECHE, ABIDJAN**",
+          "designation": "2615 CARTONS FROZEN TILAPIA WR GROSS WEIGHT : 27719.000 KG . TOTAL NET WEIGHT: 26150KGS VOLUME : 50.000 CBM . ( 61109.31 LB )",
+          "conteneurs": {
+            "FSCU5346248": {
+              "type": "40RQ",
+              "num_plomb": "OOLJRM1027",
+              "nbre_colis": 2615,
+              "poids_brut": 27719.0,
+              "volume": 50.0
+            }
+          }
+        },
+        "OOLU2306420350": {
+          "shipper": "KEY RISE INTERNATIONAL LIMITED 5TH FLOOR, UNIT H, ALPHA HOUSE,27-33 NATHAN ROAD, GABMIA AT CONSIGNEE'S RISK, ( 2401.393 CFT ) TSIM SHA TSUI,KOWLOON, COST AND HONG KONG",
+          "consignee": "KAIRABA BALDEH ANGLESEAN STREET BANJUL, THE GAMBIA",
+          "notify": "KAIRABA BALDEH ANGLESEAN STREET BANJUL, THE GAMBIA",
+          "designation": "1998 CARTONS MOSQUITO COIL GROSS WEIGHT : 26973.000 KG . VOLUME : 68.000 CBM . GOODS IN-TRANSIT TO BANJUL, ( 59464.68 LB )",
+          "conteneurs": {
+            "OOCU8040973": {
+              "type": "40HC",
+              "num_plomb": "OOLJRH1415",
+              "nbre_colis": 1998,
+              "poids_brut": 26973.0,
+              "volume": 68.0
+            }
+          }
+        }
+      }
+    }
+  }
+}

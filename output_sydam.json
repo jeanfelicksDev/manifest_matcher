@@ -1,0 +1,744 @@
+{
+  "navire": "DOLPHIN II",
+  "numero_voyage": "63E",
+  "eta": "10/03/2026",
+  "ports": {
+    "CNSHA": {
+      "bls": {
+        "OOLU2165193220": {
+          "shipper": "FEDRIGONI (ANHUI) SELF ADHESIVEMATERIAL - PP WHITE",
+          "consignee": "AFRIPACK",
+          "notify": "AFRIPACK",
+          "designation": "SELF ADHESIVE MATERIAL - COATED80HS CODE 48114190 SHANGHAI  154,917.29 M2 182REELS ON 40 AFRIPACK",
+          "conteneurs": {
+            "TIIU4912578": {
+              "type": "40HC",
+              "num_plomb": "OOLKPP7439",
+              "nbre_colis": 40,
+              "poids_brut": 50615.0,
+              "volume": null
+            }
+          }
+        },
+        "OOLU2318938980": {
+          "shipper": "HEBEI JIAHE IMPORT EXPORT COST,CARRIERSLIABILITYCEASES DETENTION AT DESTINATION",
+          "consignee": "JIWO COMMERCE SARL",
+          "notify": "JIWO COMMERCE SARL",
+          "designation": "NICOSULFURON 40G/L OD HERBICIDE INTRANSIT TO MALI ON SHANGHAI Carton CONSIGNEESOWN RISK AND AT ABIDJAN PORT. 21 DAYSFREE OF",
+          "conteneurs": {
+            "OCU49138": {
+              "type": "40DV",
+              "num_plomb": "OOLKPW2588",
+              "nbre_colis": 2079,
+              "poids_brut": 25988.0,
+              "volume": null
+            }
+          }
+        },
+        "OOLU2165538470": {
+          "shipper": "XIAOBEI FURNITURE EXPORT EQUIPMENTSHOES",
+          "consignee": "SIAFCI",
+          "notify": "SIAFCI",
+          "designation": "HOWO 4X2 LIGHT TRUCKVINNO.:LZZ5BADC7SE573378",
+          "conteneurs": {
+            "AGCZ0000983": {
+              "type": "40HC",
+              "num_plomb": "OOLKPV2218",
+              "nbre_colis": 63,
+              "poids_brut": 6810.0,
+              "volume": null
+            }
+          }
+        },
+        "OOLU2165247280": {
+          "shipper": "SUZHOU MEDELAN MEDICAL CO.,",
+          "consignee": "COBATIMED SARL",
+          "notify": "COBATIMED SARL",
+          "designation": "MEDICAL PRODUCTS SHANGHAI Carton",
+          "conteneurs": {
+            "HU530390": {
+              "type": "40HC",
+              "num_plomb": "OOLKPV3121",
+              "nbre_colis": 803,
+              "poids_brut": 10409.0,
+              "volume": null
+            }
+          }
+        },
+        "OOLU2317529100": {
+          "shipper": "MAINLAND GROUP (HONGKONG) SHANGHAI PLASTIQUE",
+          "consignee": "SOCIETE MODERNE DE",
+          "notify": "SOCIETE MODERNE DE",
+          "designation": "HDPEHS:390190 SOCIETE MODERNE DE",
+          "conteneurs": {
+            "OOCU7749033": {
+              "type": "40HC",
+              "num_plomb": "OOLKPY7588",
+              "nbre_colis": 1055,
+              "poids_brut": 1055.0,
+              "volume": null
+            },
+            "CSNU6330653": {
+              "type": "40HC",
+              "num_plomb": "OOLKPY7584",
+              "nbre_colis": 1055,
+              "poids_brut": 1055.0,
+              "volume": null
+            },
+            "OOLU6868522": {
+              "type": "40HC",
+              "num_plomb": "OOLKPS1451",
+              "nbre_colis": 1055,
+              "poids_brut": 1055.0,
+              "volume": null
+            },
+            "CSNU7807020": {
+              "type": "40HC",
+              "num_plomb": "OOLKPS1465",
+              "nbre_colis": 1055,
+              "poids_brut": 1055.0,
+              "volume": null
+            },
+            "SEKU4566659": {
+              "type": "40HC",
+              "num_plomb": "OOLKPS1460",
+              "nbre_colis": 1055,
+              "poids_brut": 1055.0,
+              "volume": null
+            },
+            "OOCU8176682": {
+              "type": "40HC",
+              "num_plomb": "OOLKPS1467",
+              "nbre_colis": 1055,
+              "poids_brut": 1055.0,
+              "volume": null
+            }
+          }
+        },
+        "OOLU4125246560": {
+          "shipper": "SHANDONG WEST AFRICA SHANGHAI",
+          "consignee": "ZONDACI SARL",
+          "notify": "ZONDACI SARL",
+          "designation": "DECORATION MATERIALS",
+          "conteneurs": {
+            "OLU94847": {
+              "type": "40HC",
+              "num_plomb": "OOLKPN1440",
+              "nbre_colis": 53,
+              "poids_brut": 6390.0,
+              "volume": null
+            }
+          }
+        },
+        "OOLU2317713700": {
+          "shipper": "JAC HEAVY DUTY IMPORT AND",
+          "consignee": "SPRIINT TECHNIQUE COTE",
+          "notify": "SPRIINT TECHNIQUE COTE",
+          "designation": "20 PACKAGE(S) OF 20 PACKAGES OF 5NEW JAC FORKLIFTS MODEL SHANGHAI  CPQYD25,CPQYD30,CPCD40 TOTALWEIGHT:23440KGS 5 SPRIINT TECHNIQUE COTE",
+          "conteneurs": {
+            "CCLU7810453": {
+              "type": "40HC",
+              "num_plomb": "OOLJWR7544",
+              "nbre_colis": 20,
+              "poids_brut": 47860.0,
+              "volume": null
+            }
+          }
+        },
+        "OOLU2318128960": {
+          "shipper": "KAIFENG JETOUR AUTOMOBILE",
+          "consignee": "AMADOU LAH",
+          "notify": "AMADOU LAH",
+          "designation": "JETOUR T2 HS 870323 YEAR OFMANUFACTURE:2025 SHANGHAI  VIN:LVTDD24B1TDB62179LVTDD24B1 3LVTDD24B3TDB65696LVTDD24B8 AMADOU LAH",
+          "conteneurs": {
+            "MAGU5269086": {
+              "type": "40HC",
+              "num_plomb": "OOLKPQ8448",
+              "nbre_colis": 3,
+              "poids_brut": 22560.0,
+              "volume": null
+            },
+            "TGBU8953350": {
+              "type": "40HC",
+              "num_plomb": "OOLKPQ8499",
+              "nbre_colis": 3,
+              "poids_brut": 22560.0,
+              "volume": null
+            },
+            "OOCU8238824": {
+              "type": "40HC",
+              "num_plomb": "OOLKPQ8443",
+              "nbre_colis": 3,
+              "poids_brut": 22560.0,
+              "volume": null
+            }
+          }
+        },
+        "OOLU2318938380": {
+          "shipper": "HEBEI JIAHE IMPORT EXPORT ANDCOST,CARRIER S LIABILITY FREE OF DETENTION",
+          "consignee": "JIWO COMMERCE SARL",
+          "notify": "JIWO COMMERCE SARL",
+          "designation": "75.7% GLYPHOSATE AMMONIUM SGHERBICIDE IN TRANSIT TO MALI SHANGHAI Carton ONCONSIGNEE S OWN RISK CEASES AT ABIDJANPORT. 21 DAYS",
+          "conteneurs": {
+            "OLU68072": {
+              "type": "40HC",
+              "num_plomb": "OOLKPV2390",
+              "nbre_colis": 2205,
+              "poids_brut": 24806.0,
+              "volume": null
+            }
+          }
+        }
+      }
+    },
+    "CNTAO": {
+      "bls": {
+        "OOLU2319022650": {
+          "shipper": "GUANGZHOU HUANRUN IMPORT QINGDAO",
+          "consignee": "SABABOU SARL",
+          "notify": "SABABOU SARL",
+          "designation": "DISC PLOUGHBOOM SPRAYERDISC HARROWSEEDER",
+          "conteneurs": {
+            "OCU91149": {
+              "type": "40HC",
+              "num_plomb": "OOLKWV9965",
+              "nbre_colis": 102,
+              "poids_brut": 28670.0,
+              "volume": null
+            }
+          }
+        },
+        "OOLU2319039250": {
+          "shipper": "LOVOL HEAVY INDUSTRY GROUP",
+          "consignee": "1)CFAO MOBILITY COTE D IVOIRE",
+          "notify": "1)CFAO MOBILITY COTE D IVOIRE",
+          "designation": "2UNIT BACKHOE LOADER FLB468-II CO.  VINNO.:CLW009LDVSX003264 QINGDAO  ENGINENUMBER:4P25F002294 HSCODE:8429590000 NUMBER CFAO MOBILITY COTE D IVOIRE,",
+          "conteneurs": {
+            "CSNU6117550": {
+              "type": "40HC",
+              "num_plomb": "OOLKWL2602",
+              "nbre_colis": 9,
+              "poids_brut": 53980.0,
+              "volume": null
+            },
+            "TCNU1988138": {
+              "type": "40HC",
+              "num_plomb": "OOLKWK6230",
+              "nbre_colis": 18,
+              "poids_brut": 53980.0,
+              "volume": null
+            }
+          }
+        },
+        "OOLU2319098760": {
+          "shipper": "FIGART INTERNATIONAL TRADE QINGDAO",
+          "consignee": "S D GROUP SARL",
+          "notify": "S D GROUP SARL",
+          "designation": "OLD TOYOTA HIGHLANDEROLD MODERN IX35OLD KIA SEDONA",
+          "conteneurs": {
+            "NU587113": {
+              "type": "40HC",
+              "num_plomb": "OOLKWL1785",
+              "nbre_colis": 3,
+              "poids_brut": 6450.0,
+              "volume": null
+            }
+          }
+        },
+        "OOLU2318847430": {
+          "shipper": "SPEED SUCCESS INDUSTRIAL QINGDAO",
+          "consignee": "GLOBAL IMPORT SARL",
+          "notify": "GLOBAL IMPORT SARL",
+          "designation": "DOORS AND FITTINGS",
+          "conteneurs": {
+            "OCU69986": {
+              "type": "40HC",
+              "num_plomb": "OOLKWL3665",
+              "nbre_colis": 990,
+              "poids_brut": 20730.0,
+              "volume": null
+            }
+          }
+        },
+        "OOLU2165766990": {
+          "shipper": "HIGH TECH INTL SCM COMPANY QINGDAO",
+          "consignee": "GLOBAL BETY NEGOCE",
+          "notify": "GLOBAL BETY NEGOCE",
+          "designation": "CARBON BLACK GLOBAL BETY NEGOCE",
+          "conteneurs": {
+            "FCIU9965977": {
+              "type": "40HC",
+              "num_plomb": "OOLKWL2866",
+              "nbre_colis": 556,
+              "poids_brut": 55229.0,
+              "volume": null
+            }
+          }
+        },
+        "OOLU2319101310": {
+          "shipper": "TRIANGLE TYRE CO.,LTD QINGDAO",
+          "consignee": "SPRIINT TECHNIQUE",
+          "notify": "SPRIINT TECHNIQUE",
+          "designation": "NEW TYRESBSC: #CIIMP- 518224SHIPPED ON BOARD SPRIINT TECHNIQUE",
+          "conteneurs": {
+            "OOCU9785106": {
+              "type": "40HC",
+              "num_plomb": "OOLKPD3425",
+              "nbre_colis": 25,
+              "poids_brut": 107335.0,
+              "volume": null
+            },
+            "DFSU7404538": {
+              "type": "40HC",
+              "num_plomb": "OOLKPD3550",
+              "nbre_colis": 50,
+              "poids_brut": 107335.0,
+              "volume": null
+            },
+            "BEAU6053915": {
+              "type": "40HC",
+              "num_plomb": "OOLKPD3466",
+              "nbre_colis": 25,
+              "poids_brut": 107335.0,
+              "volume": null
+            },
+            "CSNU7873439": {
+              "type": "40HC",
+              "num_plomb": "OOLKPD3491",
+              "nbre_colis": 25,
+              "poids_brut": 107335.0,
+              "volume": null
+            },
+            "TCNU5916619": {
+              "type": "40HC",
+              "num_plomb": "OOLKDL4493",
+              "nbre_colis": 12,
+              "poids_brut": 107335.0,
+              "volume": null
+            },
+            "FSCU8462405": {
+              "type": "40HC",
+              "num_plomb": "OOLKDL4434",
+              "nbre_colis": 25,
+              "poids_brut": 107335.0,
+              "volume": null
+            }
+          }
+        },
+        "OOLU8881369560": {
+          "shipper": "QINGDAO FREE TRADE ZONE",
+          "consignee": "SUPLICA B.V.",
+          "notify": "SUPLICA B.V.",
+          "designation": "PURCHASE ORDER NO.:OP2545044221.1110 100% QINGDAO  COTTON GREY CLOTH-1100-TUCK-IN 509187 UNIWAX S.A.",
+          "conteneurs": {
+            "OOCU8990364": {
+              "type": "40HC",
+              "num_plomb": "OOLKWL6268",
+              "nbre_colis": 32,
+              "poids_brut": 55541.0,
+              "volume": null
+            }
+          }
+        },
+        "OOLU2319036330": {
+          "shipper": "SHANDONG WEICHAI LOVOL",
+          "consignee": "SABABOU SARL",
+          "notify": "SABABOU SARL",
+          "designation": "TRACTORS TRACTORS SPARE PARTSPROMOTIONAL ITEMS QINGDAO  CHASSISNO./ENGINE FTTM5A64ETZ000016/2511A0257FTT M5A64CTZ000017/2510A0056",
+          "conteneurs": {
+            "OCU68290": {
+              "type": "40HC",
+              "num_plomb": "OOLKWK6342",
+              "nbre_colis": 18,
+              "poids_brut": 12350.0,
+              "volume": null
+            }
+          }
+        },
+        "OOLU2165768710": {
+          "shipper": "SHANDONG WEIFANG RAINBOW",
+          "consignee": "STE KISWEND-SIDA RABO SALAM",
+          "notify": "STE KISWEND-SIDA RABO SALAM",
+          "designation": "168,000.00L OF GLYPHOSATE IPA 41%SL(TOUT BRULE 410 SL) QINGDAO Carton PACKING IN1L/D*10/C,TOTAL16800CARTONS, 105,000.00LOF GLYPHOSATE IPA STE KISWEND-SIDA RABO SALAM",
+          "conteneurs": {
+            "CSNU7015532": {
+              "type": "40HC",
+              "num_plomb": "OOLKWV9485",
+              "nbre_colis": 2100,
+              "poids_brut": 357630.0,
+              "volume": null
+            },
+            "OOCU8734526": {
+              "type": "40HC",
+              "num_plomb": "OOLKWL2787",
+              "nbre_colis": 2100,
+              "poids_brut": 2100.0,
+              "volume": null
+            },
+            "OOCU7061415": {
+              "type": "40HC",
+              "num_plomb": "OOLKWL2786",
+              "nbre_colis": 2100,
+              "poids_brut": 2100.0,
+              "volume": null
+            },
+            "CBHU9568267": {
+              "type": "40HC",
+              "num_plomb": "OOLKWV9487",
+              "nbre_colis": 2100,
+              "poids_brut": 2100.0,
+              "volume": null
+            },
+            "FCIU9972071": {
+              "type": "40HC",
+              "num_plomb": "OOLKWL2783",
+              "nbre_colis": 2100,
+              "poids_brut": 2100.0,
+              "volume": null
+            },
+            "OOCU9219428": {
+              "type": "40HC",
+              "num_plomb": "OOLKWV9490",
+              "nbre_colis": 2100,
+              "poids_brut": 2100.0,
+              "volume": null
+            },
+            "FCIU9969102": {
+              "type": "40HC",
+              "num_plomb": "OOLKWV9486",
+              "nbre_colis": 2100,
+              "poids_brut": 2100.0,
+              "volume": null
+            },
+            "OOCU8277100": {
+              "type": "40HC",
+              "num_plomb": "OOLKWL2781",
+              "nbre_colis": 2100,
+              "poids_brut": 2100.0,
+              "volume": null
+            },
+            "FFAU3251018": {
+              "type": "40HC",
+              "num_plomb": "OOLKWV9488",
+              "nbre_colis": 2100,
+              "poids_brut": 2100.0,
+              "volume": null
+            },
+            "OOCU7489131": {
+              "type": "40HC",
+              "num_plomb": "OOLKWL2785",
+              "nbre_colis": 2100,
+              "poids_brut": 2100.0,
+              "volume": null
+            },
+            "FFAU3390158": {
+              "type": "40HC",
+              "num_plomb": "OOLKWL2782",
+              "nbre_colis": 2100,
+              "poids_brut": 2100.0,
+              "volume": null
+            },
+            "TCNU6969151": {
+              "type": "40HC",
+              "num_plomb": "OOLKWL2784",
+              "nbre_colis": 2100,
+              "poids_brut": 2100.0,
+              "volume": null
+            }
+          }
+        },
+        "OOLU2319039690": {
+          "shipper": "SINOTRUK INTERNATIONAL QINGDAO",
+          "consignee": "RIMCO-SETACI",
+          "notify": "RIMCO-SETACI",
+          "designation": "SINOTRUK SPARE PARTSBSC:CIIMP- 517178FREIGHT PREPAID",
+          "conteneurs": {
+            "OCU75579": {
+              "type": "40HC",
+              "num_plomb": "OOLKWP0267",
+              "nbre_colis": 32,
+              "poids_brut": 14032.0,
+              "volume": null
+            }
+          }
+        }
+      }
+    },
+    "CNZOS": {
+      "bls": {
+        "OOLU2165993630": {
+          "shipper": "TAIZHOU SKY MACHINERY",
+          "consignee": "DELAFON AGROPHARMA",
+          "notify": "DELAFON AGROPHARMA",
+          "designation": "20000 PCS SPRAYER AIR CHAMBER CO.,LTD  (400CARTON) 5000  SPRAYER ZHOUSHAN Carton HOSE (25CARTON) 8000 PCS SPRAY GUN (320 CARTON) 5000 PCS SPRAY GUN (100CARTON) 3400 PCS APRAYER AIRCHAMBER (85",
+          "conteneurs": {
+            "SGU61687": {
+              "type": "40HC",
+              "num_plomb": "OOLJVS1149",
+              "nbre_colis": 930,
+              "poids_brut": 11181.0,
+              "volume": null
+            }
+          }
+        },
+        "OOLU2165728420": {
+          "shipper": "GUANGZHOU AJ BUILDING ZHOUSHAN",
+          "consignee": "FOBUPREST",
+          "notify": "FOBUPREST",
+          "designation": "PLASTIC FORMWORK MATERIAL FOBUPREST",
+          "conteneurs": {
+            "OOCU6365516": {
+              "type": "40HC",
+              "num_plomb": "OOLJVS2427",
+              "nbre_colis": 141,
+              "poids_brut": 21800.0,
+              "volume": null
+            }
+          }
+        },
+        "OOLU2319619380": {
+          "shipper": "YIWU HAILIANG COMMODITY ZHOUSHAN ONCONSIGNEE S THE LINESRESPONSIBILITY STOPSAT PORT OF DISCHARGE",
+          "consignee": "XIE PINGQIN",
+          "notify": "XIE PINGQIN",
+          "designation": "PLASTIC PELLETS SHIPMENT INTRANSIT TO BAMAKO MALI",
+          "conteneurs": {
+            "OCU87523": {
+              "type": "40HC",
+              "num_plomb": "OOLJVN1307",
+              "nbre_colis": 922,
+              "poids_brut": 27500.0,
+              "volume": null
+            }
+          }
+        },
+        "OOLU2165948730": {
+          "shipper": "YIWU HAILIANG COMMODITY ZHOUSHAN MALI ONCONSIGNEE S THE LINESRESPONSIBILITY STOPS AT PORT OFDISCHARGE",
+          "consignee": "MOHAMED TRAORE",
+          "notify": "MOHAMED TRAORE",
+          "designation": "PLASTIC TOYS MATTRESS SHIPMENT INTRANSIT TO BAMAKO",
+          "conteneurs": {
+            "IU982126": {
+              "type": "",
+              "num_plomb": "OOLJVK1075",
+              "nbre_colis": 529,
+              "poids_brut": 27500.0,
+              "volume": null
+            }
+          }
+        },
+        "OOLU8881446860": {
+          "shipper": "TIANJIN TEXTILE GROUP IMPORT ZHOUSHAN",
+          "consignee": "IMEXA",
+          "notify": "IMEXA",
+          "designation": "BICYCLE PARTSCTN: CI00256312 IMEXA",
+          "conteneurs": {
+            "OOCU6342193": {
+              "type": "40HC",
+              "num_plomb": "OOLJVS3507",
+              "nbre_colis": 2166,
+              "poids_brut": 2166.0,
+              "volume": null
+            }
+          }
+        },
+        "OOLU2166008710": {
+          "shipper": "LINYI TUOLING INTERNATIONAL",
+          "consignee": "GLOBAL IMPORT SARL",
+          "notify": "GLOBAL IMPORT SARL",
+          "designation": "ALUMINUM POT ZHOUSHAN Carton",
+          "conteneurs": {
+            "OCU63581": {
+              "type": "40HC",
+              "num_plomb": "OOLJGU7641",
+              "nbre_colis": 1034,
+              "poids_brut": 25553.0,
+              "volume": null
+            }
+          }
+        }
+      }
+    },
+    "CNTXG": {
+      "bls": {
+        "OOLU2317048380": {
+          "shipper": "PIGMENTS SERVICES, INC. BOARD FREIGHTPREPAID FDI NO. TO THE ORDER OF",
+          "consignee": "S.C.C.I.",
+          "notify": "S.C.C.I.",
+          "designation": "1X20 FT CONTAINER 8,000 KGS CARBONBLACK 410 HS CODE: TIANJINXING  2803.0010PALLETS=400BAGS 250202919 BSCNUMBER: CIIMP-",
+          "conteneurs": {
+            "BHU43698": {
+              "type": "20DV",
+              "num_plomb": "OOLKQP4085",
+              "nbre_colis": 10,
+              "poids_brut": 8080.0,
+              "volume": null
+            }
+          }
+        }
+      }
+    },
+    "CNNAN": {
+      "bls": {
+        "OOLU2318887220": {
+          "shipper": "XIAMEN ZHUOYUECHENG IMPORT TILAPIA WHOLE",
+          "consignee": "LA TULIPE FOOD (LTF)",
+          "notify": "LA TULIPE FOOD (LTF)",
+          "designation": "FROZEN TILAPIA WHOLE AND  ROUND(OREOCHROMIS NILOTICUS) NANAO Carton NETWEIGHT:28000KGSFROZEN NETWEIGHT:28000KGS FREIGHT LA TULIPE FOOD (LTF)",
+          "conteneurs": {
+            "OERU4104888": {
+              "type": "40HR",
+              "num_plomb": "OOLKSM7709",
+              "nbre_colis": 1400,
+              "poids_brut": 57880.0,
+              "volume": null
+            }
+          }
+        },
+        "OOLU2318980446": {
+          "shipper": "GD MIDEA HEATING VENTILATING D",
+          "consignee": "MAINTENANCE CLIMATISATION ET",
+          "notify": "MAINTENANCE CLIMATISATION ET",
+          "designation": "AIR CONDITIONERS AND SPARE PARTSBSCCIIMP-519652 NANAO Carton",
+          "conteneurs": {
+            "FSU131563": {
+              "type": "",
+              "num_plomb": "OOLKFT6296",
+              "nbre_colis": 52,
+              "poids_brut": 1371.0,
+              "volume": null
+            }
+          }
+        },
+        "OOLU2318783150": {
+          "shipper": "MAOMING HUIZHONG AQUATIC ANDRESPONSIBILITYFREIGHT PREPAIDTEMPERATURE SET AT -",
+          "consignee": "AHAMADOU DOUCOURE",
+          "notify": "AHAMADOU DOUCOURE",
+          "designation": "FROZEN TILAPIA WHOLE ROUND GOODSIN TRANSIT TO BAMAKO, NANAO Carton MALI ATCONSIGNEE S RISK, COST 18.0 C (-0.4F) FRESH AIR EXCHANGE",
+          "conteneurs": {
+            "CU532012": {
+              "type": "",
+              "num_plomb": "OOLKSM7651",
+              "nbre_colis": 2630,
+              "poids_brut": 28141.0,
+              "volume": null
+            }
+          }
+        },
+        "OOLU2318825220": {
+          "shipper": "GUANGDONG YECHANG FOOD PREPAIDTEMPERATURE SET AT - RATE SET AT",
+          "consignee": "GEDIPAC",
+          "notify": "GEDIPAC",
+          "designation": "FROZEN TILAPIA WHOLE CO.,LTD  ROUND(OREOCHROMIS NILOTICUS) NANAO Carton NETWEIGHT: 28200KGS FREIGHT GEDIPAC",
+          "conteneurs": {
+            "OOLU6268702": {
+              "type": "40HR",
+              "num_plomb": "OOLKSM7658",
+              "nbre_colis": 2820,
+              "poids_brut": 58092.0,
+              "volume": null
+            }
+          }
+        },
+        "OOLU2318871660": {
+          "shipper": "MAOMING SHUANGTAI FOOD CO. , AIREXCHANGE RATE SET AT",
+          "consignee": "SEAFOOD MIDDLEEAST FZC",
+          "notify": "SEAFOOD MIDDLEEAST FZC",
+          "designation": "FROZEN TILAPIA WHOLE ROUND(OREOCHROMIS NILOTICUS) NANAO Carton FREIGHTPREPAID TOTAL NET WEIGHT: 27000KGSTEMPERATURE KAPITAINE GROUPE",
+          "conteneurs": {
+            "OTPU6188880": {
+              "type": "40HR",
+              "num_plomb": "OOLKZQ3440",
+              "nbre_colis": 1350,
+              "poids_brut": 57780.0,
+              "volume": null
+            }
+          }
+        }
+      }
+    },
+    "CNHAK": {
+      "bls": {
+        "OOLU2318418983": {
+          "shipper": "HAINAN YUNZHOU FOODS CO., RATE SET AT KAPITAINE GROUPE",
+          "consignee": "SEAFOOD MIDDLEEAST FZC",
+          "notify": "SEAFOOD MIDDLEEAST FZC",
+          "designation": "FROZEN TILAPI A WHOLE LTD  ROUND(OREOCHROMIS HAIKOU Carton NILOTICUS)TEMPERATURE SET AT - 20.0 C (-4.0F) FRESH AIR EXCHANGE 0CUBICMETERPERHOUR(0.0000",
+          "conteneurs": {
+            "IU507341": {
+              "type": "",
+              "num_plomb": "OOLKSF8466",
+              "nbre_colis": 2600,
+              "poids_brut": 27820.0,
+              "volume": null
+            }
+          }
+        },
+        "OOLU2318418980": {
+          "shipper": "HAINAN YUNZHOU FOODS CO.,",
+          "consignee": "SEAFOOD MIDDLEEAST FZC",
+          "notify": "SEAFOOD MIDDLEEAST FZC",
+          "designation": "FROZEN TILAPIA WHOLE LTD  ROUND(OREOCHROMIS NILOTICUS) HAIKOU Carton TOTAL NETWEIGHT:130000.00 KGS TEMPERATURESET AT -20.0 C (-4.0 RATESET AT 0 KAPITAINE GROUPE",
+          "conteneurs": {
+            "FSCU5341396": {
+              "type": "40HR",
+              "num_plomb": "OOLKSF8414",
+              "nbre_colis": 2600,
+              "poids_brut": 139100.0,
+              "volume": null
+            },
+            "OTPU6184499": {
+              "type": "40HR",
+              "num_plomb": "OOLKSF8575",
+              "nbre_colis": 2600,
+              "poids_brut": 2600.0,
+              "volume": null
+            },
+            "FSCU5348087": {
+              "type": "40HR",
+              "num_plomb": "OOLKSF8418",
+              "nbre_colis": 2600,
+              "poids_brut": 2600.0,
+              "volume": null
+            },
+            "FBIU5634686": {
+              "type": "40HR",
+              "num_plomb": "OOLKSF8420",
+              "nbre_colis": 2600,
+              "poids_brut": 2600.0,
+              "volume": null
+            }
+          }
+        },
+        "OOLU2318418982": {
+          "shipper": "HAINAN YUNZHOU FOODS CO., FREIGHTPREPAID SHIPPER CONTAINS NO SOLIDWOOD",
+          "consignee": "SEAFOOD MIDDLEEAST FZC",
+          "notify": "SEAFOOD MIDDLEEAST FZC",
+          "designation": "FROZEN TILAPIA WHOLE LTD  ROUND(OREOCHROMIS NILOTICUS) HAIKOU Carton TOTAL NETWEIGHT: 104000.00 KGS KAPITAINE GROUPE",
+          "conteneurs": {
+            "FBIU5501810": {
+              "type": "40HR",
+              "num_plomb": "OOLKSF8579",
+              "nbre_colis": 2600,
+              "poids_brut": 111280.0,
+              "volume": null
+            },
+            "OOLU6336746": {
+              "type": "40HR",
+              "num_plomb": "OOLKSF8411",
+              "nbre_colis": 2600,
+              "poids_brut": 2600.0,
+              "volume": null
+            },
+            "FSCU5301686": {
+              "type": "40HR",
+              "num_plomb": "OOLKSF8412",
+              "nbre_colis": 2600,
+              "poids_brut": 2600.0,
+              "volume": null
+            }
+          }
+        }
+      }
+    }
+  }
+}
