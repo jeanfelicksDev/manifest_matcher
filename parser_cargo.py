@@ -99,7 +99,7 @@ def _normalize_type(size: str, variant: str) -> str:
 # Regex : ligne tableau conteneur
 # Ex: "CSNU8817661 OOLJWV8819 40HQ 419 CT FCL/FCL 23547.050 TARE WT : 4.00"
 _RE_CT_LINE = re.compile(
-    r'^([A-Z]{4}\d{7})\s+'          # G1 : numéro conteneur
+    r'^\s*([A-Z]{4}\d{7})\s+'          # G1 : numéro conteneur
     r'([A-Z0-9]{6,12})\s+'          # G2 : scellé (seal)
     r'(20|40)([A-Z]{2})\s+'         # G3+G4 : taille + variant (40HQ, 20GP...)
     r'(\d+)\s+\w+\s+'               # G5 : nombre de colis
@@ -109,7 +109,7 @@ _RE_CT_LINE = re.compile(
 
 # Regex: ligne tableau conteneur sans trafic (format alternatif)
 _RE_CT_LINE_ALT = re.compile(
-    r'^([A-Z]{4}\d{7})\s+'
+    r'^\s*([A-Z]{4}\d{7})\s+'
     r'([A-Z0-9]{6,12})\s+'
     r'(20|40)([A-Z]{2})\s+'
     r'(\d+)\s+\w+\s+'
@@ -148,7 +148,7 @@ def parse_cargo(file_obj) -> dict:
     pages_lines = []
     with pdfplumber.open(file_obj) as pdf:
         for page in pdf.pages:
-            txt = page.extract_text()
+            txt = page.extract_text(layout=True)
             page_lines = txt.split("\n") if txt else []
             pages_lines.append(page_lines)
 
@@ -197,7 +197,7 @@ def parse_cargo(file_obj) -> dict:
             pol_page = m_pol.group(1).strip()
 
         for line in page_lines:
-            annotated_lines.append((line.strip(), pol_page))
+            annotated_lines.append((line.rstrip(), pol_page))
 
     # ── Machine à états : parcours des lignes ─────────────────────────────
     # États possibles : 'idle' | 'in_shipper' | 'in_consignee' | 'in_notify'
@@ -268,42 +268,58 @@ def parse_cargo(file_obj) -> dict:
         def _extract_actor_name(lines, is_shipper=False):
             left_parts = []
             right_parts = []
-            # Mots clés typiques de la colonne de droite (Désignation / Poids) dans CARGO
             right_kw = r'(GROSS WEIGHT|VOLUME:|CARGO IN|ON-CARRIAGE|ARRANGED BY|THEIR RESPONSIBILITY|THEIR COSTS|FREIGHT PREPAID|OCEAN FREIGHT)'
 
             for sl in lines:
-                sl = sl.strip()
-                if not sl or sl in (".", ".."):
+                sl_clean = sl.rstrip()
+                if not sl_clean or sl_clean.strip() in (".", ".."):
                     continue
-                if sl.upper() == "SAME AS CONSIGNEE":
+                if sl_clean.strip().upper() == "SAME AS CONSIGNEE":
                     break
                 
                 # Retirer N° de suivi/TVA (alphanum > 10 chars isolé ou en fin)
-                sl = re.sub(r'\s+[A-Z0-9-]{10,}$', '', sl).strip()
-                if re.match(r'^[A-Z0-9-]{10,}$', sl):
+                sl_clean = re.sub(r'\s+[A-Z0-9-]{10,}$', '', sl_clean).rstrip()
+                if re.match(r'^\s*[A-Z0-9-]{10,}$', sl_clean):
                     continue
 
-                left = sl
-                right = ""
+                indent = len(sl_clean) - len(sl_clean.lstrip())
+                left, right = "", ""
 
-                # Séparation gauche (Shipper) / droite (Désignation) par grand espace (layout=True)
-                parts = re.split(r'\s{5,}', sl, maxsplit=1)
+                m_gap = re.search(r'\S(\s{5,})\S', sl_clean)
+                gap_start = m_gap.start(1) if m_gap else 999
                 
-                if len(parts) >= 2:
-                    left, right = parts[0].strip(), parts[1].strip()
+                if m_gap and gap_start <= 42:
+                    left = sl_clean[:gap_start].strip()
+                    right = sl_clean[gap_start:].strip()
+                elif indent <= 10:
+                    # Les colonnes ont fusionné, coupure manuelle vers l'index 32-35
+                    best_space = -1
+                    if len(sl_clean) > 35:
+                        for i in range(35, 20, -1):
+                            if sl_clean[i] == ' ':
+                                best_space = i
+                                break
+                    if best_space >= 20:
+                        left = sl_clean[:best_space].strip()
+                        right = sl_clean[best_space:].strip()
+                    else:
+                        left = sl_clean.strip()
+                elif indent >= 27:
+                    right = sl_clean.strip()
                 else:
-                    # Rétro-compatibilité : Séparation par mot-clé de la colonne droite s'ils sont collés
-                    m = re.search(r'\s+(' + right_kw + r'.*)', sl, re.IGNORECASE)
-                    if m:
-                        left = sl[:m.start()].strip()
-                        right = m.group(1).strip()
-                    elif ' . ' in sl:
-                        sp = sl.split(' . ', 1)
-                        left, right = sp[0].strip(), sp[1].strip()
+                    # Fallback au cas où
+                    left = sl_clean.strip()
 
-                # Nettoyage
+                # Fallback keyword old-school
+                m = re.search(r'\s+(' + right_kw + r'.*)', left, re.IGNORECASE)
+                if m:
+                    right = m.group(1).strip() + " " + right
+                    left = left[:m.start()].strip()
+                elif ' . ' in left:
+                    sp = left.split(' . ', 1)
+                    left, right = sp[0].strip(), sp[1].strip() + " " + right
+
                 left = re.sub(r'\s*[,\.\&]\s*$', '', left).strip()
-
                 if left and left.upper() not in ('N/M', ''):
                     left_parts.append(left)
                 if right:
@@ -317,13 +333,6 @@ def parse_cargo(file_obj) -> dict:
 
         # ── Extraction Shipper / Désignation ──
         shipper, raw_designation = _extract_actor_name(shipper_lines, is_shipper=True)
-
-        if shipper:
-            # Nettoyages heuristiques pour les lignes récalcitrantes de N/M qui leakent dans Shipper
-            shipper = re.sub(r'^N/M[\.\s]*\d+\s+(?:PKGS?|PACKAGES?|CARTONS?|CTNS?|PCS)\s+[A-Z0-9-]+\s+', '', shipper, flags=re.IGNORECASE).strip()
-            shipper = re.sub(r'^N/M[\.\s]*\d+\s+(?:CARTONS?|CTNS?)\s+HERBICIDE\s+\([^)]+\)\s+', '', shipper, flags=re.IGNORECASE).strip()
-            shipper = re.sub(r'^N/M[\.\s]*$', '', shipper, flags=re.IGNORECASE).strip()
-            if not shipper: shipper = None
 
         consignee = _extract_actor_name(consignee_lines)
         notify    = _extract_actor_name(notify_lines)
@@ -361,7 +370,7 @@ def parse_cargo(file_obj) -> dict:
 
         # ── Début d'un nouveau BL ──────────────────────────────────────────
         m_bl = re.match(
-            r'B/L NUMBER:\s+([A-Z0-9]+)',
+            r'^\s*B/L NUMBER:\s+([A-Z0-9]+)',
             line, re.IGNORECASE
         )
         if m_bl:
@@ -378,37 +387,37 @@ def parse_cargo(file_obj) -> dict:
             continue
 
         # ── Transitions d'état ─────────────────────────────────────────────
-        if re.match(r'^SHIPPER\s*:', line, re.IGNORECASE):
+        if re.match(r'^\s*SHIPPER\s*:', line, re.IGNORECASE):
             state = 'in_shipper'
-            # La 1ère ligne shipper peut être sur la même ligne
-            rest = re.sub(r'^SHIPPER\s*:\s*', '', line, flags=re.IGNORECASE).strip()
-            if rest:
+            # Reposer les espaces pour garder l'indentation
+            rest = re.sub(r'^\s*SHIPPER\s*:\s*', lambda m: ' ' * len(m.group(0)), line, flags=re.IGNORECASE).rstrip()
+            if rest.strip():
                 shipper_lines.append(rest)
             continue
 
-        if re.match(r'^CONSIGNEE\s*:', line, re.IGNORECASE):
+        if re.match(r'^\s*CONSIGNEE\s*:', line, re.IGNORECASE):
             state = 'in_consignee'
-            rest = re.sub(r'^CONSIGNEE\s*:\s*', '', line, flags=re.IGNORECASE).strip()
-            if rest:
+            rest = re.sub(r'^\s*CONSIGNEE\s*:\s*', lambda m: ' ' * len(m.group(0)), line, flags=re.IGNORECASE).rstrip()
+            if rest.strip():
                 consignee_lines.append(rest)
             continue
 
-        if re.match(r'^NOTIFY PARTY\s*:', line, re.IGNORECASE):
+        if re.match(r'^\s*NOTIFY PARTY\s*:', line, re.IGNORECASE):
             state = 'in_notify'
-            rest = re.sub(r'^NOTIFY PARTY\s*:\s*', '', line, flags=re.IGNORECASE).strip()
-            if rest:
+            rest = re.sub(r'^\s*NOTIFY PARTY\s*:\s*', lambda m: ' ' * len(m.group(0)), line, flags=re.IGNORECASE).rstrip()
+            if rest.strip():
                 notify_lines.append(rest)
             continue
 
-        if re.match(r'^ALSO NOTIFY PARTY\s*:', line, re.IGNORECASE):
+        if re.match(r'^\s*ALSO NOTIFY PARTY\s*:', line, re.IGNORECASE):
             state = 'in_also_notify'
             continue
 
-        if re.match(r'^\*\*\s*TOTAL\s*:', line, re.IGNORECASE):
+        if re.match(r'^\s*\*\*\s*TOTAL\s*:', line, re.IGNORECASE):
             state = 'in_total'
             continue
 
-        if re.match(r'^CODE IMPORT-EXPORT\s*:', line, re.IGNORECASE):
+        if re.match(r'^\s*CODE IMPORT-EXPORT\s*:', line, re.IGNORECASE):
             state = 'idle'
             continue
 
@@ -426,31 +435,31 @@ def parse_cargo(file_obj) -> dict:
 
         # ── Accumulation selon l'état ──────────────────────────────────────
         # Ignorer les lignes commençant par * (suite adresse ALSO NOTIFY)
-        if line.startswith("*") or line.startswith("**"):
+        if line.lstrip().startswith("*") or line.lstrip().startswith("**"):
             continue
 
         if state == 'in_shipper':
             # Arrêter si ressemble à une adresse (ADD:, TEL:, etc.)
-            if re.match(r'^(ADD|TEL|FAX|E-MAIL|ROOM|NO\.|BUILDING)', line, re.IGNORECASE):
+            if re.match(r'^\s*(ADD|TEL|FAX|E-MAIL|ROOM|NO\.|BUILDING)', line, re.IGNORECASE):
                 state = 'idle'
             else:
                 shipper_lines.append(line)
 
         elif state == 'in_consignee':
-            if re.match(r'^(ADD|TEL|FAX|E-MAIL|01\s*BP|QUARTIER|CODE IMPORT)', line, re.IGNORECASE):
+            if re.match(r'^\s*(ADD|TEL|FAX|E-MAIL|01\s*BP|QUARTIER|CODE IMPORT)', line, re.IGNORECASE):
                 pass  # on ignore les adresses
             else:
                 consignee_lines.append(line)
 
         elif state == 'in_notify':
-            if re.match(r'^(ADD|TEL|FAX|E-MAIL|01\s*BP|QUARTIER)', line, re.IGNORECASE):
+            if re.match(r'^\s*(ADD|TEL|FAX|E-MAIL|01\s*BP|QUARTIER)', line, re.IGNORECASE):
                 pass
             else:
                 notify_lines.append(line)
 
         elif state == 'in_total':
             # VOLUME sur la ligne suivant ** TOTAL
-            m_vol = re.match(r'^VOLUME\s*:\s*([\d\.]+)\s*CBM', line, re.IGNORECASE)
+            m_vol = re.match(r'^\s*VOLUME\s*:\s*([\d\.]+)\s*CBM', line, re.IGNORECASE)
             if m_vol:
                 # On stocke le volume pour le BL courant
                 # On le répartira plus tard
