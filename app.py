@@ -459,6 +459,17 @@ elif btn_lancer:
                     _summary_card(c1, data1, label1, badge1)
                     _summary_card(c2, data2, label2, badge2)
 
+                # ── Affichage JSON côté à côte ─────────────────────────────
+                st.subheader("📄 Transcriptions JSON")
+                with st.expander("Voir les données brutes extraites au format JSON", expanded=False):
+                    c_json1, c_json2 = st.columns(2)
+                    with c_json1:
+                        st.markdown(f"**{label1}**")
+                        st.json(data1)
+                    with c_json2:
+                        st.markdown(f"**{label2}**")
+                        st.json(data2)
+
                 # ── Réconciliation ─────────────────────────────────────────
                 st.info("Comparaison des données…")
                 differences = reconcile_manifests(data1, data2, label1, label2)
