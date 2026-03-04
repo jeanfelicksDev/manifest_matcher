@@ -133,16 +133,39 @@ def detect_pdf_format(file_obj) -> str:
         return "sydam"
 
 
+def sort_manifest_data(data: dict) -> dict:
+    """Trie les ports, les BLs et les conteneurs par ordre alphabétique."""
+    if not isinstance(data, dict):
+        return data
+    if "ports" in data:
+        sorted_ports = {}
+        for pol in sorted(data["ports"].keys()):
+            port_data = data["ports"][pol]
+            sorted_bls = {}
+            for bl_ref in sorted(port_data.get("bls", {}).keys()):
+                bl_data = port_data["bls"][bl_ref]
+                sorted_cts = {}
+                for ct_ref in sorted(bl_data.get("conteneurs", {}).keys()):
+                    sorted_cts[ct_ref] = bl_data["conteneurs"][ct_ref]
+                bl_data["conteneurs"] = sorted_cts
+                sorted_bls[bl_ref] = bl_data
+            port_data["bls"] = sorted_bls
+            sorted_ports[pol] = port_data
+        data["ports"] = sorted_ports
+    return data
+
+
 def parse_pdf_auto(file_obj) -> tuple:
     """
     Détecte le format et parse le PDF avec le bon parseur.
     Retourne (data_dict, format_detected) où format_detected in ['sydam', 'cargo'].
+    Les dictionnaires sont triés par ordre alphabétique.
     """
     fmt = detect_pdf_format(file_obj)
     file_obj.seek(0)
     if fmt == "cargo":
-        return parse_cargo(file_obj), "cargo"
-    return parse_sydam(file_obj), "sydam"
+        return sort_manifest_data(parse_cargo(file_obj)), "cargo"
+    return sort_manifest_data(parse_sydam(file_obj)), "sydam"
 
 
 def _fmt_num(n: float) -> str:
@@ -400,7 +423,7 @@ elif btn_lancer:
                     # ── Fichier 1 : XML ────────────────────────────────────
                     st.info("Extraction XML…")
                     xml_bytes = f1.read()
-                    data1 = parse_xml(xml_bytes)
+                    data1 = sort_manifest_data(parse_xml(xml_bytes))
                     st.success("XML extrait avec succès !")
 
                     # ── Fichier 2 : PDF auto-détecté ───────────────────────
