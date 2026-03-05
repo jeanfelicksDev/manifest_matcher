@@ -4,11 +4,17 @@ import io
 import re
 from datetime import datetime
 from xhtml2pdf import pisa
+import openpyxl
+from openpyxl.styles import PatternFill
 
 from parser_xml   import parse_xml
 from parser_sydam import parse_sydam
 from parser_cargo import parse_cargo
 from reconciliation import reconcile_manifests
+from outlook_excel import (
+    fetch_outlook_emails, build_navire_map, format_date,
+    COLUMN_MAP, COL_LABELS, SHEET_NAME, OUTLOOK_AVAILABLE
+)
 
 # ── Configuration page ───────────────────────────────────────────────────────
 st.set_page_config(page_title="CONTROL FICHIER SYDAM", layout="wide")
@@ -185,7 +191,7 @@ st.markdown(
 
 mode = st.radio(
     "Mode de fonctionnement :",
-    ["XML vs PDF", "PDF vs PDF", "Générer RECAP PDF"],
+    ["XML vs PDF", "PDF vs PDF", "Générer RECAP PDF", "📊 Mesure Navire"],
     horizontal=True
 )
 
@@ -213,12 +219,17 @@ else:
         date_signature = st.date_input("Date de signature", value=datetime.today(), format="DD/MM/YYYY")
 
 st.write("")
-col_btn1, col_btn2, col_btn3 = st.columns([1, 1, 1])
-with col_btn2:
-    if mode == "Générer RECAP PDF":
-        btn_lancer = st.button("Générer RECAP", type="primary", use_container_width=True)
-    else:
-        btn_lancer = st.button("Lancer la Réconciliation", type="primary", use_container_width=True)
+
+# Le bouton principal n'est visible que pour les 3 premiers modes
+if mode != "📊 Mesure Navire":
+    col_btn1, col_btn2, col_btn3 = st.columns([1, 1, 1])
+    with col_btn2:
+        if mode == "Générer RECAP PDF":
+            btn_lancer = st.button("Générer RECAP", type="primary", use_container_width=True)
+        else:
+            btn_lancer = st.button("Lancer la Réconciliation", type="primary", use_container_width=True)
+else:
+    btn_lancer = False
 
 # ─────────────────────────────────────────────────────────────────────────────
 # Mode : Générer RECAP PDF
@@ -535,3 +546,185 @@ elif btn_lancer:
                 st.error(f"Erreur lors de l'analyse : {e}")
                 import traceback
                 st.code(traceback.format_exc())
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Mode : 📊 Mesure Navire — Synchronisation Outlook → Excel
+# ─────────────────────────────────────────────────────────────────────────────
+elif mode == "📊 Mesure Navire":
+
+    st.markdown("---")
+    st.subheader("😢 Mesure Navire — Synchronisation Outlook → Excel")
+    st.markdown(
+        "Chargez le fichier Excel MESURE du mois, récupérez les dates d'envoi "
+        "depuis Outlook et téléchargez le fichier mis à jour."
+    )
+
+    # Format des objets de mails
+    with st.expander("📧 Format des objets de mails reconnus", expanded=False):
+        st.code(
+            "TOP IMPORT EA CETUS 012E ETA: 12-02-2026\n"
+            "ZIP IMPORT NORDMAAS 220N ETA: 06-02-2026\n"
+            "MANIFESTE EXPORT ONE PRESENCE 029E ETA: 13-02-2026",
+            language=""
+        )
+        col_imp, col_exp = st.columns(2)
+        with col_imp:
+            st.markdown("**IMPORT** → Colonnes E/F/G")
+            st.write("- E → TOP | F → ZIP | G → MANIFESTE")
+        with col_exp:
+            st.markdown("**EXPORT** → Colonnes H/I/J")
+            st.write("- H → TOP | I → ZIP | J → MANIFESTE")
+
+    # ── Upload du fichier Excel ───────────────────────────────────────────────
+    mn_col1, mn_col2 = st.columns([1, 1], gap="large")
+
+    with mn_col1:
+        st.markdown("**📂 Fichier Excel du mois (MESURE MOIS)**")
+        mn_uploaded = st.file_uploader(
+            "Déposez votre fichier MESURE",
+            type=["xlsx", "xlsm", "xls"],
+            key="mn_excel_uploader",
+            label_visibility="collapsed"
+        )
+
+        if mn_uploaded:
+            st.success(f"✅ **{mn_uploaded.name}** chargé")
+            mn_wb = openpyxl.load_workbook(io.BytesIO(mn_uploaded.read()))
+
+            if SHEET_NAME in mn_wb.sheetnames:
+                mn_ws = mn_wb[SHEET_NAME]
+                mn_navire_map = build_navire_map(mn_ws)
+
+                # Aperçu du tableau
+                preview_data = []
+                for (nav, voy), row in mn_navire_map.items():
+                    row_dict = {'Navire': nav, 'VOY': voy}
+                    for col_idx, label in COL_LABELS.items():
+                        val = mn_ws.cell(row=row, column=col_idx).value
+                        if isinstance(val, datetime):
+                            row_dict[label] = val.strftime('%d/%m/%Y')
+                        elif val:
+                            row_dict[label] = str(val)
+                        else:
+                            row_dict[label] = '—'
+                    preview_data.append(row_dict)
+
+                st.markdown(f"**{len(mn_navire_map)} navire(s)** dans la feuille `{SHEET_NAME}` :")
+                st.dataframe(pd.DataFrame(preview_data), use_container_width=True, hide_index=True)
+            else:
+                st.error(f"❌ Feuille `{SHEET_NAME}` introuvable. Disponibles : {mn_wb.sheetnames}")
+                mn_uploaded = None
+
+    # ── Connexion Outlook ────────────────────────────────────────────────────
+    with mn_col2:
+        st.markdown("**📧 Récupération depuis Outlook**")
+
+        if not OUTLOOK_AVAILABLE:
+            st.warning(
+                "⚠️ **Mode Cloud** — Outlook non disponible ici. "
+                "Lancez l'app **en local** sur votre PC Windows."
+            )
+            st.info("💡 En local : `streamlit run app.py`")
+        else:
+            if st.button("🔍 Récupérer les mails depuis Outlook",
+                         use_container_width=True, key="mn_outlook_btn"):
+                with st.spinner("Connexion à Outlook..."):
+                    mn_emails, mn_err = fetch_outlook_emails()
+
+                if mn_err:
+                    st.error(f"❌ Erreur Outlook : {mn_err}")
+                elif not mn_emails:
+                    st.warning("⚠️ Aucun mail correspondant trouvé.")
+                else:
+                    st.session_state['mn_emails'] = mn_emails
+                    st.success(f"✅ **{len(mn_emails)} mail(s)** trouvé(s) !")
+
+        # Tableau des mails trouvés
+        if 'mn_emails' in st.session_state and st.session_state['mn_emails']:
+            mn_emails = st.session_state['mn_emails']
+            df_emails = pd.DataFrame([{
+                'Type':       e['type'],
+                'Direction':  e['direction'],
+                'Navire':     e['navire'],
+                'VOY':        e['voy'],
+                'Date envoi': e['date'].strftime('%d/%m/%Y') if e['date'] else '—',
+            } for e in mn_emails])
+            st.dataframe(df_emails, use_container_width=True, hide_index=True)
+
+            # Compteurs
+            c1, c2, c3 = st.columns(3)
+            c1.metric("Mails", len(mn_emails))
+            c2.metric("TOP", sum(1 for e in mn_emails if e['type'] == 'TOP'))
+            c3.metric("ZIP / MANIFESTE",
+                      sum(1 for e in mn_emails if e['type'] in ('ZIP', 'MANIFESTE')))
+
+    # ── Application + téléchargement ──────────────────────────────────────────
+    if (mn_uploaded
+            and 'mn_emails' in st.session_state
+            and st.session_state['mn_emails']):
+
+        st.markdown("---")
+        if st.button("✅ Appliquer les dates dans Excel",
+                     type="primary", use_container_width=True, key="mn_apply_btn"):
+
+            mn_uploaded.seek(0)
+            mn_wb2   = openpyxl.load_workbook(io.BytesIO(mn_uploaded.read()))
+            mn_ws2   = mn_wb2[SHEET_NAME]
+            mn_nmap2 = build_navire_map(mn_ws2)
+
+            updated_log = []
+            skipped_log = []
+
+            for email in st.session_state['mn_emails']:
+                key = (email['navire'], email['voy'])
+                col = COLUMN_MAP.get((email['type'], email['direction']))
+                row = mn_nmap2.get(key)
+
+                if row is None:
+                    skipped_log.append(f"Navire introuvable : {email['navire']} {email['voy']}")
+                    continue
+                if col is None:
+                    skipped_log.append(f"Type inconnu : {email['type']} {email['direction']}")
+                    continue
+                if email['date'] is None:
+                    skipped_log.append(f"Date invalide pour : {email['subject'][:40]}")
+                    continue
+
+                d = email['date']
+                cell = mn_ws2.cell(row=row, column=col)
+                cell.value         = datetime(d.year, d.month, d.day)
+                cell.number_format = 'DD/MM/YYYY'
+                cell.fill          = PatternFill("solid", fgColor="C6EFCE")
+                updated_log.append({
+                    'Navire':   email['navire'],
+                    'VOY':      email['voy'],
+                    'Colonne':  COL_LABELS.get(col, str(col)),
+                    'Date':     d.strftime('%d/%m/%Y'),
+                })
+
+            if updated_log:
+                st.success(f"🎉 **{len(updated_log)} cellule(s) mise(s) à jour !**")
+                st.dataframe(pd.DataFrame(updated_log),
+                             use_container_width=True, hide_index=True)
+
+                output = io.BytesIO()
+                mn_wb2.save(output)
+                output.seek(0)
+                nom_base = mn_uploaded.name.replace('.xlsx','').replace('.xls','')
+
+                st.download_button(
+                    label="⬇️ Télécharger le fichier Excel mis à jour",
+                    data=output,
+                    file_name=f"{nom_base}_MAJ.xlsx",
+                    mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                    use_container_width=True,
+                    key="mn_download_btn"
+                )
+            else:
+                st.warning("⚠️ Aucune cellule mise à jour. Vérifiez la correspondance navires/voyages.")
+
+            if skipped_log:
+                with st.expander(f"⚠️ {len(skipped_log)} élément(s) ignoré(s)"):
+                    for s in skipped_log:
+                        st.write(f"• {s}")
