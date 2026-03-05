@@ -4,3 +4,4 @@ pdfplumber
 xmltodict
 xhtml2pdf
 rich==13.9.4
+openpyxl
