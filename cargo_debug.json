@@ -1,0 +1,782 @@
+{
+  "SINGAPORE": {
+    "bls": {
+      "2166002850": {
+        "shipper": "N/M. 215 PACKAGES AAM2511-14 CHONGQING DALONGYUFENG MOTORCYCLE MANUFACTURING CO. LTD",
+        "consignee": "KD NEGOCE",
+        "notify": "HONGKONG SPLENDID TRADE LIMITED FLAT/RM B 5/F GAYLORD COMMERCIAL BLDG 114-118 LOCKHART ROAD***",
+        "designation": "GROSS WEIGHT : 22575.000 KG . MOTORCYCLE CKD VOLUME : 71.079 CBM . . ( 49768.85 LB ) ( 2510.126 CFT )",
+        "conteneurs": {
+          "CSNU8044828": {
+            "type": "40HC",
+            "num_plomb": "OOLKPP5540",
+            "nbre_colis": 215,
+            "poids_brut": 22575.0,
+            "volume": 71.079
+          }
+        }
+      },
+      "2318619192": {
+        "shipper": "N/M. 20 PACKAGES ELEVATOR SPARE PARTS YIWU HARVEST IMPORT AND EXPORT CO.,LTD",
+        "consignee": "ETS DARPHANE 05 B.P. 187 ABIDJAN 05 +225 586561219 CNONELINK@GMAIL.COM",
+        "notify": null,
+        "designation": "GROSS WEIGHT : 19830.000 KG . . VOLUME : 68.000 CBM . . ( 43717.22 LB )",
+        "conteneurs": {
+          "TEMU6639268": {
+            "type": "40HC",
+            "num_plomb": "OOLKSM7681",
+            "nbre_colis": 20,
+            "poids_brut": 19830.0,
+            "volume": 68.0
+          }
+        }
+      },
+      "2317929090": {
+        "shipper": "2700 CARTONS FROZEN PANGASIUS WHOLE ROUND H'NG BROTHERS FROZEN FOOD TOTAL NET WEIGHT: 27,000.00KGS VOLUME : 50.000 CBM SDN BHD ( 63095.65 LB ) 3881, MK 11, KAMPUNG JAWI SUNGAI BAKAP 14200 SUNGAI MALI AT CONSIGNEE'S CARE AND JAWI,PULAU PINANG, MALAYSIA EXPENSES CARRIER'S LIABILITY ENDS AT POD",
+        "consignee": "YAYA SOGORE COMMERCANT HAMDALLAYE ACI 2000 RUE: 293, PORTE: 355 BAMAKO, MALI",
+        "notify": "YAYA SOGORE HAMDALLAYE ACI 2000 RUE: 293, PORTE: 355 BAMAKO, MALI",
+        "designation": "GROSS WEIGHT : 28620.000 KG . CARGO IN TRANSIT TO BAMAKO, ( 1765.730 CFT )",
+        "conteneurs": {
+          "OERU4177992": {
+            "type": "40RQ",
+            "num_plomb": "OOLKTN9732",
+            "nbre_colis": 2700,
+            "poids_brut": 28620.0,
+            "volume": 50.0
+          }
+        }
+      },
+      "2319203860": {
+        "shipper": "N/M. 3270 CARTONS DOOR LOCK EXPORT CARE CO. , LIMITED . BATHROOM CABINET ( 174361.81 LB )",
+        "consignee": "( 9605.571 CFT ) SODBIS-CI SOCIETE DE DISTRIBUTION DE BIENS ET SERVICES DE COTE D'IVOIRE RCCM:CI-ABJ-03-2022-B13-0809 *",
+        "notify": null,
+        "designation": "GROSS WEIGHT : 79090.000 KG . BASIN VOLUME : 272.000 CBM .",
+        "conteneurs": {
+          "FDCU0112870": {
+            "type": "40HC",
+            "num_plomb": "OOLKSF0143",
+            "nbre_colis": 409,
+            "poids_brut": 19540.0,
+            "volume": 67.2
+          },
+          "OOCU7419480": {
+            "type": "40HC",
+            "num_plomb": "OOLKZJ1255",
+            "nbre_colis": 1128,
+            "poids_brut": 21460.0,
+            "volume": 73.804
+          },
+          "OOLU9996050": {
+            "type": "40HC",
+            "num_plomb": "OOLJYR9390",
+            "nbre_colis": 912,
+            "poids_brut": 20500.0,
+            "volume": 70.502
+          },
+          "TIIU4567039": {
+            "type": "40HC",
+            "num_plomb": "OOLKZJ1252",
+            "nbre_colis": 821,
+            "poids_brut": 17590.0,
+            "volume": 60.494
+          }
+        }
+      },
+      "2319188160": {
+        "shipper": "N/M. 1552 PACKAGES EVA RECYCLING MATERIAL FUJIAN JINHONGCHANG SPORTING GOODS CO.,LTD",
+        "consignee": "MEDINEX SARL 05 BP 384 ABIDJAN (VILLE) 05 YOPOUGON CITE GFCI-LOT 194",
+        "notify": "MEDINEX SARL 05 BP 384 ABIDJAN (VILLE) 05 YOPOUGON CITE GFCI-LOT 194",
+        "designation": "GROSS WEIGHT : 39210.000 KG . . VOLUME : 56.000 CBM . . ( 86442.37 LB )",
+        "conteneurs": {
+          "CSLU1645202": {
+            "type": "20DV",
+            "num_plomb": "OOLKQQ6969",
+            "nbre_colis": 799,
+            "poids_brut": 20210.0,
+            "volume": 28.864
+          },
+          "CSNU2621542": {
+            "type": "20DV",
+            "num_plomb": "OOLKQQ6813",
+            "nbre_colis": 753,
+            "poids_brut": 19000.0,
+            "volume": 27.136
+          }
+        }
+      }
+    }
+  },
+  "NANSHA": {
+    "bls": {
+      "2319102010": {
+        "shipper": "N/M. 2050 CARTONS MIX FRUIT BUBBLE GUM JINJIANG CITY HONGTAIXING TRADE CO., LTD RISK & ACCOUNT ( 2401.393 CFT )",
+        "consignee": "21 DAYS FREE DETENTION AT ETS SOYA LAH GOUROBOCOUM24@GMAIL.COM",
+        "notify": null,
+        "designation": "GROSS WEIGHT : 25420.000 KG . CARGO IN TRANSIT TO REGION VOLUME : 68.000 CBM . MOPTI MALI UNDER CONSIGNEE'S ( 56040.93 LB )",
+        "conteneurs": {
+          "OOCU8738429": {
+            "type": "40HC",
+            "num_plomb": "OOLKZQ0481",
+            "nbre_colis": 2050,
+            "poids_brut": 25420.0,
+            "volume": 68.0
+          }
+        }
+      },
+      "2319286411": {
+        "shipper": "N/M. 2600 CARTONS FROZEN TILAPIA WHOLE ROUND YANGJIANG LINGZE AQUATIC PRODUCTS CO., LTD",
+        "consignee": "(-0.4 F) AFRIMER DALIMENTATION FRESH AIR EXCHANGE RATE SET AT TREICHVILLE, PORT DE PECHE, CUBICFEETPERMINUTE) RUE DES PECHEURS",
+        "notify": "AFRIMER TREICHVILLE, PORT DE PECHE RUE DES PECHEURS",
+        "designation": "GROSS WEIGHT : 28080.000 KG . (OREOCHROMIS NILOTICUS) VOLUME : 56.000 CBM . SHIPPER DECLARED THAT SHIPMENT ( 61905.17 LB )",
+        "conteneurs": {
+          "FSCU5346660": {
+            "type": "40RQ",
+            "num_plomb": "OOLKZQ0860",
+            "nbre_colis": 2600,
+            "poids_brut": 28080.0,
+            "volume": 56.0
+          }
+        }
+      },
+      "2319318622": {
+        "shipper": "PLACE OF DELIVERY : ABIDJAN N/M. 2700 CARTONS FROZEN TILAPIA WHOLE ROUND HUAZHOU SIDA AQUATIC PRODUCTS CO, LTD HEXI INDUSTRIAL CLUSTER ZONE HUAZHOU CITY,GUANGDONG PROVINCE, CHINA. BAMAKO MALI AT CARE AND EXPENSES SHIPPER STATES THAT",
+        "consignee": "NO WOOD PACKAGING MATERIAL IS AGENCE DE GESTION DU MARCHE CONTAINED IN THIS SHIPMENT CENTRAL A POISSON TEMPERATURE SET AT -20.0 C COMMUNE VI SUR LA ROUTE DE (-4.0 F) SENOU, BAMAKO, MALI FRESH AIR EXCHANGE RATE SET AT FISCAL : 400100135E 0 CUBICMETERPERHOUR(0.0000 CUBICFEETPERMINUTE)",
+        "notify": "AGENCE DE GESTION DU MARCHE CENTRAL A POISSON COMMUNE VI SUR LA ROUTE DE SENOU, BAMAKO, MALI FISCAL :",
+        "designation": "GROSS WEIGHT : 29160.000 KG . NET WEIGHT:27000KGS VOLUME : 56.000 CBM . ( 64286.14 LB ) FREIGHT PREPAID ( 1977.618 CFT ) CARGO IN TRANSIT TO",
+        "conteneurs": {
+          "OERU4255565": {
+            "type": "40RQ",
+            "num_plomb": "OOLKZP7102",
+            "nbre_colis": 2700,
+            "poids_brut": 29160.0,
+            "volume": 56.0
+          }
+        }
+      },
+      "2319628140": {
+        "shipper": "PLACE OF DELIVERY : ABIDJAN N/M. 2650 CARTONS FROZEN TILAPIA WHOLE ROUND MAOMING HUIZHONG AQUATIC PRODUCTS CO.,LTD. A DISTRICT ,NO.10,ANLE EAST SHIPPER STATES THAT ( 1977.618 CFT ) ROAD ,SHUIDONG TOWN, NO WOOD PACKAGING MATERIAL IS DIANBAI DISTRICT,MAOMING* CONTAINED IN THIS SHIPMENT TEMPERATURE SET AT -18.0 C (-0.4 F)",
+        "consignee": "FRESH AIR EXCHANGE RATE SET AT SEPRACO.CI 0 CUBICMETERPERHOUR(0.0000 TREICHVILLE, PORT DE PECHE CUBICFEETPERMINUTE) 11 BP 114 ABIDJAN 11 IVORY COAST",
+        "notify": "SEPRACO.CI TREICHVILLE, PORT DE PECHE 11 BP 114 ABIDJAN 11 IVORY COAST",
+        "designation": "GROSS WEIGHT : 28090.000 KG . VOLUME : 56.000 CBM . FREIGHT PREPAID ( 61927.21 LB )",
+        "conteneurs": {
+          "FSCU5338730": {
+            "type": "40RQ",
+            "num_plomb": "OOLKZQ0911",
+            "nbre_colis": 2650,
+            "poids_brut": 28090.0,
+            "volume": 56.0
+          }
+        }
+      },
+      "2319628141": {
+        "shipper": "N/M. 1400 CARTONS FROZEN TILAPIA WHOLE ROUND XIAMEN ZHUOYUECHENG IMPORT AND PLACE OF DELIVERY : ABIDJAN EXPORT CO.,LTD",
+        "consignee": "CUBICFEETPERMINUTE) LA TULIPE FOOD (LTF) 18 BP 642 ABIDJAN 18 COTE D'IVOIRE N/M. 1400 CARTONS FROZEN TILAPIA WHOLE ROUND . (OREOCHROMIS NILOTICUS) VOLUME : 60.000 CBM",
+        "notify": ". ( 62787.01 LB ) LA TULIPE FOOD (LTF) NET WEIGHT:28000KGS ( 2118.876 CFT ) 18 BP 642 ABIDJAN 18 TEMPERATURE SET AT -18.0 C COTE D'IVOIRE (-0.4 F) FRESH AIR EXCHANGE RATE SET AT",
+        "designation": "GROSS WEIGHT : 28480.000 KG . (OREOCHROMIS NILOTICUS) VOLUME : 60.000 CBM . NET WEIGHT:28000KGS FREIGHT ( 62787.01 LB )",
+        "conteneurs": {
+          "OOLU6512974": {
+            "type": "40RQ",
+            "num_plomb": "OOLKZQ4076",
+            "nbre_colis": 1400,
+            "poids_brut": 28480.0,
+            "volume": 60.0
+          },
+          "OTPU6188621": {
+            "type": "40RQ",
+            "num_plomb": "OOLKZP4543",
+            "nbre_colis": 1400,
+            "poids_brut": 28480.0,
+            "volume": 60.0
+          }
+        }
+      },
+      "2320020430": {
+        "shipper": "PRODUCT NAME :. 136 DRUMS 136 X 200 KGS DRUM(S) PER SHANGHAI QICHENG INDUSTRIAL COCAMIDOPROPYL. CONTAINER VOLUME : 45.000 CBM CO., LTD. BETAINE (CAB35). 27.2 MT OF COCAMIDOPROPYL ( 62663.55 LB ) RM 302, T2 BUILDING HONGQIAO NET WEIGHT:. BETAINE(CAB35) ( 1589.157 CFT ) PLACE OF DELIVERY : ABIDJAN VANKE CENTER, 200KG. AS PER PFI GA 26671 LANE 988 SHENCHANG ROAD, * 209KG. BATCH NO.:.",
+        "consignee": "A260130 GAPUMA COTE D'IVOIRE DATE OF 11 BP 38 ABJ 11 MANUFACTURE: MARCORY- ABIDJAN JAN. 30, 2026 IVORY COAST DATE OF EXPIRY: JAN. 28, 2028",
+        "notify": "MADE IN: CHINA GAPUMA COTE D'IVOIRE GAPUMA GROUP 11 BP 38 ABJ 11 LIMITED MARCORY- ABIDJAN UNIT 4 KEW IVORY COAST WHARF, 8 KEW BRIDGE",
+        "designation": "GROSS WEIGHT : 28424.000 KG . GROSS WEIGHT:. BSC #CIIMP-519301",
+        "conteneurs": {
+          "CAIU9159438": {
+            "type": "40HC",
+            "num_plomb": "OOLKZQ0598",
+            "nbre_colis": 136,
+            "poids_brut": 28424.0,
+            "volume": 45.0
+          }
+        }
+      },
+      "2320195520": {
+        "shipper": "N/M. 47 PACKAGES PLASTIC BOTTLE CAPS SOLIPRO LIMITED FLAT/RM.A, 12/F., ZJ300",
+        "consignee": "TEMPERATURE SET AT 20.0 C SOCIETE DE ORIGINLIFE SARL (68.0 F) ABIDJAN COCODY BONOUMIN FRESH AIR EXCHANGE RATE SET AT EX-GESTONE ; 21BP 1238 ABIDJAN 0 CUBICMETERPERHOUR(0.0000 21 CUBICFEETPERMINUTE)",
+        "notify": "SOCIETE DE ORIGINLIFE SARL ABIDJAN COCODY BONOUMIN EX-GESTONE ; 21BP 1238 ABIDJAN 21",
+        "designation": "GROSS WEIGHT : 8750.000 KG . N.W.:257.25KGS VOLUME : 15.000 CBM . PE HEAT SHRINKABLE FILM ( 19290.25 LB )",
+        "conteneurs": {
+          "OERU4272109": {
+            "type": "20RF",
+            "num_plomb": "OOLKZQ0952",
+            "nbre_colis": 47,
+            "poids_brut": 8750.0,
+            "volume": 15.0
+          }
+        }
+      },
+      "2319318621": {
+        "shipper": "N/M. 2600 CARTONS FROZEN TILAPIA WHOLE ROUND MAOMING HAIYI FOODS CO., LTD QIJING TOWN,HIGH TECH INDUSTRIAL DEVELOPMENT ZONE, TEMPERATURE SET AT -18.0 C ( 1977.618 CFT ) MAOMING CITY,GUANGDONG (-0.4 F) PROVINCE,CHINA * FRESH AIR EXCHANGE RATE SET AT 0 CUBICMETERPERHOUR(0.0000 CUBICFEETPERMINUTE)",
+        "consignee": "INALCA CI 01 ABIDJAN COTE D IVOIRE . NET WEIGHT: 26000KGS ( 61618.57 LB )",
+        "notify": "TOTAL 5200 CARTONS ( 1977.618 CFT ) INALCA CI TOTAL NET WEIGHT: 52000KGS 01 ABIDJAN COTE D IVOIRE FDI 260000338 SHIPPER STATES THAT",
+        "designation": "GROSS WEIGHT : 27950.000 KG . (OREOCHROMIS NILOTICUS) VOLUME : 56.000 CBM . NET WEIGHT: 26000KGS ( 61618.57 LB )",
+        "conteneurs": {
+          "OOLU6472830": {
+            "type": "40RQ",
+            "num_plomb": "OOLKSA3233",
+            "nbre_colis": 2600,
+            "poids_brut": 27950.0,
+            "volume": 56.0
+          },
+          "OOLU6479367": {
+            "type": "40RQ",
+            "num_plomb": "OOLKSA3376",
+            "nbre_colis": 2600,
+            "poids_brut": 27950.0,
+            "volume": 56.0
+          }
+        }
+      }
+    }
+  },
+  "NINGBO": {
+    "bls": {
+      "2165900980": {
+        "shipper": "N/M. 766 PACKAGES FLOOR MAT ALLBRIGHT IMPORT AND EXPORT CO.,LIMITED LED LAMP ( 2401.393 CFT )",
+        "consignee": "LED STRIP ETS DARPHANE STORAGE RACK 05 B.P. 187 ABIDJAN 05 RAINCOAT +225 586561219 SHOE RACK CNONELINK@GMAIL.COM WALLPAPER",
+        "notify": "ETS DARPHANE 05 B.P. 187 ABIDJAN 05 +225 586561219 CNONELINK@GMAIL.COM",
+        "designation": "GROSS WEIGHT : 12720.000 KG . BLANKET VOLUME : 68.000 CBM . TABLE ( 28042.51 LB )",
+        "conteneurs": {
+          "CSGU6596080": {
+            "type": "40HC",
+            "num_plomb": "OOLKNV6981",
+            "nbre_colis": 766,
+            "poids_brut": 12720.0,
+            "volume": 68.0
+          }
+        }
+      },
+      "2165901010": {
+        "shipper": "N/M. 964 CARTONS TAPE YIWU HARVEST IMPORT AND EXPORT CO.,LTD",
+        "consignee": "COOKWARE PLACE OF DELIVERY : ABIDJAN ETS DARPHANE BLANKET 05 B.P. 187 ABIDJAN 05 PLATFORM SCALE +225 586561219 HINGE CNONELINK@GMAIL.COM WRENCH",
+        "notify": "ETS DARPHANE 05 B.P. 187 ABIDJAN 05 +225 586561219 CNONELINK@GMAIL.COM",
+        "designation": "GROSS WEIGHT : 27920.000 KG . SHELF VOLUME : 68.000 CBM . TABLE ( 61552.43 LB )",
+        "conteneurs": {
+          "CSGU6672620": {
+            "type": "40HC",
+            "num_plomb": "OOLJVU0245",
+            "nbre_colis": 964,
+            "poids_brut": 27920.0,
+            "volume": 68.0
+          }
+        }
+      },
+      "2166002150": {
+        "shipper": "N/M. 268 PACKAGES HARDWARE MATERIALS, MECHANICAL HANGZHOU BITAI GLOBAL TRADING CO.,LTD",
+        "consignee": "HUALONG CARRIERE KOUMASSI, COTE D'IVOIRE",
+        "notify": "HUALONG CARRIERE KOUMASSI, COTE D'IVOIRE PLACE OF DELIVERY : ABIDJAN",
+        "designation": "GROSS WEIGHT : 18000.000 KG . AND ELECTRICAL SPARE PARTS VOLUME : 68.000 CBM . . ( 39682.80 LB )",
+        "conteneurs": {
+          "CSGU6150760": {
+            "type": "40HC",
+            "num_plomb": "OOLKNW5381",
+            "nbre_colis": 268,
+            "poids_brut": 18000.0,
+            "volume": 68.0
+          }
+        }
+      },
+      "2166130830": {
+        "shipper": "N/M. 3227 CARTONS BABY WALKER KAY CHANCE TRADE COMPANY LIMITED HS:570500 ( 12208.257 CFT )",
+        "consignee": "BROOMS A.J.CI HS:960390 26 BP 870 ABIDJAN 26 2) VENUS TCL COTE D'IVOIRE",
+        "notify": "1750 CARTONS 1) VENUS TRADING COMPANY LIMITED ( 4947.575 CFT )",
+        "designation": "GROSS WEIGHT : 56390.000 KG . HS:940370 VOLUME : 345.700 CBM . DOOR MAT ( 124317.39 LB )",
+        "conteneurs": {
+          "CSGU6133552": {
+            "type": "40HC",
+            "num_plomb": "OOLKNW9876",
+            "nbre_colis": 613,
+            "poids_brut": 10890.0,
+            "volume": 65.297
+          },
+          "CSGU6136715": {
+            "type": "40HC",
+            "num_plomb": "OOLKNW5297",
+            "nbre_colis": 822,
+            "poids_brut": 12270.0,
+            "volume": 73.572
+          },
+          "CSGU6137202": {
+            "type": "40HC",
+            "num_plomb": "OOLKNW5311",
+            "nbre_colis": 1064,
+            "poids_brut": 12860.0,
+            "volume": 77.109
+          },
+          "CSGU6142322": {
+            "type": "40HC",
+            "num_plomb": "OOLKNW4153",
+            "nbre_colis": 709,
+            "poids_brut": 11820.0,
+            "volume": 70.873
+          },
+          "CSGU6142390": {
+            "type": "40HC",
+            "num_plomb": "OOLKNW5257",
+            "nbre_colis": 541,
+            "poids_brut": 8780.0,
+            "volume": 52.645
+          },
+          "CSGU6143606": {
+            "type": "40HC",
+            "num_plomb": "OOLKNW5296",
+            "nbre_colis": 686,
+            "poids_brut": 11770.0,
+            "volume": 70.574
+          },
+          "CSGU6143653": {
+            "type": "40HC",
+            "num_plomb": "OOLKNW5295",
+            "nbre_colis": 542,
+            "poids_brut": 12630.0,
+            "volume": 75.73
+          }
+        }
+      },
+      "2166144960": {
+        "shipper": "N/M. 8 PACKAGES RKFD-330 PAPER BAG MACHINE WENZHOU ROKIN MACHINERY CO. LTD",
+        "consignee": "SPARK'LINE 28 BP 522 ABIDJAN (VILLE) 28 COCODY 2PLTEAUX STATION CORLAY CONTACT: +225 0707550000 **",
+        "notify": "SPARK'LINE 28 BP 522 ABIDJAN (VILLE) 28 COCODY 2PLTEAUX STATION CORLAY CONTACT: +225 0707550000 **",
+        "designation": "GROSS WEIGHT : 12996.000 KG . WITH 4 COLOR FLEXO PRINTING VOLUME : 60.810 CBM . INLINE (1200MM) AND HANDLE ( 28650.98 LB )",
+        "conteneurs": {
+          "BEAU2122345": {
+            "type": "20DV",
+            "num_plomb": "OOLKNW9206",
+            "nbre_colis": 2,
+            "poids_brut": 4581.0,
+            "volume": 21.435
+          },
+          "CSGU6162144": {
+            "type": "40HC",
+            "num_plomb": "OOLKNW5270",
+            "nbre_colis": 6,
+            "poids_brut": 8415.0,
+            "volume": 39.375
+          }
+        }
+      },
+      "2166190680": {
+        "shipper": "N/M. 98 PACKAGES CENTRAL CONCRETE EQUIPMENT HANGZHOU BITAI GLOBAL TRADING CO.,LTD",
+        "consignee": "HUALONG CARRIERE KOUMASSI, COTE D'IVOIRE",
+        "notify": "HUALONG CARRIERE KOUMASSI, COTE D'IVOIRE",
+        "designation": "GROSS WEIGHT : 99500.000 KG . . VOLUME : 272.000 CBM . . ( 219357.70 LB )",
+        "conteneurs": {
+          "BEAU6218907": {
+            "type": "40HC",
+            "num_plomb": "OOLJVK1499",
+            "nbre_colis": 30,
+            "poids_brut": 27500.0,
+            "volume": 75.176
+          },
+          "CSGU6143078": {
+            "type": "40HC",
+            "num_plomb": "OOLKNW4176",
+            "nbre_colis": 21,
+            "poids_brut": 26000.0,
+            "volume": 71.075
+          },
+          "FFAU3418403": {
+            "type": "40HC",
+            "num_plomb": "OOLJVM9992",
+            "nbre_colis": 18,
+            "poids_brut": 24000.0,
+            "volume": 65.608
+          },
+          "OOCU7906153": {
+            "type": "40HC",
+            "num_plomb": "OOLJVM0362",
+            "nbre_colis": 29,
+            "poids_brut": 22000.0,
+            "volume": 60.141
+          }
+        }
+      }
+    }
+  },
+  "QINGDAO": {
+    "bls": {
+      "8881440550": {
+        "shipper": "N/M. 1600 CARTONS COPY PAPER QUFU XINYUE PAPER CO., LTD ECONOMIC DEVELOPMENT ZONE WEST AREA,INDUSTRIAL ROAD 1 QUFU CITY,JINING CITY SHANDONG PROVINCE ,CHINA",
+        "consignee": "GRACE MULTI-SERVICES,SARL COTE D'IVOIRE",
+        "notify": "GRACE MULTI-SERVICES,SARL COTE D'IVOIRE",
+        "designation": "GROSS WEIGHT : 20960.000 KG . BSC NUMBER: BSCCIIMP-520626 VOLUME : 28.000 CBM . . ( 46208.42 LB ) ( 988.809 CFT )",
+        "conteneurs": {
+          "OOLU2924572": {
+            "type": "20DV",
+            "num_plomb": "OOLKWV5708",
+            "nbre_colis": 1600,
+            "poids_brut": 20960.0,
+            "volume": 28.0
+          }
+        }
+      },
+      "8881449200": {
+        "shipper": "N/M. 17 PACKAGES HDPE GEOCELL 200-445 CELL SHANDONG SYNTHETIC TRADING CO LTD 4-1306,UNION FORTUNE COLOR PERFORATED ( 802.348 CFT ) PLAZA ,2177 TIANCHEN ROAD, WIDTH 2.81M LENGTH 10.67M JINAN AREA CHINA(SHANDONG) * STAPLES 1/2\",2500 PER SET",
+        "consignee": "SOCIETE IVOIRIENNE DE CONSTRUCTION DU METRO D'ABIDJAN(SICMA)PROJET LIGNE 1 DU METRO D'ABIDJAN AVENUE CHRISTIANI,BOUCLE DE SORTIE **",
+        "notify": "ITL (INTERNATIONALE DE TRANSIT ET LOGISTIQUE) 08 BP 2062 BIDJAN 08 NOM: DIOP PAPE CONTACT: +225 0709132132 ***",
+        "designation": "GROSS WEIGHT : 10600.000 KG . HEIGHT 200MM VOLUME : 22.720 CBM . WELDING SPACE 445MM BLACK ( 23368.76 LB )",
+        "conteneurs": {
+          "CSNU1063030": {
+            "type": "20DV",
+            "num_plomb": "OOLKWV5658",
+            "nbre_colis": 17,
+            "poids_brut": 10600.0,
+            "volume": 22.72
+          }
+        }
+      }
+    }
+  },
+  "SHANGHAI": {
+    "bls": {
+      "2166080660": {
+        "shipper": "N/M. 8250 CARTONS HERBICIDE (BROYEUR 200SL ) NANJING YICHENG AGROCHEMICAL CO.,LTD",
+        "consignee": "CROP & HUMAN PROTECT (CHP) 26 BP 990 ABIDJAN 26 COTE D'IVOIRE",
+        "notify": "CROP & HUMAN PROTECT (CHP) 26 BP 990 ABIDJAN 26 COTE D'IVOIRE",
+        "designation": "GROSS WEIGHT : 132825.000 KG . POUR LA PROTECTION DES PLANTS VOLUME : 250.000 CBM . KEY RING ( 292826.00 LB )",
+        "conteneurs": {
+          "FCIU9913248": {
+            "type": "40HC",
+            "num_plomb": "OOLKPT1603",
+            "nbre_colis": 1650,
+            "poids_brut": 26565.0,
+            "volume": 50.0
+          },
+          "FFAU2692997": {
+            "type": "40HC",
+            "num_plomb": "OOLKPT7225",
+            "nbre_colis": 1650,
+            "poids_brut": 26565.0,
+            "volume": 50.0
+          },
+          "OOLU9254683": {
+            "type": "40HC",
+            "num_plomb": "OOLKPT7223",
+            "nbre_colis": 1650,
+            "poids_brut": 26565.0,
+            "volume": 50.0
+          },
+          "OOLU9779820": {
+            "type": "40HC",
+            "num_plomb": "OOLKPT1607",
+            "nbre_colis": 1650,
+            "poids_brut": 26565.0,
+            "volume": 50.0
+          },
+          "TGBU8795423": {
+            "type": "40HC",
+            "num_plomb": "OOLKPT1601",
+            "nbre_colis": 1650,
+            "poids_brut": 26565.0,
+            "volume": 50.0
+          }
+        }
+      },
+      "2166112310": {
+        "shipper": "N/M. 1730 CARTONS SEEDER NANJING HAIGE CHEMICAL CO. LTD",
+        "consignee": "COSTA SARL ABIDJAN,COTE D'IVOIRE EMAIL: MONTAGNE24@SINA.COM CONTACT PERSON: KOUASSI",
+        "notify": "COSTA SARL ABIDJAN,COTE D'IVOIRE EMAIL: MONTAGNE24@SINA.COM CONTACT PERSON: KOUASSI",
+        "designation": "GROSS WEIGHT : 16954.000 KG . . VOLUME : 110.000 CBM . . ( 37376.79 LB )",
+        "conteneurs": {
+          "CSGU6274205": {
+            "type": "40HC",
+            "num_plomb": "OOLKPU0196",
+            "nbre_colis": 880,
+            "poids_brut": 8624.0,
+            "volume": 55.954
+          },
+          "FCIU9450919": {
+            "type": "40HC",
+            "num_plomb": "OOLKPU0147",
+            "nbre_colis": 850,
+            "poids_brut": 8330.0,
+            "volume": 54.046
+          }
+        }
+      },
+      "2319734680": {
+        "shipper": "N/M. 58 PACKAGES AUTOMATIC ROTARY OPP HOT TAIZHOU BANGE IMPORT AND EXPORT CO.,LTD AOAN VILLAGE,XICHENG LABELING MACHINE ( 3090.028 CFT ) SUB-DISCTRICT,HUANGYAN, LINEAR FILM WRAPPING MACHINE TAIZHOU,ZHEJIANG PROVINCE, * AUTOMATIC 3-IN-1 WATER FILLING MACHINE XGF 24-24-8",
+        "consignee": "VOLTAGE REGULATOR ETABLISSEMENT IMA ET FRERES ECTN:CIIMP-510198 DOKOUE BP 142 GUIGLO IVORY COST DOKOUE, GIGLO, IVORY COST",
+        "notify": "KENNA NIN BAMBA SOLUTION HOUARI BOUMEDIENE AU 2EME ETAGE DE LIMMEUBLE SANA 1 COLLE A FASO ***",
+        "designation": "GROSS WEIGHT : 15100.000 KG . MACHINE VOLUME : 87.500 CBM . AUTOMATIC SHRINK SLEEVE ( 33289.46 LB )",
+        "conteneurs": {
+          "HLXU8059120": {
+            "type": "40HC",
+            "num_plomb": "OOLHPG4818",
+            "nbre_colis": 6,
+            "poids_brut": 5300.0,
+            "volume": 30.712
+          },
+          "HLXU8064003": {
+            "type": "40HC",
+            "num_plomb": "OOLHPG4817",
+            "nbre_colis": 52,
+            "poids_brut": 9800.0,
+            "volume": 56.788
+          }
+        }
+      },
+      "4124814990": {
+        "shipper": "N/M. 1450 CARTONS VETERINARY PRODUCT TOPSURF HOLDING CO LIMITED 3/F JONSIM PLACE 228 QUEEN S RD DATED 29/10/2025 ( 1604.342 CFT ) EAST WANCHAI VALUE CFR ABIDJAN HONG KONG INCOTERMS 2020 ORIGIN OF GOODS: CHINA L/C NUMBER:",
+        "consignee": "BSC #CIIMP-517154 TO THE ORDER OF SGCI IMO NUMBER OF THE IVOIRE, 5 ET 7 AVENUE J. ANOMA 01 COTE D IVOIRE)",
+        "notify": "SN PROVECI 18 BP 2863 ABIDJAN 18 COTE D IVOIRE",
+        "designation": "GROSS WEIGHT : 22181.800 KG . AS PER PROFORMA INVOICE VOLUME : 45.430 CBM . NUMBER THC NP 25 08 ( 48902.00 LB )",
+        "conteneurs": {
+          "FCIU9906892": {
+            "type": "40HC",
+            "num_plomb": "OOLKPV0188",
+            "nbre_colis": 1450,
+            "poids_brut": 22181.8,
+            "volume": 45.43
+          }
+        }
+      }
+    }
+  },
+  "XIAMEN": {
+    "bls": {
+      "2318640770": {
+        "shipper": "N/M. 13500 CARTONS FROZEN MACKEREL SHISHI SEABOUND AQUATIC PRODUCTS CO.,LTD N0.1 HAILONG ROAD,XIANGZHI ( 8828.650 CFT ) TOWN,SHISHI CITY, TEMPERATURE SET AT -22.0 C FUJIAN PROVINCE CHINA ** (-7.6 F) FRESH AIR EXCHANGE RATE SET AT 0 CUBICMETERPERHOUR(0.0000",
+        "consignee": "CUBICFEETPERMINUTE) OPAC ZONE DES ENTREPOT, LOT 201 BOULEVARD VRIDI, ABIDJAN COTE D'IVOIRE",
+        "notify": "OPAC ZONE DES ENTREPOT, LOT 201 BOULEVARD VRIDI, ABIDJAN COTE D'IVOIRE",
+        "designation": "GROSS WEIGHT : 141750.000 KG . TOTAL CARTONS:13500CARTONS VOLUME : 250.000 CBM . TOTAL NET WEIGHT:135000KGS ( 312502.05 LB )",
+        "conteneurs": {
+          "FSCU5315930": {
+            "type": "40RQ",
+            "num_plomb": "OOLKFP2416",
+            "nbre_colis": 2700,
+            "poids_brut": 28350.0,
+            "volume": 50.0
+          },
+          "FSCU5338854": {
+            "type": "40RQ",
+            "num_plomb": "OOLKFP2429",
+            "nbre_colis": 2700,
+            "poids_brut": 28350.0,
+            "volume": 50.0
+          },
+          "OOLU6272786": {
+            "type": "40RQ",
+            "num_plomb": "OOLKFP2477",
+            "nbre_colis": 2700,
+            "poids_brut": 28350.0,
+            "volume": 50.0
+          },
+          "OOLU6473142": {
+            "type": "40RQ",
+            "num_plomb": "OOLKFP2503",
+            "nbre_colis": 2700,
+            "poids_brut": 28350.0,
+            "volume": 50.0
+          },
+          "SEGU9808318": {
+            "type": "40RQ",
+            "num_plomb": "OOLKFP2484",
+            "nbre_colis": 2700,
+            "poids_brut": 28350.0,
+            "volume": 50.0
+          }
+        }
+      },
+      "2319240010": {
+        "shipper": "N/M. 2682 CARTONS FROZEN TILAPIA WHOLE ROUND DONGSHAN YONGSHENG AQUATIC PRODUCTS CO.,LTD",
+        "consignee": "MALI AT CONSIGNEE'S RISK, COST MODY CAMARA AND NOUVEAU MARCHE DE DATALOGGER:2601040159 SOUGOUKOURA MEDIN BAMAKO MALI TEMPERATURE SET AT -20.0 C (-4.0 F)",
+        "notify": "FRESH AIR EXCHANGE RATE SET AT MODY CAMARA 0 CUBICMETERPERHOUR(0.0000 NOUVEAU MARCHE DE CUBICFEETPERMINUTE) SOUGOUKOURA MEDIN BAMAKO MALI",
+        "designation": "GROSS WEIGHT : 28429.200 KG . (OREOCHROMIS NILOTICUS) VOLUME : 56.000 CBM . N.W.:26820KGS ( 62675.01 LB )",
+        "conteneurs": {
+          "OERU4085685": {
+            "type": "40RQ",
+            "num_plomb": "OOLKFP2417",
+            "nbre_colis": 2682,
+            "poids_brut": 28429.2,
+            "volume": 56.0
+          }
+        }
+      },
+      "2319240730": {
+        "shipper": "N/M. 2624 CARTONS FROZEN TILAPIA WHOLE ROUND DONGSHAN YONGSHENG AQUATIC PRODUCTS CO.,LTD PLACE OF DELIVERY : ABIDJAN",
+        "consignee": "AT CONSIGNEE'S RISK, COST AND MODY CAMARA NOUVEAU MARCHE DE DATALOGGER:2601040160 SOUGOUKOURA MEDIN BAMAKO MALI TEMPERATURE SET AT -20.0 C (-4.0 F)",
+        "notify": "FRESH AIR EXCHANGE RATE SET AT MODY CAMARA 0 CUBICMETERPERHOUR(0.0000 NOUVEAU MARCHE DE CUBICFEETPERMINUTE) SOUGOUKOURA MEDIN BAMAKO MALI",
+        "designation": "GROSS WEIGHT : 27814.400 KG . (OREOCHROMIS NILOTICUS) VOLUME : 56.000 CBM . N.W.:26240KGS ( 61319.63 LB )",
+        "conteneurs": {
+          "FSCU5991684": {
+            "type": "40RQ",
+            "num_plomb": "OOLKFP2450",
+            "nbre_colis": 2624,
+            "poids_brut": 27814.4,
+            "volume": 56.0
+          }
+        }
+      },
+      "2319369960": {
+        "shipper": "N/M. 1260 PACKAGES CERAMIC TILE DONGGUAN QINGHEJI TRADING CO., LTD",
+        "consignee": "SOCIETE IVOIRIENNE DE ET PLACE OF DELIVERY : ABIDJAN COAST **",
+        "notify": "SOCIETE IVOIRIENNE DE ET COAST **",
+        "designation": "GROSS WEIGHT : 54000.000 KG . . VOLUME : 56.000 CBM . . ( 119048.40 LB )",
+        "conteneurs": {
+          "WEDU3583394": {
+            "type": "20DV",
+            "num_plomb": "OOLKQQ5841",
+            "nbre_colis": 630,
+            "poids_brut": 27000.0,
+            "volume": 28.0
+          },
+          "WEDU3915668": {
+            "type": "20DV",
+            "num_plomb": "OOLKQQ5921",
+            "nbre_colis": 630,
+            "poids_brut": 27000.0,
+            "volume": 28.0
+          }
+        }
+      },
+      "2319461370": {
+        "shipper": "N/M. 5579 PACKAGES BABY DIAPER WIN WING GLOBAL TRADING CO. LIMITED FLAT/RM 1911 LEE GARDEN ONE 33 HYSAN AVENUE CAUSEWAY BAY HONG KONG",
+        "consignee": "GLOBAL IMPORT SARL PLACE OF DELIVERY : ABIDJAN 225 ABIDJAN / NCC: 2404836 X MOBILE: 0173 3762 27/05 86 13 3700 *",
+        "notify": "GLOBAL IMPORT SARL 225 ABIDJAN / NCC: 2404836 X MOBILE: 0173 3762 27/05 86 13 3700 *",
+        "designation": "GROSS WEIGHT : 40450.000 KG . HS CODE:961900 VOLUME : 136.000 CBM . BSC#:CIIMP-500591 ( 89176.07 LB ) ( 4802.786 CFT )",
+        "conteneurs": {
+          "OOCU8962320": {
+            "type": "40HC",
+            "num_plomb": "OOLKQQ5655",
+            "nbre_colis": 2792,
+            "poids_brut": 20120.0,
+            "volume": 67.647
+          },
+          "TGHU6938152": {
+            "type": "40HC",
+            "num_plomb": "OOLKQQ5673",
+            "nbre_colis": 2787,
+            "poids_brut": 20330.0,
+            "volume": 68.353
+          }
+        }
+      },
+      "2319461450": {
+        "shipper": "N/M. 1248 CARTONS BABY BED &CHAIR QUANZHOU FLYA SHOES AND GARMENTS CO.LTD ZHUFENG BIZ BLD ,WENZHU RD JINJIANG ,FUJIAN,CHINA MOB:8613636908419",
+        "consignee": "IMEXA 05 BP 2150 ABIDJAN 05 ABIDJAN TREICHVILLE PLACE OF DELIVERY : ABIDJAN BOULEVARD VGE COTE D'IVOIRE *",
+        "notify": "GRECCO TRADING LLC IRIDIUM BUSINESS CENTER DEIRA - OFFICE 4016 DUBAI, UNITED ARAB EMIRATES MOB :",
+        "designation": "GROSS WEIGHT : 11257.000 KG . BSC NO: CIIMP-521548 VOLUME : 67.800 CBM . . ( 24817.18 LB ) ( 2394.330 CFT )",
+        "conteneurs": {
+          "TRHU6226289": {
+            "type": "40HC",
+            "num_plomb": "OOLKFP2424",
+            "nbre_colis": 1248,
+            "poids_brut": 11257.0,
+            "volume": 67.8
+          }
+        }
+      },
+      "2319461610": {
+        "shipper": "N/M. 4103 PACKAGES RECYCLE PVC GRANULES XIAMEN WESTRONG TRADING CO. LTD",
+        "consignee": "MEDINEX SARL 05 BP 384 ABIDJAN (VILLE)05 YOPOUGON CITE GFCI-LOT 194",
+        "notify": "MEDINEX SARL 05 BP 384 ABIDJAN (VILLE)05 PLACE OF DELIVERY : ABIDJAN YOPOUGON CITE GFCI-LOT 194",
+        "designation": "GROSS WEIGHT : 103660.000 KG . . VOLUME : 112.000 CBM . . ( 228528.84 LB )",
+        "conteneurs": {
+          "CSLU1940168": {
+            "type": "20DV",
+            "num_plomb": "OOLKQQ9202",
+            "nbre_colis": 1018,
+            "poids_brut": 25730.0,
+            "volume": 27.8
+          },
+          "OOCU0911440": {
+            "type": "20DV",
+            "num_plomb": "OOLKQQ9303",
+            "nbre_colis": 1020,
+            "poids_brut": 25910.0,
+            "volume": 27.995
+          },
+          "OOLU0927947": {
+            "type": "20DV",
+            "num_plomb": "OOLKQQ9255",
+            "nbre_colis": 1034,
+            "poids_brut": 26010.0,
+            "volume": 28.103
+          },
+          "TEMU0111400": {
+            "type": "20DV",
+            "num_plomb": "OOLKQQ9374",
+            "nbre_colis": 1031,
+            "poids_brut": 26010.0,
+            "volume": 28.103
+          }
+        }
+      },
+      "2319462160": {
+        "shipper": "N/M. 350 PACKAGES SPONGE RAW MATERIALS XIAMEN FENGZAN NEW MATERIAL CO.,LTD UNIT 3,22A-23,3/F,BUILDING 1 FREE TRADE TIMES SQUARE,",
+        "consignee": "ETS DARPHANE 05 B.P.187 ABIDJAN 05 EMAIL:ETS.DARPHANE@GMAIL.COM",
+        "notify": "ETS DARPHANE 05 B.P.187 ABIDJAN 05 EMAIL:ETS.DARPHANE@GMAIL.COM",
+        "designation": "GROSS WEIGHT : 26278.000 KG . MATTRESS MANUFACTURING VOLUME : 65.000 CBM . MATERIALS ( 57932.48 LB ) ( 2295.449 CFT )",
+        "conteneurs": {
+          "OOLU9659552": {
+            "type": "40HC",
+            "num_plomb": "OOLKFP5570",
+            "nbre_colis": 350,
+            "poids_brut": 26278.0,
+            "volume": 65.0
+          }
+        }
+      },
+      "2319926180": {
+        "shipper": "N/M. 5100 CARTONS FROZEN TILAPIA WHOLE ROUND ZHANGZHOU LONGYI FOOD CO.,LTD HIGH-TECH INDUSTRIAL PARK JINGCHENG TOWN, NANJING COUNTY TEMPERATURE SET AT -20.0 C ( 3955.235 CFT ) ZHANGZHOU CITY,FUJIAN,CHINA (-4.0 F) FRESH AIR EXCHANGE RATE SET AT 0 CUBICMETERPERHOUR(0.0000",
+        "consignee": "CUBICFEETPERMINUTE) AGENCE DE GESTION DU MARCHE CENTRAL A POISSON MALI AT CONSIGNEES CARE AND COMMUNE VI, SUR LA ROUTE EXPENSES DE SENOU, BAMAKO, MALI FISCAL : 400100135E",
+        "notify": "AGENCE DE GESTION DU MARCHE CENTRAL A POISSON COMMUNE VI, SUR LA ROUTE DE SENOU, BAMAKO, MALI FISCAL :",
+        "designation": "GROSS WEIGHT : 53550.000 KG . (OREOCHROMIS NILOTICUS) VOLUME : 112.000 CBM . TOTAL NET WEIGHT:51000KGS ( 118056.33 LB )",
+        "conteneurs": {
+          "FSCU5329390": {
+            "type": "40RQ",
+            "num_plomb": "OOLKQQ5850",
+            "nbre_colis": 2550,
+            "poids_brut": 26775.0,
+            "volume": 56.0
+          },
+          "FSCU5336511": {
+            "type": "40RQ",
+            "num_plomb": "OOLKQQ5942",
+            "nbre_colis": 2550,
+            "poids_brut": 26775.0,
+            "volume": 56.0
+          }
+        }
+      },
+      "2319993070": {
+        "shipper": "N/M. 16 PACKAGES DRYING MACHINE YIWOLI TRADING CO.,LIMITED UNIT 1307, BEVERLEY COMMERCIAL CENTRE, 87-105 CHATHAM ROAD ( 4802.786 CFT ) SOUTH, TSIM SHA TSUI, KOWLOON HONGKONG",
+        "consignee": "GENERAL IVOIRIENNE DE BOIS ADRESSE:BP 10 N'DOUCI COTED'IVORE",
+        "notify": "GENERAL IVOIRIENNE DE BOIS ADRESSE:BP 10 N'DOUCI COTED'IVORE",
+        "designation": "GROSS WEIGHT : 18780.000 KG . . VOLUME : 136.000 CBM . . ( 41402.39 LB )",
+        "conteneurs": {
+          "CCLU7667276": {
+            "type": "40HC",
+            "num_plomb": "OOLKFP5762",
+            "nbre_colis": 3,
+            "poids_brut": 9180.0,
+            "volume": 66.479
+          },
+          "OOCU8431284": {
+            "type": "40HC",
+            "num_plomb": "OOLKFP5665",
+            "nbre_colis": 13,
+            "poids_brut": 9600.0,
+            "volume": 69.521
+          }
+        }
+      }
+    }
+  }
+}

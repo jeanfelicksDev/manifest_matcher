@@ -1,0 +1,674 @@
+{
+  "CNNAN": {
+    "bls": {
+      "OOLU2320195520": {
+        "shipper": "SOLIPRO LIMITED NANAO SOCIETE DE ORIGINLIFE SARL",
+        "consignee": null,
+        "notify": null,
+        "designation": "PLASTIC BOTTLE CAPS N.W.:257.25KGSPE HEAT SHRINKABLE FILMN.W.:5760KGS N.W.:2187.5KGS TOTALN.W.:8204.75KGS SOCIETE DE ORIGINLIFE SARL PVC HEAT SHRINKABLEFILM",
+        "conteneurs": {
+          "ERU42721": {
+            "type": "",
+            "num_plomb": "OOLKZQ0952",
+            "nbre_colis": 47,
+            "poids_brut": 8750.0,
+            "volume": null
+          }
+        }
+      },
+      "OOLU2318619192": {
+        "shipper": "YIWU HARVEST IMPORT AND NANAO Ligne",
+        "consignee": null,
+        "notify": null,
+        "designation": "ELEVATOR SPARE PARTS EXPORT ETS DARPHANE SAME AS CONSIGNEE Conteneur",
+        "conteneurs": {
+          "MU66392": {
+            "type": "40HC",
+            "num_plomb": "OOLKSM7681",
+            "nbre_colis": 20,
+            "poids_brut": 19830.0,
+            "volume": null
+          }
+        }
+      },
+      "OOLU2319102010": {
+        "shipper": "JINJIANG CITY HONGTAIXING NANAO SAME AS CONSIGNEE Ligne",
+        "consignee": null,
+        "notify": null,
+        "designation": "MIX FRUIT BUBBLE GUM CARGO INTRANSIT TO REGION MOPTI MALI Carton UNDERCONSIGNEE S RISK ACCOUNT21 DAYS FREE DETENTION AT DESTINATION ETS SOYA LAH Conteneur",
+        "conteneurs": {
+          "OCU87384": {
+            "type": "40HC",
+            "num_plomb": "OOLKZQ0481",
+            "nbre_colis": 2050,
+            "poids_brut": 25420.0,
+            "volume": null
+          }
+        }
+      },
+      "OOLU2319628140": {
+        "shipper": "MAOMING HUIZHONG AQUATIC NANAO SEPRACO.CI",
+        "consignee": null,
+        "notify": null,
+        "designation": "FROZEN TILAPIA WHOLE ROUND FREIGHTPREPAID SHIPPER STATES Carton THAT NOWOOD PACKAGING MATERIAL ISCONTAINED IN THIS SHIPMENT.TEMPERATURE SET AT- 18.0 C (-0.4 F) FRESH AIREXCHANGE SEPRACO.CI",
+        "conteneurs": {
+          "CU533873": {
+            "type": "",
+            "num_plomb": "OOLKZQ0911",
+            "nbre_colis": 2650,
+            "poids_brut": 28090.0,
+            "volume": null
+          }
+        }
+      },
+      "OOLU2319318621": {
+        "shipper": "MAOMING HAIYI FOODS CO., LTD. NANAO INALCA CI F)",
+        "consignee": null,
+        "notify": null,
+        "designation": "FROZEN TILAPIA WHOLE ROUND(OREOCHROMIS NILOTICUS) Carton NETWEIGHT: 26000KGS TEMPERATURE SETAT -18.0 C (-0.4 RATE SET AT INALCA CI FRESH AIREXCHANGE",
+        "conteneurs": {
+          "OOLU6479367": {
+            "type": "40HR",
+            "num_plomb": "OOLKSA3233",
+            "nbre_colis": 2600,
+            "poids_brut": 55900.0,
+            "volume": null
+          }
+        }
+      },
+      "OOLU2320020430": {
+        "shipper": "SHANGHAI QICHENG INDUSTRIAL NANAO GAPUMA COTE D IVOIRE",
+        "consignee": null,
+        "notify": null,
+        "designation": "PERCONTAINER 27.2 MT Fut  OFCOCAMIDOPROPYL BETAINE(CAB35) ASPER PFI GA 26671BSC #CIIMP-519301 GAPUMA COTE D IVOIRE 136 X 200 KGS DRUM(S)",
+        "conteneurs": {
+          "AIU915943": {
+            "type": "",
+            "num_plomb": "OOLKZQ0598",
+            "nbre_colis": 136,
+            "poids_brut": 28424.0,
+            "volume": null
+          }
+        }
+      },
+      "OOLU2319628141": {
+        "shipper": "XIAMEN ZHUOYUECHENG IMPORT NANAO LA TULIPE FOOD (LTF)",
+        "consignee": null,
+        "notify": null,
+        "designation": "FROZEN TILAPIA WHOLE AND                        ROUND(OREOCHROMIS NILOTICUS) Carton NETWEIGHT:28000KGS FREIGHT PREPAIDTEMPERATURE SET AT - EXCHANGE RATE SET AT LA TULIPE FOOD (LTF) 18.0 C   (-0.4 F) FRESHAIR",
+        "conteneurs": {
+          "OTPU6188621": {
+            "type": "40HR",
+            "num_plomb": "OOLKZQ4076",
+            "nbre_colis": 1400,
+            "poids_brut": 56960.0,
+            "volume": null
+          }
+        }
+      },
+      "OOLU2319286411": {
+        "shipper": "YANGJIANG LINGZE AQUATIC NANAO AFRIMER DALIMENTATION Ligne",
+        "consignee": null,
+        "notify": null,
+        "designation": "FROZEN TILAPIA WHOLE ROUND(OREOCHROMIS NILOTICUS) Carton SHIPPERDECLARED THAT SHIPMENT DOES NOTINCLUDS ANY SOLID WOOD PACKAGING MATERIALNET WEIGHT:26000KGS AFRIMER DALIMENTATION Conteneur",
+        "conteneurs": {
+          "CU534666": {
+            "type": "",
+            "num_plomb": "OOLKZQ0860",
+            "nbre_colis": 2600,
+            "poids_brut": 28080.0,
+            "volume": null
+          }
+        }
+      },
+      "OOLU2319318622": {
+        "shipper": "HUAZHOU SIDA AQUATIC NANAO AGENCE DE GESTION DU MARCHE",
+        "consignee": null,
+        "notify": null,
+        "designation": "FROZEN TILAPIA WHOLE ROUND PRODUCTS                   NETWEIGHT:27000KGS FREIGHT Carton PREPAIDCARGO IN TRANSIT TO BAMAKO MALI ATCONSIGNEES CARE AND EXPENSES. SHIPPERSTATES THAT NO WOOD AGENCE DE GESTION DU MARCHE",
+        "conteneurs": {
+          "ERU42555": {
+            "type": "40HR",
+            "num_plomb": "OOLKZP7102",
+            "nbre_colis": 2700,
+            "poids_brut": 29160.0,
+            "volume": null
+          }
+        }
+      }
+    }
+  },
+  "CNXMN": {
+    "bls": {
+      "OOLU2319240010": {
+        "shipper": "DONGSHAN YONGSHENG XIAMEN MODY CAMARA Ligne",
+        "consignee": null,
+        "notify": null,
+        "designation": "FROZEN TILAPIA WHOLE AQUATIC                    ROUND(OREOCHROMIS Carton NILOTICUS)N.W.:26820KGS SHIPPER STATES THATTHIS SHIPMENT CONTAINS NO   SOLID WOODPACKING MATERIAL CARGO MODY CAMARA Conteneur",
+        "conteneurs": {
+          "ERU40856": {
+            "type": "40HR",
+            "num_plomb": "OOLKFP2417",
+            "nbre_colis": 2682,
+            "poids_brut": 28429.0,
+            "volume": null
+          }
+        }
+      },
+      "OOLU2319461450": {
+        "shipper": "QUANZHOU FLYA SHOES AND XIAMEN GRECCO TRADING LLC Ligne",
+        "consignee": null,
+        "notify": null,
+        "designation": "BABY BED CHAIRBSC NO: CIIMP- 521548 Carton IMEXA Conteneur",
+        "conteneurs": {
+          "HU622628": {
+            "type": "40HC",
+            "num_plomb": "OOLKFP2424",
+            "nbre_colis": 1248,
+            "poids_brut": 11257.0,
+            "volume": null
+          }
+        }
+      },
+      "OOLU2319369960": {
+        "shipper": "DONGGUAN QINGHEJI TRADING W XIAMEN Ligne",
+        "consignee": null,
+        "notify": null,
+        "designation": "CERAMIC TILE SOCIETE IVOIRIENNE DE Conteneur",
+        "conteneurs": {
+          "WEDU3583394": {
+            "type": "20DV",
+            "num_plomb": "OOLKQQ5921",
+            "nbre_colis": 630,
+            "poids_brut": 54000.0,
+            "volume": null
+          }
+        }
+      },
+      "OOLU2319926180": {
+        "shipper": "ZHANGZHOU LONGYI FOOD XIAMEN AGENCE DE GESTION DU MARCHE",
+        "consignee": null,
+        "notify": null,
+        "designation": "FROZEN TILAPIA WHOLE CO.,LTD.                   ROUND(OREOCHROMIS NILOTICUS) Carton TOTAL NETWEIGHT:51000KGS TEMPERATURE SET AT-20.0 C (-4.0 RATESET AT 0 AGENCE DE GESTION DU MARCHE F)  FRESH AIR EXCHANGE",
+        "conteneurs": {
+          "FSCU5329390": {
+            "type": "40HR",
+            "num_plomb": "OOLKQQ5942",
+            "nbre_colis": 2550,
+            "poids_brut": 53550.0,
+            "volume": null
+          }
+        }
+      },
+      "OOLU2319461610": {
+        "shipper": "XIAMEN WESTRONG TRADING",
+        "consignee": null,
+        "notify": null,
+        "designation": "RECYCLE PVC GRANULES CO., MEDINEX SARL",
+        "conteneurs": {
+          "CSLU1940168": {
+            "type": "20DV",
+            "num_plomb": "OOLKQQ9374",
+            "nbre_colis": 1018,
+            "poids_brut": 1018.0,
+            "volume": null
+          },
+          "OOLU0927947": {
+            "type": "20DV",
+            "num_plomb": "OOLKQQ9255",
+            "nbre_colis": 1034,
+            "poids_brut": 1034.0,
+            "volume": null
+          },
+          "OOCU0911440": {
+            "type": "20DV",
+            "num_plomb": "OOLKQQ9303",
+            "nbre_colis": 1020,
+            "poids_brut": 1020.0,
+            "volume": null
+          }
+        }
+      },
+      "OOLU2318640770": {
+        "shipper": "SHISHI SEABOUND AQUATIC XIAMEN OPAC 1/1 40HR",
+        "consignee": null,
+        "notify": null,
+        "designation": "FROZEN MACKEREL TOTALCARTONS:13500CARTONS Carton TOTAL NETWEIGHT:135000KGS TEMPERATURE SETAT -22.0 C (-7.6 OPAC F)FRESH AIREXCHANGE RATE SET",
+        "conteneurs": {
+          "FSCU5315930": {
+            "type": "40HR",
+            "num_plomb": "OOLKFP2503",
+            "nbre_colis": 2700,
+            "poids_brut": 141750.0,
+            "volume": null
+          },
+          "OOLU6272786": {
+            "type": "40HR",
+            "num_plomb": "OOLKFP2477",
+            "nbre_colis": 2700,
+            "poids_brut": 2700.0,
+            "volume": null
+          },
+          "SEGU9808318": {
+            "type": "",
+            "num_plomb": "OOLKFP2484",
+            "nbre_colis": 2700,
+            "poids_brut": 141750.0,
+            "volume": null
+          },
+          "FSCU5338854": {
+            "type": "40HR",
+            "num_plomb": "OOLKFP2429",
+            "nbre_colis": 2700,
+            "poids_brut": 2700.0,
+            "volume": null
+          }
+        }
+      },
+      "OOLU2319240730": {
+        "shipper": "DONGSHAN YONGSHENG XIAMEN MODY CAMARA",
+        "consignee": null,
+        "notify": null,
+        "designation": "FROZEN TILAPIA WHOLE AQUATIC                    ROUND(OREOCHROMIS Carton NILOTICUS)N.W.:26240KGS SHIPPER STATES THATTHIS SHIPMENT CONTAINS NO   SOLID WOODPACKING MATERIAL CARGO MODY CAMARA NILOTICUS)N.W.:26820KGS SHIPPER",
+        "conteneurs": {
+          "CU599168": {
+            "type": "",
+            "num_plomb": "OOLKFP2450",
+            "nbre_colis": 2624,
+            "poids_brut": 27814.0,
+            "volume": null
+          }
+        }
+      },
+      "OOLU2319188160": {
+        "shipper": "FUJIAN JINHONGCHANG XIAMEN Ligne",
+        "consignee": null,
+        "notify": null,
+        "designation": "EVA RECYCLING MATERIAL SPORTING MEDINEX SARL Conteneur",
+        "conteneurs": {
+          "CSNU2621542": {
+            "type": "20DV",
+            "num_plomb": "OOLKQQ6969",
+            "nbre_colis": 753,
+            "poids_brut": 39210.0,
+            "volume": null
+          }
+        }
+      },
+      "OOLU2319461370": {
+        "shipper": "WIN WING GLOBAL TRADING CO., XIAMEN GLOBAL IMPORT SARL",
+        "consignee": null,
+        "notify": null,
+        "designation": "BABY DIAPERHS CODE:961900BSC#:CIIMP-500591 GLOBAL IMPORT SARL",
+        "conteneurs": {
+          "TGHU6938152": {
+            "type": "40HC",
+            "num_plomb": "OOLKQQ5655",
+            "nbre_colis": 2787,
+            "poids_brut": 2787.0,
+            "volume": null
+          }
+        }
+      },
+      "OOLU2319993070": {
+        "shipper": "YIWOLI TRADING CO.,LIMITED XIAMEN Ligne",
+        "consignee": null,
+        "notify": null,
+        "designation": "DRYING MACHINE GENERAL IVOIRIENNE DE BOIS Conteneur",
+        "conteneurs": {
+          "OOCU8431284": {
+            "type": "40HC",
+            "num_plomb": "OOLKFP5762",
+            "nbre_colis": 13,
+            "poids_brut": 18780.0,
+            "volume": null
+          }
+        }
+      },
+      "OOLU2319462160": {
+        "shipper": "XIAMEN FENGZAN NEW MATERIAL ETS DARPHANE",
+        "consignee": null,
+        "notify": null,
+        "designation": "SPONGE RAW MATERIALS MATTRESSMANUFACTURING ETS DARPHANE",
+        "conteneurs": {
+          "OLU96595": {
+            "type": "40HC",
+            "num_plomb": "OOLKFP5570",
+            "nbre_colis": 350,
+            "poids_brut": 26278.0,
+            "volume": null
+          }
+        }
+      }
+    }
+  },
+  "CNTAO": {
+    "bls": {
+      "OOLU8881440550": {
+        "shipper": "QUFU XINYUE PAPER CO., LTD QINGDAO GRACE ENTREPRISE",
+        "consignee": null,
+        "notify": null,
+        "designation": "COPY PAPERBSC NUMBER:BSCCIIMP-520626 Carton GRACE ENTREPRISE",
+        "conteneurs": {
+          "OLU29245": {
+            "type": "20DV",
+            "num_plomb": "OOLKWV5708",
+            "nbre_colis": 1600,
+            "poids_brut": 20960.0,
+            "volume": null
+          }
+        }
+      },
+      "OOLU8881449200": {
+        "shipper": "SHANDONG SYNTHETIC QINGDAO ITL (INTERNATIONALE DE TRANSIT",
+        "consignee": null,
+        "notify": null,
+        "designation": "HDPE GEOCELL 200-445 CELL HEIGHT200MM WELDING SPACE 445MM BLACKCOLOR PERFORATED 10.67MSTAPLES 1/2 ',2500 PER SET SOCIETE IVOIRIENNE DE WIDTH 2.81MLENGTH",
+        "conteneurs": {
+          "SNU106303": {
+            "type": "20DV",
+            "num_plomb": "OOLKWV5658",
+            "nbre_colis": 17,
+            "poids_brut": 10600.0,
+            "volume": null
+          }
+        }
+      }
+    }
+  },
+  "CNSHA": {
+    "bls": {
+      "OOLU2166080660": {
+        "shipper": "NANJING YICHENG SHANGHAI CROP HUMAN PROTECT (CHP)",
+        "consignee": null,
+        "notify": null,
+        "designation": "HERBICIDE (BROYEUR 200SL)POUR AGROCHEMICAL               LA PROTECTION DES PLANTSKEY Carton RINGCIIMP 518362CIIMP 518363 CROP HUMAN PROTECT (CHP)",
+        "conteneurs": {
+          "OOLU9254683": {
+            "type": "40HC",
+            "num_plomb": "OOLKPT7225",
+            "nbre_colis": 1650,
+            "poids_brut": 1650.0,
+            "volume": null
+          },
+          "TGBU8795423": {
+            "type": "40HC",
+            "num_plomb": "OOLKPT1601",
+            "nbre_colis": 1650,
+            "poids_brut": 1650.0,
+            "volume": null
+          },
+          "FCIU9913248": {
+            "type": "40HC",
+            "num_plomb": "OOLKPT1603",
+            "nbre_colis": 1650,
+            "poids_brut": 518363.0,
+            "volume": null
+          },
+          "OOLU9779820": {
+            "type": "40HC",
+            "num_plomb": "OOLKPT1607",
+            "nbre_colis": 1650,
+            "poids_brut": 1650.0,
+            "volume": null
+          }
+        }
+      },
+      "OOLU2319734680": {
+        "shipper": "TAIZHOU BANGE IMPORT AND H SHANGHAI KENNA NIN BAMBA SOLUTION Ligne",
+        "consignee": null,
+        "notify": null,
+        "designation": "AUTOMATIC ROTARY OPP HOT MACHINEAUTOMATIC SHRINK SLEEVE LABELINGMACHINE LINEAR MACHINE XGF 24-24-8VOLTAGE ETABLISSEMENT IMA ET FRERES FILM WRAPPINGMACHINE AUTOMATIC 3-IN-1 WATERFILLING Conteneur",
+        "conteneurs": {
+          "HLXU8064003": {
+            "type": "40HC",
+            "num_plomb": "OOLHPG4818",
+            "nbre_colis": 52,
+            "poids_brut": 15100.0,
+            "volume": null
+          }
+        }
+      },
+      "OOLU2166112310": {
+        "shipper": "NANJING HAIGE CHEMICAL CO., SHANGHAI Ligne",
+        "consignee": null,
+        "notify": null,
+        "designation": "SEEDER Carton COSTA SARL Conteneur",
+        "conteneurs": {
+          "FCIU9450919": {
+            "type": "40HC",
+            "num_plomb": "OOLKPU0196",
+            "nbre_colis": 850,
+            "poids_brut": 16954.0,
+            "volume": null
+          }
+        }
+      },
+      "OOLU4124814990": {
+        "shipper": "TOPSURF HOLDING CO LIMITED SHANGHAI SN PROVECI",
+        "consignee": null,
+        "notify": null,
+        "designation": "VETERINARY PRODUCT AS PER PROFORMAINVOICE NUMBER THC Carton NP 25 08 DATED29/10/2025 VALUE CFR ABIDJAN INCOTERMS 2020 ORIGIN OF GOODS:CHINA L/C NUMBER: 00111CDI26000009BSC TO THE ORDER OF SGCI",
+        "conteneurs": {
+          "IU990689": {
+            "type": "",
+            "num_plomb": "OOLKPV0188",
+            "nbre_colis": 1450,
+            "poids_brut": 22181.0,
+            "volume": null
+          }
+        }
+      }
+    }
+  },
+  "CNNGB": {
+    "bls": {
+      "OOLU2166002150": {
+        "shipper": "HANGZHOU BITAI GLOBAL NINGBO HUALONG CARRIERE Ligne",
+        "consignee": null,
+        "notify": null,
+        "designation": "HARDWARE MATERIALS, TRADING                    MECHANICAL ANDELECTRICAL SPARE PARTS HUALONG CARRIERE Conteneur",
+        "conteneurs": {
+          "SGU61507": {
+            "type": "40HC",
+            "num_plomb": "OOLKNW5381",
+            "nbre_colis": 268,
+            "poids_brut": 18000.0,
+            "volume": null
+          }
+        }
+      },
+      "OOLU2166130830": {
+        "shipper": "KAY CHANCE TRADE COMPANY NINGBO 1) VENUS TRADING COMPANY",
+        "consignee": null,
+        "notify": null,
+        "designation": "BABY WALKERHS:940370DOOR MATHS:570500BROOMSHS:9603902) Carton VENUS TCL A.J.CI",
+        "conteneurs": {
+          "CSGU6142322": {
+            "type": "40HC",
+            "num_plomb": "OOLKNW5297",
+            "nbre_colis": 709,
+            "poids_brut": 81020.0,
+            "volume": null
+          },
+          "CSGU6133552": {
+            "type": "40HC",
+            "num_plomb": "OOLKNW9876",
+            "nbre_colis": 613,
+            "poids_brut": 81020.0,
+            "volume": null
+          },
+          "CSGU6143653": {
+            "type": "40HC",
+            "num_plomb": "OOLKNW5295",
+            "nbre_colis": 542,
+            "poids_brut": 81020.0,
+            "volume": null
+          },
+          "CSGU6143606": {
+            "type": "40HC",
+            "num_plomb": "OOLKNW5296",
+            "nbre_colis": 686,
+            "poids_brut": 81020.0,
+            "volume": null
+          },
+          "CSGU6137202": {
+            "type": "40HC",
+            "num_plomb": "OOLKNW5311",
+            "nbre_colis": 1064,
+            "poids_brut": 1064.0,
+            "volume": null
+          },
+          "CSGU6142390": {
+            "type": "40HC",
+            "num_plomb": "OOLKNW5257",
+            "nbre_colis": 541,
+            "poids_brut": 81020.0,
+            "volume": null
+          }
+        }
+      },
+      "OOLU2165900980": {
+        "shipper": "ALLBRIGHT IMPORT AND EXPORT NINGBO ETS DARPHANE Ligne",
+        "consignee": null,
+        "notify": null,
+        "designation": "FLOOR MATBLANKETTABLELED LAMPLED STRIPSTORAGE RACKRAINCOATSHOE ETS DARPHANE RACKWALLPAPER Conteneur",
+        "conteneurs": {
+          "SGU65960": {
+            "type": "40HC",
+            "num_plomb": "OOLKNV6981",
+            "nbre_colis": 766,
+            "poids_brut": 12720.0,
+            "volume": null
+          }
+        }
+      },
+      "OOLU2166190680": {
+        "shipper": "HANGZHOU BITAI GLOBAL NINGBO Ligne",
+        "consignee": null,
+        "notify": null,
+        "designation": "CENTRAL CONCRETE EQUIPMENT TRADING HUALONG CARRIERE Conteneur",
+        "conteneurs": {
+          "BEAU6218907": {
+            "type": "40HC",
+            "num_plomb": "OOLKNW4176",
+            "nbre_colis": 30,
+            "poids_brut": 99500.0,
+            "volume": null
+          },
+          "FFAU3418403": {
+            "type": "40HC",
+            "num_plomb": "OOLJVM9992",
+            "nbre_colis": 18,
+            "poids_brut": 99500.0,
+            "volume": null
+          },
+          "OOCU7906153": {
+            "type": "40HC",
+            "num_plomb": "OOLJVM0362",
+            "nbre_colis": 29,
+            "poids_brut": 99500.0,
+            "volume": null
+          }
+        }
+      },
+      "OOLU2166002850": {
+        "shipper": "CHONGQING DALONGYUFENG NINGBO Ligne",
+        "consignee": null,
+        "notify": null,
+        "designation": "AAM2511-14MOTORCYCLE CKD KD NEGOCE HONGKONG SPLENDID TRADE Conteneur",
+        "conteneurs": {
+          "SNU80448": {
+            "type": "40HC",
+            "num_plomb": "OOLKPP5540",
+            "nbre_colis": 215,
+            "poids_brut": 22575.0,
+            "volume": null
+          }
+        }
+      },
+      "OOLU2165901010": {
+        "shipper": "YIWU HARVEST IMPORT AND NINGBO ETS DARPHANE Ligne",
+        "consignee": null,
+        "notify": null,
+        "designation": "TAPE SHELF TABLE STORAGE EXPORT                     RACK JUICER GLASSES PAPER Carton CARD STEEL WOOL COOKWARE BLANKET PLATFORM SCALE HINGE WRENCH ETS DARPHANE Conteneur",
+        "conteneurs": {
+          "SGU66726": {
+            "type": "40HC",
+            "num_plomb": "OOLJVU0245",
+            "nbre_colis": 964,
+            "poids_brut": 27920.0,
+            "volume": null
+          }
+        }
+      },
+      "OOLU2166144960": {
+        "shipper": "WENZHOU ROKIN MACHINERY NINGBO SPARK LINE Ligne",
+        "consignee": null,
+        "notify": null,
+        "designation": "RKFD-330 PAPER BAG MACHINE CO.,                       WITH 4COLOR FLEXO PRINTING INLINE(1200MM) AND HANDLE SPARK LINE MAKING TOOLBSC NUMBER: CIIMP- 520679 Conteneur",
+        "conteneurs": {
+          "BEAU2122345": {
+            "type": "40HC",
+            "num_plomb": "OOLKNW5270",
+            "nbre_colis": 2,
+            "poids_brut": 520679.0,
+            "volume": null
+          }
+        }
+      }
+    }
+  },
+  "MYPEN": {
+    "bls": {
+      "OOLU2317929090": {
+        "shipper": "HNG BROTHERS FROZEN FOOD PENANG YAYA SOGORE COMMERCANT",
+        "consignee": null,
+        "notify": null,
+        "designation": "FROZEN PANGASIUS WHOLE ROUND TOTALNET WEIGHT: Carton 27,000.00KGS CARGO INTRANSIT TO BAMAKO, MALI ATCONSIGNEES CARE AND EXPENSES.CARRIER S LIABILITYENDS AT POD. YAYA SOGORE COMMERCANT",
+        "conteneurs": {
+          "ERU41779": {
+            "type": "40HR",
+            "num_plomb": "OOLKTN9732",
+            "nbre_colis": 2700,
+            "poids_brut": 28620.0,
+            "volume": null
+          }
+        }
+      }
+    }
+  },
+  "CNSWA": {
+    "bls": {
+      "OOLU2319203860": {
+        "shipper": "EXPORT CARE CO. , LIMITED SHANTOU Ligne",
+        "consignee": null,
+        "notify": null,
+        "designation": "DOOR LOCKBASINBATHROOM CABINETBSC-CIIMP-515230 Carton SODBIS-CI N/M SAME AS CONSIGNEE Conteneur",
+        "conteneurs": {
+          "OOLU9996050": {
+            "type": "40HC",
+            "num_plomb": "OOLKZJ1255",
+            "nbre_colis": 912,
+            "poids_brut": 79090.0,
+            "volume": null
+          },
+          "TIIU4567039": {
+            "type": "40HC",
+            "num_plomb": "OOLKZJ1252",
+            "nbre_colis": 821,
+            "poids_brut": 79090.0,
+            "volume": null
+          },
+          "FDCU0112870": {
+            "type": "40HC",
+            "num_plomb": "OOLKSF0143",
+            "nbre_colis": 409,
+            "poids_brut": 79090.0,
+            "volume": null
+          }
+        }
+      }
+    }
+  }
+}
